@@ -1,0 +1,42 @@
+title: Kano
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: name
+            field:
+              type: text
+              display: 'kano naam'
+              validate:
+                - required
+          -
+            handle: kano_image
+            field:
+              max_files: 1
+              folder: img
+              type: assets
+              display: 'Kano image'
+          -
+            handle: info
+            field:
+              type: textarea
+              display: 'kano info'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

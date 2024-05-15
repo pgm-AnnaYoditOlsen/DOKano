@@ -36,11 +36,22 @@
         </div>
       </section>
 
-      <section>
+      <section class="relative">
         <img class="h-[30rem] absolute left-[-10rem] top-[115rem] z-[-1]" src="assets/img/dolphin_left.svg" alt="dolphin">
-        d
       </section>
 
-
+      <section class="relative mt-[8rem]">
+        <h2 class="text-center font-standard font-bold text-[36px]">Onze kanos</h2>
+        <img class="absolute w-[110rem] top-[11rem] z-[-1] hidden md:block" src="assets/img/wave.svg" alt="canoe wave">
+        <div class="flex flex-wrap justify-center gap-[4rem] mt-[8rem]">
+            {{ collection:kanos limit="3" }}
+                <div class="max-w-[13.3rem] w-full">
+                    <img class="max-w-[20rem] w-full" src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
+                    <h3 class="text-center font-standard text-2xl">{{ name }}</h3>
+                    <p class="text-center font-alternative text-sm">{{ info }}</p>
+                </div>
+            {{ /collection:kanos }}
+        </div>
+      </section>
       
 </section>
