@@ -32,26 +32,6 @@ tabs:
               type: template
               display: Template
               localizable: true
-          -
-            handle: adres
-            field:
-              type: text
-              display: Adres
-          -
-            handle: openinguren
-            field:
-              type: textarea
-              display: Openinguren
-          -
-            handle: facebook
-            field:
-              type: icon
-              display: Facebook
-          -
-            handle: instagram
-            field:
-              type: icon
-              display: instagram
   sidebar:
     display: Sidebar
     sections:
