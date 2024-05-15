@@ -27,7 +27,7 @@ pagina_content: |-
 
   Samen voor schone rivieren!
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715784647
+updated_at: 1715785550
 panel_image:
   - dokano-code-block.jpg
 ---

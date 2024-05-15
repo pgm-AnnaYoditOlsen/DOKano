@@ -18,6 +18,8 @@ tabs:
             field:
               type: assets
               display: 'panel image'
+              max_files: 1
+              folder: img
           -
             handle: beschrijving
             field:

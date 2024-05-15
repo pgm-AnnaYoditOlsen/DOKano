@@ -9,7 +9,7 @@ pagina_content: |-
 
   Vzw DOKano houdt al langer opruimacties voor drijvend zwerfvuil. Het is een bewuste keuze om scholen bij de acties te betrekken, zegt Marly. "Het is ervaringsleren: leerlingen leren ontspannend kanovaren, het is teambuilding, maar tegelijkertijd verrichten ze een goede daad."
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715784654
+updated_at: 1715785540
 panel_image:
-  - dokano-code-block-1715784653.jpg
+  - dokano-sept-22.jpg
 ---

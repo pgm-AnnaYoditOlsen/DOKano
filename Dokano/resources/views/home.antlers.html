@@ -17,12 +17,29 @@
         </p>
     </div>
 
-    <div>
-        {{ collection:evenementen }}
-        <div>
-            <img src="{{ panel_image }}" alt="{{ title }}">
+    <section class="mt-[10rem] relative">
+        <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[40rem]">
+          {{ collection:evenementen limit="3"}}
+          <a href="{{ url }}" class="relative min-w-full px-[2rem] py-[1rem] snap-center">
+            <div>
+              <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}" alt="{{ panel_image.alt }}">
+            </div>
+            <div>
+              <h3 class="font-standard text-[24px] font-bold">{{ title }}</h3>
+              <p>{{ beschrijving }}</p>
+            </div>
+          </a>
+          {{ /collection:evenementen }}
         </div>
-            {{ title }}
-        {{ /collection:evenementen }}
-    </div>
+        <div class="flex justify-center mt-[3rem]">
+          <a href="#" class=" hover:bg-standards-black hover:text-standards-white transition duration-300 ease-in-out inline-block text-standards-black font-bold py-2 px-4 rounded-full border border-standards-black">Meer evenementen</a>
+        </div>
+      </section>
+
+      <section>
+        <img class="h-[30rem] absolute left-[-10rem] top-[115rem] z-[-1]" src="assets/img/dolphin_left.svg" alt="dolphin">
+      </section>
+
+
+      
 </section>

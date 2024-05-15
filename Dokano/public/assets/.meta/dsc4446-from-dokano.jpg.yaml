@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'garbage on the ground'
 size: 912627
 last_modified: 1715784635
 width: 1920

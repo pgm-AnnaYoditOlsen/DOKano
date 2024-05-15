@@ -4,7 +4,7 @@ blueprint: evenementen
 title: 'Clean-it-up CUP'
 author: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715784637
+updated_at: 1715785435
 date: 'Van 14-12-2022 tot 16-12-2022'
 beschrijving: "De\_Clean-it-up CUP - 2022\_is een regatta vuilvissen, ploggen, pliken & plandelen georganiseerd door DOKano, Decathlon en CUP. Tijdens de editie 2022 gaan we de strijd aan tegen drijfvuil & zwerfvuil van het Houtdok tot het Keizerpark (en vice versa ;-))."
 pagina_content: |-
