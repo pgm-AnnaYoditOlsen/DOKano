@@ -1,0 +1,46 @@
+title: Evenementen
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate:
+                - required
+          -
+            handle: panel_image
+            field:
+              type: assets
+              display: 'panel image'
+          -
+            handle: beschrijving
+            field:
+              type: textarea
+              display: beschrijving
+          -
+            handle: date
+            field:
+              type: text
+              display: Date
+          -
+            handle: pagina_content
+            field:
+              type: markdown
+              display: 'Pagina Content'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

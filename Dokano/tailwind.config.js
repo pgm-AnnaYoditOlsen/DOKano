@@ -21,8 +21,8 @@ theme: {
                 },
             },
             fontFamily: {
-                theme1: ['Roboto', 'sans-serif'], 
-                theme2: ['Open Sans', 'sans-serif'],
+                standard: ['Merriweather', 'serif'],
+                alternative: ['Montserrat', 'sans-serif'],
             },
         },
     },

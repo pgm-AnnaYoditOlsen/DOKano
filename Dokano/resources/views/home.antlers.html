@@ -1,5 +1,28 @@
 {{# standard layout file for the homepage #}}
+<section>
+    <div>
+        <img class="w-full h-auto" src="assets/img/DOKano.svg" alt="DOKano Image">
+        <img class="absolute w-[40%] top-40 left-1/2 transform -translate-x-1/2" src="assets/img/logo.svg" alt="Logo">
+    </div>
+    
+    <div class="flex flex-col mx-auto mt-[-24rem] text-center">
+        <h1 class="text-[36px] font-standard">
+            {{ title }}
+        </h1>
+        <span class="text-[20px] font-standard">
+            {{ teaser }}
+        </span>
+        <p class="mx-auto font-standard md:max-w-[30rem] w-full px-2">
+            {{ hometext }}
+        </p>
+    </div>
 
-<h1>
-    Welcome to DOKano
-</h1>
+    <div>
+        {{ collection:evenementen }}
+        <div>
+            <img src="{{ panel_image }}" alt="{{ title }}">
+        </div>
+            {{ title }}
+        {{ /collection:evenementen }}
+    </div>
+</section>
