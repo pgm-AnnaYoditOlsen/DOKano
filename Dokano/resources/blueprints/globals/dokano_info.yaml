@@ -1,0 +1,16 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: adres
+            field:
+              type: markdown
+              display: adres
+          -
+            handle: openingsuren
+            field:
+              type: markdown
+              display: openingsuren
