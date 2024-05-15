@@ -1,0 +1,12 @@
+<nav class="bg-DOKano-lightblue p-5 text-standards-white">
+    <ul class="flex items-center justify-around"> 
+            <div>
+                <li class="w-[8rem]"><a href="/"><img src="assets/img/logo.svg"></a></li>
+            </div>
+            <div class="flex">
+                {{ nav:navigation }}
+                        <li class="ml-[3rem]"><a href="{{ url }}">{{ title }}</a></li>
+                {{ /nav:navigation }}
+            </div>
+    </ul>
+</nav>
