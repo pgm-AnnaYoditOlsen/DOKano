@@ -22,6 +22,35 @@ tabs:
             field:
               type: textarea
               display: homeText
+          -
+            handle: title_drijfvuil
+            field:
+              type: text
+              display: 'Title Drijfvuil'
+          -
+            handle: teaser_drijfvuil
+            field:
+              type: text
+              display: 'Teaser Drijfvuil'
+          -
+            handle: text_drijfvuil
+            field:
+              type: textarea
+              display: 'Text Drijfvuil'
+          -
+            handle: activity_photos
+            field:
+              max_files: 10
+              folder: img
+              type: assets
+              display: 'Activity photos'
+          -
+            handle: sponsers
+            field:
+              max_files: 20
+              folder: img
+              type: assets
+              display: 'sponsers images'
   sidebar:
     display: Sidebar
     sections:

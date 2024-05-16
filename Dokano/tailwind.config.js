@@ -17,12 +17,14 @@ theme: {
                 },
                 DOKano: {
                     lightblue: '#85C5D3', 
-                    yellow: '#E3A623', 
+                    yellow: '#FFC400', 
+                    orange: '#FF793E',
+                    darkGreen: '#0C4D54',
                 },
             },
             fontFamily: {
-                standard: ['Merriweather', 'serif'],
-                alternative: ['Montserrat', 'sans-serif'],
+                standard: ['Futura PT', 'sans-serif'],
+                alternative: ['New Spirit Condensed', 'serif'],
             },
         },
     },

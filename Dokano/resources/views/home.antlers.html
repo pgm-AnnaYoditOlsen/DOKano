@@ -36,11 +36,72 @@
         </div>
       </section>
 
-      <section>
+      <section class="relative">
         <img class="h-[30rem] absolute left-[-10rem] top-[115rem] z-[-1]" src="assets/img/dolphin_left.svg" alt="dolphin">
-        d
       </section>
 
+      <section class="relative mt-[8rem]">
+        <h2 class="text-center font-standard font-bold text-[36px]">Onze kanos</h2>
+        <img class="absolute w-[110rem] top-[11rem] z-[-1] hidden md:block" src="assets/img/wave.svg" alt="canoe wave">
+        <div class="flex flex-wrap justify-center gap-[4rem] mt-[8rem]">
+            {{ collection:kanos limit="3" }}
+                <div class="max-w-[13.3rem] w-full">
+                    <img class="max-w-[20rem] w-full" src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
+                    <h3 class="text-center font-standard text-2xl">{{ name }}</h3> 
+                    <p class="text-center font-alternative text-sm">{{ info }}</p>
+                </div>
+            {{ /collection:kanos }}
+        </div>
+      </section>
 
-      
+      <section class="max-w-[40rem] mt-[7rem] w-full mx-auto flex flex-col justify-center">
+        <h2 class="text-[60px] text-DOKano-yellow text-center font-alternative">{{title_drijfvuil}}</h2>
+        <h3 class="text-[36px] font-bold text-center font-standard">{{teaser_drijfvuil}}</h3>
+        <p class="mt-[1.5rem] font-alternative">{{text_drijfvuil}}</p>
+      </section>
+
+  <section class="mt-[7rem] relative">
+    <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
+      {{ activity_photos }}
+        <img class="min-w-full px-[1rem] snap-center relative  h-[30rem] object-cover w-full mx-auto" src="{{ url }}" alt="{{ alt }}">
+      {{ /activity_photos }}
+    </div>
+  </section>
+
+  <section class="mt-[7rem]">
+    <h2 class="text-center font-standard text-[36px]">Scoreboard</h2>
+    {{ collection:scoreboard }}
+
+    <div class="max-w-[50rem] w-full mx-auto">
+      {{ teams limit="6" }}
+      <div class="flex sm:gap-[4rem] mb-5 flex-wrap justify-center items-center">
+  
+          <img class="max-w-[5rem] sm:block hidden w-full h-[5rem]" src="assets/img/Crown.svg" alt="crown">
+          
+          {{ if !team_foto:url}}
+          <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="assets/img/DOKano.svg" alt="dokano">
+          {{ else }}
+          <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="{{ team_foto:url }}" alt="{{ team_foto:alt }}">
+          {{ /if }}
+  
+          <div class="flex flex-wrap items-center justify-center max-w-[20rem] w-full">
+            <span>{{ naam }} - </span>
+            <span>{{ kilogram }}</span>
+          </div>
+  
+      </div>
+      {{ /teams }}
+    </div>
+    {{ /collection:scoreboard }}
+  </section>
+
+    <section>
+      <div class="flex flex-wrap justify-center" id="weather"></div>
+  </section>
+
+  <section class="mt-[7rem] max-w-[60rem] w-ful mx-auto flex flex-wrap gap-5">
+  {{ sponsers }}
+    <img class="max-w-[6rem] w-full h-[3rem] " src="{{ url }}" alt="{{ alt }}">
+  {{ /sponsers }}
+  </section>
 </section>

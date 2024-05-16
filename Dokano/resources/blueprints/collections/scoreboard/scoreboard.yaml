@@ -1,0 +1,55 @@
+title: Scoreboard
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Players
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: teams
+            field:
+              type: replicator
+              display: Teams
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: team_foto
+                          field:
+                            type: assets
+                            display: 'team foto'
+                            max_files: 1
+                            folder: img
+                        -
+                          handle: naam
+                          field:
+                            type: text
+                            display: 'team naam'
+                        -
+                          handle: kilogram
+                          field:
+                            type: text
+                            display: kilogram
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
