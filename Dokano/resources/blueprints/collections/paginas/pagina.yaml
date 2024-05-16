@@ -1,20 +1,63 @@
 title: Pagina
 tabs:
   main:
+    display: Main
     sections:
       -
+        display: 'Blauw stuk'
         fields:
           -
             handle: title
             field:
               type: text
               required: true
+              validate:
+                - required
+          -
+            handle: hero_image
+            field:
+              max_files: 1
+              folder: img
+              type: assets
+              display: 'Hero Image'
           -
             handle: content
             field:
               type: markdown
               display: Content
               localizable: true
+          -
+            handle: table_one
+            field:
+              type: table
+              display: Voormiddag
+          -
+            handle: table_two
+            field:
+              type: table
+              display: Namiddag
+          -
+            handle: foto
+            field:
+              max_files: 1
+              folder: img
+              type: assets
+              display: Foto
+      -
+        display: 'Wit stuk'
+        fields:
+          -
+            handle: info
+            field:
+              type: markdown
+              display: 'Extra informatie'
+          -
+            handle: foto_carousel
+            field:
+              max_files: 3
+              folder: img
+              type: assets
+              display: 'Foto Carousel'
           -
             handle: author
             field:
@@ -30,6 +73,7 @@ tabs:
               display: Template
               localizable: true
   sidebar:
+    display: Sidebar
     sections:
       -
         fields:
