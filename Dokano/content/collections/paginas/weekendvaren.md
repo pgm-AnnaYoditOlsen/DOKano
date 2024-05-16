@@ -5,7 +5,7 @@ title: Weekendvaren
 author: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
 template: pages
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715893702
+updated_at: 1715879546
 hero_image: weekendvaren_hero.jpg
 info: |-
   ## Gratis kano’s
@@ -23,6 +23,7 @@ foto_carousel:
   - kopie-van-20200919_133222.jpg
   - kopie-van-20201023_155130-1679582895.jpg
   - kano-op-water.jpg
+home_info: 'Elk weekend varen we op zaterdag en zondag van 13u tot 17u. Je krijgt van ons een gele kano met peddels, een waterdichte ton, en een vaarkaart mee. Hou je graag het water proper, dan krijg je ook grijpers en afvalzakken mee.'
 ---
 ## Dolfijn!
 Elk weekend varen we op zaterdag en zondag van 13u tot 17u. Je krijgt van ons een gele kano met peddels, een waterdichte ton, en een vaarkaart mee. Hou je graag het water proper, dan krijg je ook grijpers en afvalzakken mee.

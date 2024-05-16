@@ -4,7 +4,7 @@ blueprint: pagina
 title: 'Schoon water project'
 author: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715894180
+updated_at: 1715879581
 template: pages
 info: |-
   ## Wanneer
@@ -59,6 +59,7 @@ foto_carousel:
   - kopie-van-img_20200625_155511.jpg
   - kopie-van-img_20200707_140547.jpg
   - kopie-van-img_20200625_155609.jpg
+home_info: 'Het Schoon Water Project is een plezante bewustmakende activiteit voor scholen, jeugdverenigingen en vzw’s die met jongeren werken. Tijdens het kanovaren krijg je de gelegenheid om het Gentse water mee proper te maken, stil te staan bij je eigen gedrag én elkaar op een andere manier te leren kennen.'
 ---
 ## Doe mee met ons Schoon Water Project!
 Het Schoon Water Project is een plezante bewustmakende activiteit voor scholen, jeugdverenigingen en vzw’s die met jongeren werken. Tijdens het kanovaren krijg je de gelegenheid om het water mee proper te maken, stil te staan bij je eigen gedrag én elkaar op een andere manier te leren kennen.
