@@ -5,7 +5,7 @@
         <img class="absolute w-[40%] top-40 left-1/2 transform -translate-x-1/2" src="assets/img/logo.svg" alt="Logo">
     </div>
     
-    <div class="flex flex-col mx-auto mt-[-24rem] text-center">
+    <div class="flex flex-col mx-auto md:mt-[-24rem] sm:mt-[-13rem] text-center">
         <h1 class="text-[36px] font-standard">
             {{ title }}
         </h1>
@@ -36,13 +36,21 @@
         </div>
       </section>
 
-      <section class="relative">
-        <img class="h-[30rem] absolute left-[-10rem] top-[115rem] z-[-1]" src="assets/img/dolphin_left.svg" alt="dolphin">
-      </section>
+      <section class="mt-[8rem] relative">
+        <div class="mb-[3rem] px-[2] mx-w-[80%] md:grid md:grid-cols-2 justify-items-center md:grid-rows-2 lg:grid-cols-3 lg:col-auto lg:grid-rows-1 gap-[2rem]">
+            {{ collection:paginas limit="3" }}
+                <a href="{{ url }}" class="pageIndex mx-[2rem] mb-[2rem] pb-[1rem] card-highlight text-standards-white block bg-DOKano-lightblue rounded-xl lg:w-72">
+                    <img class="lg:col-auto rounded-xl max-h-[10rem] w-full object-cover" src="{{ hero_image.url }}" alt="{{ hero_image.alt }}">
+                    <h3 class="p-3 text-center font-standard text-2xl">{{ title }}</h3> 
+                    <p class="p-3 text-center font-alternative text-sm">{{home_info}}</p>
+                </a>
+            {{ /collection:paginas }}
+        </div>
+    </section>
 
       <section class="relative mt-[8rem]">
         <h2 class="text-center font-standard font-bold text-[36px]">Onze kanos</h2>
-        <img class="absolute w-[110rem] top-[11rem] z-[-1] hidden md:block" src="assets/img/wave.svg" alt="canoe wave">
+        <img class="absolute max-w-[110rem] top-[11rem] z-[-1] hidden md:block" src="assets/img/wave.svg" alt="canoe wave">
         <div class="flex flex-wrap justify-center gap-[4rem] mt-[8rem]">
             {{ collection:kanos limit="3" }}
                 <div class="max-w-[13.3rem] w-full">
@@ -95,7 +103,7 @@
     {{ /collection:scoreboard }}
   </section>
 
-    <section>
+    <section class="mt-[7rem]">
       <div class="flex flex-wrap justify-center" id="weather"></div>
   </section>
 
@@ -105,3 +113,24 @@
   {{ /sponsers }}
   </section>
 </section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const pageLinks = document.querySelectorAll('.pageIndex');
+
+      pageLinks.forEach((link, index) => {
+          switch (index) {
+              case 0:
+                  link.style.backgroundColor = '#FF793E';
+                  break;
+              case 1:
+                  link.style.backgroundColor = '#0C4D54';
+                  break;
+              case 2:
+                  link.style.backgroundColor = '#FFC400';
+                  break;
+          }
+      });
+  });
+</script>

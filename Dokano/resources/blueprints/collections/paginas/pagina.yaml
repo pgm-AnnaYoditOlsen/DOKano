@@ -43,6 +43,11 @@ tabs:
               folder: img
               type: assets
               display: Foto
+          -
+            handle: home_info
+            field:
+              type: textarea
+              display: 'home info'
       -
         display: 'Wit stuk'
         fields:

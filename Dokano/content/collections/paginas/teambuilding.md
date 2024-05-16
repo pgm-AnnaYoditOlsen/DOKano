@@ -4,7 +4,7 @@ blueprint: pagina
 title: Teambuilding
 author: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715873713
+updated_at: 1715879597
 template: pages
 table_one:
   -
@@ -48,6 +48,7 @@ foto_carousel:
   - img_9986-1679582759.jpg
   - kopie-van-img_7110.jpg
   - kopie-van-img_6409.jpg
+home_info: 'Wil je met je team iets onvergetelijk doen? Bij vzw Dokano kan je met je bedrijf of team terecht om te kanovaren met vuilvissen. Gewapend met grijpers, handschoenen en afvaltonnen, ga je met de kano op pad! Verzamel zoveel mogelijk afval en help zo om het water schoon te maken.'
 ---
 Alle trossen los!
 Wil je met je team iets onvergetelijk doen? Bij vzw Dokano kan je met je bedrijf of team terecht om te kanovaren met vuilvissen. Gewapend met grijpers, handschoenen en afvaltonnen, ga je met de kano op pad! Verzamel zoveel mogelijk afval en help zo om het water schoon te maken.
