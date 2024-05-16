@@ -44,6 +44,13 @@ tabs:
               folder: img
               type: assets
               display: 'Activity photos'
+          -
+            handle: sponsers
+            field:
+              max_files: 20
+              folder: img
+              type: assets
+              display: 'sponsers images'
   sidebar:
     display: Sidebar
     sections:

@@ -3,3 +3,42 @@
 @import "tailwindcss/utilities";
 
 /* This is all you. */
+
+
+.weather-ghent {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 14rem;
+    border-right: 2px solid black;
+    color: black;
+  }
+  
+  .weekend {
+    color: white;
+    background-color: rgb(133,196,211);
+  }
+  
+  .weather-ghent:nth-last-child(1) {
+    border-right: none;
+  }
+  
+  .weather-ghent h2 {
+    font-family: "Chaloops regular";
+  }
+  
+  .date {
+    margin-bottom: 2rem;
+  }
+  
+  .weather-icon {
+    margin-bottom: 1rem;
+  }
+  
+  .weather-icon img {
+    width: 5rem;
+    height: 5rem;
+  }
+  

@@ -63,25 +63,25 @@
   <section class="mt-[7rem] relative">
     <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
       {{ activity_photos }}
-        <img class="min-w-full snap-center relative  h-[30rem] object-cover w-full mx-auto" src="{{ url }}" alt="{{ alt }}">
+        <img class="min-w-full px-[1rem] snap-center relative  h-[30rem] object-cover w-full mx-auto" src="{{ url }}" alt="{{ alt }}">
       {{ /activity_photos }}
     </div>
   </section>
 
   <section class="mt-[7rem]">
     <h2 class="text-center font-standard text-[36px]">Scoreboard</h2>
-    {{ collection:scoreboard limit="6" }}
+    {{ collection:scoreboard }}
 
     <div class="max-w-[50rem] w-full mx-auto">
-      {{ teams }}
-      <div class="flex sm:gap-[4rem] sm:mb-0 mb-[5rem] flex-wrap justify-center items-center">
+      {{ teams limit="6" }}
+      <div class="flex sm:gap-[4rem] mb-5 flex-wrap justify-center items-center">
   
           <img class="max-w-[5rem] sm:block hidden w-full h-[5rem]" src="assets/img/Crown.svg" alt="crown">
-  
-          {{ if team_photo:url }}
-            <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="{{ team_photo:url }}" alt="{{ team_photo:alt }}">
+          
+          {{ if !team_foto:url}}
+          <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="assets/img/DOKano.svg" alt="dokano">
           {{ else }}
-            <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="assets/img/DOKano.svg" alt="dokano">
+          <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="{{ team_foto:url }}" alt="{{ team_foto:alt }}">
           {{ /if }}
   
           <div class="flex flex-wrap items-center justify-center max-w-[20rem] w-full">
@@ -93,5 +93,15 @@
       {{ /teams }}
     </div>
     {{ /collection:scoreboard }}
+  </section>
+
+    <section>
+      <div class="flex flex-wrap justify-center" id="weather"></div>
+  </section>
+
+  <section class="mt-[7rem] max-w-[60rem] w-ful mx-auto flex flex-wrap gap-5">
+  {{ sponsers }}
+    <img class="max-w-[6rem] w-full h-[3rem] " src="{{ url }}" alt="{{ alt }}">
+  {{ /sponsers }}
   </section>
 </section>

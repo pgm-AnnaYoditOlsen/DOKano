@@ -42,6 +42,12 @@ teams:
     kilogram: 8.2kg
     type: new_set
     enabled: true
+  -
+    id: lw99w0jm
+    naam: yeeep
+    kilogram: 21212kg
+    type: new_set
+    enabled: true
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715863420
+updated_at: 1715870145
 ---

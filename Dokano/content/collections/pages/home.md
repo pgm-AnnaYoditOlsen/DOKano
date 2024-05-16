@@ -3,7 +3,7 @@ id: 9b5fd94f-b949-4909-8635-bd0fa60aeb95
 blueprint: home
 title: 'Samen voor schoon water'
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715861403
+updated_at: 1715871900
 teaser: 'We duiken erin!'
 hometext: 'Vzw Dokano wil het plezier van varen op schoon water met zoveel mogelijk mensen delen. Omdat varen avontuurlijk en ontspannend is: je ziet de stad van een andere kant, wordt één met de natuur en laat al je zorgen achter op de kade. En dat schoon water? Wel, we hebben een licht utopische droom om ooit tussen de dolfijnen te zwemmen. Goesting gekregen? Kom dan weekendvaren bij ons, met of zonder vuilvissen. Voor scholen en jeugdverenigingen hebben we het Schoon Water Project, en voor bedrijven organiseren we teambuildings.'
 title_drijfvuil: 8530kg
@@ -16,4 +16,20 @@ activity_photos:
   - img/activity3.jpg
   - img/activity4.jpg
   - img/activity5.jpg
+sponsers:
+  - img/active-guides-(1).svg
+  - img/artevelde-logo-high-res-(1).svg
+  - img/bricolage.svg
+  - img/gent-logo-high-res.svg
+  - img/gmf-high-res-logo-(1).svg
+  - img/hogent-logo.svg
+  - img/ivago-logo.svg
+  - img/jes-logo.svg
+  - img/onze-vrijwilligers-(1).svg
+  - img/pepijn-degreef-logo.svg
+  - img/refu-interim-logo.svg
+  - img/river-cleanup-(1).svg
+  - img/sogent-(1).svg
+  - img/waterland-logo.svg
+  - img/waterweg-logo.svg
 ---
