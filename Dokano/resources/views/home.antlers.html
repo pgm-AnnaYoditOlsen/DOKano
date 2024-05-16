@@ -47,11 +47,51 @@
             {{ collection:kanos limit="3" }}
                 <div class="max-w-[13.3rem] w-full">
                     <img class="max-w-[20rem] w-full" src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
-                    <h3 class="text-center font-standard text-2xl">{{ name }}</h3>
+                    <h3 class="text-center font-standard text-2xl">{{ name }}</h3> 
                     <p class="text-center font-alternative text-sm">{{ info }}</p>
                 </div>
             {{ /collection:kanos }}
         </div>
       </section>
-      
+
+      <section class="max-w-[40rem] mt-[7rem] w-full mx-auto flex flex-col justify-center">
+        <h2 class="text-[60px] text-DOKano-yellow text-center font-alternative">{{title_drijfvuil}}</h2>
+        <h3 class="text-[36px] font-bold text-center font-standard">{{teaser_drijfvuil}}</h3>
+        <p class="mt-[1.5rem] font-alternative">{{text_drijfvuil}}</p>
+      </section>
+
+  <section class="mt-[7rem] relative">
+    <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
+      {{ activity_photos }}
+        <img class="min-w-full snap-center relative  h-[30rem] object-cover w-full mx-auto" src="{{ url }}" alt="{{ alt }}">
+      {{ /activity_photos }}
+    </div>
+  </section>
+
+  <section class="mt-[7rem]">
+    <h2 class="text-center font-standard text-[36px]">Scoreboard</h2>
+    {{ collection:scoreboard limit="6" }}
+
+    <div class="max-w-[50rem] w-full mx-auto">
+      {{ teams }}
+      <div class="flex sm:gap-[4rem] sm:mb-0 mb-[5rem] flex-wrap justify-center items-center">
+  
+          <img class="max-w-[5rem] sm:block hidden w-full h-[5rem]" src="assets/img/Crown.svg" alt="crown">
+  
+          {{ if team_photo:url }}
+            <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="{{ team_photo:url }}" alt="{{ team_photo:alt }}">
+          {{ else }}
+            <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="assets/img/DOKano.svg" alt="dokano">
+          {{ /if }}
+  
+          <div class="flex flex-wrap items-center justify-center max-w-[20rem] w-full">
+            <span>{{ naam }} - </span>
+            <span>{{ kilogram }}</span>
+          </div>
+  
+      </div>
+      {{ /teams }}
+    </div>
+    {{ /collection:scoreboard }}
+  </section>
 </section>
