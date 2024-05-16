@@ -1,8 +1,38 @@
 {{# standard layout file for the pages (no homepage) #}}
 
-<img src="{{ hero_image.url }}" alt="{{ hero_image.alt}}">
-{{ title }}
-{{ content }}
-<img src="{{ foto.url }}" alt="{{ foto.alt}}">
+<div class="relative">
+    <div class="">
+        <img class="w-full md:h-80 md:object-cover object-center" src="{{ hero_image.url }}" alt="{{ hero_image.alt}}">
+    </div>
+    <img class="w-full absolute -bottom-0" src="assets/img/wave_weekend_start.svg" alt="footer wave">
+</div>
 
-{{ info }}
+<section class="bg-DOKano-lightblue">
+    <div class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:justify-between items-center pt-12 pb-6">
+        <div class="max-w-xs md:max-w-sm xl:max-w-lg text-standards-white pb-12 font-standard">
+            <h1 class="text-3xl lg:text-4xl pb-6">{{ title }}</h1>
+            <div class="custom">
+                {{ content }}
+            </div>
+        </div>
+        <div>
+            <img class="object-cover h-80 xl:h-96 md:max-w-xs lg:max-w-md xl:max-w-lg" src="{{ foto.url }}" alt="{{ foto.alt}}">
+        </div>
+    </div>
+</section>
+<div>
+    <img class="w-full" src="assets/img/wave_weekend_end.svg" alt="footer wave">
+</div>
+
+<section>
+    <div class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:justify-between items-center pt-12 pb-6">
+        <div class="custom max-w-xs md:max-w-sm xl:max-w-lg pb-12">
+            {{ info }}
+        </div>
+        <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth md:max-w-xs lg:max-w-md ">
+            {{ foto_carousel }}
+                <img class="min-w-full  snap-center relative object-cover h-80 xl:h-96" src="{{ url }}" alt="{{ alt}}">
+            {{ /foto_carousel }}
+        </div>
+    </div>
+</section>

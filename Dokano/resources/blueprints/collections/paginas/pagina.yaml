@@ -55,9 +55,10 @@ tabs:
             handle: foto_carousel
             field:
               max_files: 3
-              folder: img
+              folder: /
               type: assets
               display: 'Foto Carousel'
+              min_files: 1
           -
             handle: author
             field:
