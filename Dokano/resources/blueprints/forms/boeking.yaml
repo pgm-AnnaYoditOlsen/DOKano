@@ -1,0 +1,56 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: formule
+            field:
+              type: text
+              display: formule
+          -
+            handle: datum
+            field:
+              type: text
+              display: datum
+          -
+            handle: aantal_volwassenen
+            field:
+              type: text
+              display: 'aantal volwassenen'
+          -
+            handle: aantal_kinderen
+            field:
+              type: text
+              display: 'aantal kinderen'
+          -
+            handle: type_kano
+            field:
+              type: text
+              display: 'type kano'
+          -
+            handle: opmerkingen
+            field:
+              type: textarea
+              display: opmerkingen
+          -
+            handle: voornaam
+            field:
+              type: text
+              display: voornaam
+          -
+            handle: naam
+            field:
+              type: text
+              display: naam
+          -
+            handle: email
+            field:
+              type: text
+              display: email
+          -
+            handle: telefoon
+            field:
+              type: text
+              display: telefoon

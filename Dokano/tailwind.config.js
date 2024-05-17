@@ -14,6 +14,7 @@ theme: {
                 standards: {
                     white: '#FFFFFF',
                     black: '#000000', 
+                    grey: '#C5CAD8',
                 },
                 DOKano: {
                     lightblue: '#85C5D3', 

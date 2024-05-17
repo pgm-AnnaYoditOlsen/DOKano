@@ -4,6 +4,18 @@
 
 /* This is all you. */
 
+:root {
+  --main-yellow: hsl(42, 81%, 60%);
+  --sec-yellow: hsl(41, 78%, 51%);
+  --main-blue: hsl(191, 40%, 76%);
+  --sec-blue: hsl(191, 47%, 67%);
+  --main-grey: hsl(227, 16%, 89%);
+  --sec-grey: hsl(224, 20%, 81%);
+  --turquoise: hsl(157, 59%, 52%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
 
 .weather-ghent {
     padding: 1rem;
@@ -12,13 +24,13 @@
     align-items: center;
     flex-direction: column;
     max-width: 14rem;
-    border-right: 2px solid black;
-    color: black;
+    border-right: 2px solid var(--black);
+    color: var(--black);
   }
   
   .weekend {
-    color: white;
-    background-color: rgb(133,196,211);
+    color: var(--white);
+    background-color: var(--sec-blue);
   }
   
   .weather-ghent:nth-last-child(1) {
@@ -75,4 +87,69 @@
     .fix-grid a:last-child{
         grid-column: 1/3;
     }
+}
+
+.radio-formule-wrapper input:checked + label h2 {
+  background-color: var(--main-yellow);
+  color: var(--white);
+}
+
+.radio-formule-wrapper label:hover h2 {
+  background-color: var(--main-yellow);
+  color: var(--white);
+}
+
+.radio-formule {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-family: "Chaloops Regular";
+  background-color: var(--sec-grey);
+  padding: 0.62rem;
+  margin: 0.32rem;
+  border-radius: 1rem;
+  text-align: center;
+  width: 10rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.datePicker {
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid var(--sec-grey);
+  font-size: 16px;
+  width: 220px;
+}
+
+.submit {
+  display: flex;
+  float: right;
+  margin: 2rem 0;
+  cursor: pointer;
+  background-color: var(--sec-yellow);
+  border-radius: 4rem;
+  padding: 0.8rem 1rem;
+}
+
+.back {
+  border: 2px solid var(--black);
+  padding: 0.8rem 1rem;
+  border-radius: 4rem;
+  display: flex;
+  float: right;
+  margin: 2rem 0;
+  cursor: pointer;
+  color: var(--black);
+  transition: all 0.3s ease;
+}
+
+.back:hover {
+  border: 2px solid var(--sec-grey);
+  color: var(--sec-grey);
+}
+
+.slider-yellow{
+  width: 0%;
+  background-color: var(--main-yellow);
+  transition: all 0.5s ease;
 }
