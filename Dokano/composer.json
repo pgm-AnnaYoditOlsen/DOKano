@@ -14,6 +14,7 @@
         "laravel/framework": "^11",
         "laravel/reverb": "@beta",
         "laravel/tinker": "^2.9",
+        "nomala/statamic-google-places": "^1.2",
         "statamic/cms": "^5.0",
         "statamic/collaboration": "^1.0",
         "statamic/eloquent-driver": "^4.0"

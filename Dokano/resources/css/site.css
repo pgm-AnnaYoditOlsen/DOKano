@@ -55,19 +55,31 @@
   }
 
 .custom {
-  h2 {
+  h2{
     font-size: 1.25rem;
     margin-top: 1.25rem;
     margin-bottom: .62rem;
   }
+  h3 {
+    font-size: 1.12rem;
+    margin-top: 0.75rem;
+    font-weight: 700;
+  }
+
   strong {
     font-weight: 700;
   }
 }
 
 @media (min-width: 1024px) {
-  .custom h2{
+  .custom{ 
+    h2{
     font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem
+    }
   }
 }
 

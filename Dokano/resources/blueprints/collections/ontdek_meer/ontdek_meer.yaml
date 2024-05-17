@@ -1,0 +1,105 @@
+title: 'Ontdek meer'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              localizable: true
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+      -
+        display: Vrijwilliger
+        fields:
+          -
+            handle: subtitle_volunteer
+            field:
+              type: text
+              display: 'Ondertitel vrijwilliger'
+          -
+            handle: content_volunteer
+            field:
+              type: markdown
+              display: 'content vrijwilliger'
+          -
+            handle: form_field
+            field:
+              type: form
+              display: Formulier
+          -
+            handle: foto_volunteer
+            field:
+              max_files: 1
+              folder: img
+              type: assets
+              display: Foto
+      -
+        display: Donaties
+        fields:
+          -
+            handle: subtitle_donations
+            field:
+              type: text
+              display: 'Ondertitel donaties'
+          -
+            handle: foto_donations
+            field:
+              max_files: 1
+              folder: img
+              type: assets
+              display: Foto
+          -
+            handle: content_donations
+            field:
+              type: markdown
+              display: 'Content donaties'
+      -
+        display: Vaarkaarten
+        fields:
+          -
+            handle: subtitle_sailing
+            field:
+              type: text
+              display: 'ondertitel vaarkaarten'
+          -
+            handle: sailing_charts
+            field:
+              max_files: 3
+              folder: vaarkaarten
+              type: assets
+              display: Vaarkaart
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
