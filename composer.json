@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jezzdk/statamic-google-maps": "^2.1"
+    }
+}
