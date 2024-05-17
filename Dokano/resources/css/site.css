@@ -77,6 +77,8 @@
     }
 }
 
+/** boeking */
+
 .radio-formule-wrapper input:checked + label h2 {
   background-color: var(--main-yellow);
   color: var(--white);

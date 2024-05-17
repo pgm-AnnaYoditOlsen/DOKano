@@ -8,49 +8,49 @@ tabs:
             handle: formule
             field:
               type: text
-              display: formule
+              display: 'Formule:'
           -
             handle: datum
             field:
               type: text
-              display: datum
+              display: 'Datum:'
           -
             handle: aantal_volwassenen
             field:
               type: text
-              display: 'aantal volwassenen'
+              display: 'Aantal volwassenen:'
           -
             handle: aantal_kinderen
             field:
               type: text
-              display: 'aantal kinderen'
+              display: 'Aantal Kinderen:'
           -
             handle: type_kano
             field:
               type: text
-              display: 'type kano'
+              display: 'Type kano:'
           -
             handle: opmerkingen
             field:
               type: textarea
-              display: opmerkingen
+              display: 'Opmerkingen:'
           -
             handle: voornaam
             field:
               type: text
-              display: voornaam
+              display: 'Voornaam:'
           -
             handle: naam
             field:
               type: text
-              display: naam
+              display: 'Achternaam:'
           -
             handle: email
             field:
               type: text
-              display: email
+              display: 'Email:'
           -
             handle: telefoon
             field:
               type: text
-              display: telefoon
+              display: 'Telefoon:'
