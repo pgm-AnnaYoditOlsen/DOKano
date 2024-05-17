@@ -53,6 +53,130 @@
   </section>
 
 
-  <section>
+  <section class="max-w-[42rem] w-full mx-auto relative">
+    <form class="w-full" action="">
+        <div id="form1" class="transition-all relative">
+            <div class="flex flex-wrap md:justify-start md:items-center">
+                <h2 class="font-standard w-24 text-right text-xl text-standards-black">Formule:</h2>
+                <div class="ml-[2rem] flex flex-wrap justify-center radio-formule-wrapper">
+                    {{ collection:paginas }}
+                        <div>
+                            <input type="radio" name="formule" id="{{ title }}" value="{{ title }}" hidden>
+                            <label for="{{ title }}"><h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2></label>
+                        </div>
+                    {{ /collection:paginas }}
+                </div>
+            </div>
+            
+            {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}} {{# anna #}}
+            <div class="flex flex-wrap mb-[2rem] mt-[1rem] gap-8 justify-start items-center">
+              <label class="font-standard text-xl text-right w-24 text-standards-black" for="datePicker">Datum:</label>
+              <input type="text" id="datePicker" name="datePicker"  class="datePicker rounded-md text-standards-black" placeholder="klik hier om een datum te kiezen"  data-available-days="">
+              <div class="relative">
+                <option value="" disabled selected> Select a time</option>
+              </div>
+            </div>
+
+
+
+            <div>
+              <div class="flex flex-wrap mb-[2rem] mt-[1rem] gap-2 justify-start items-center">
+                <label class="font-standard w-24 text-right text-xl text-standards-black"  for="adults">Aantal volwassenen:</label>
+                <input type="number" id="volwassenen" name="fields[volwassenen]" class="w-[5rem] rounded-md  ml-[2rem] border-b-[1px] border-standards-grey text-standards-black" value="" required min="0" max="25" data-price="">
+              </div>
     
+              <div class="flex flex-wrap justify-start gap-2 items-center">
+                <label class="booking-font w-24 text-right text-xl text-standards-black"  for="childeren">Aantal kinderen:</label>
+                <input type="number" id="kinderen" name="fields[kinderen]" class="w-[5rem] ml-[2rem] rounded-md  border-b-[1px] border-standards-grey text-standards-black" value="" required min="0" max="25" data-price="">
+              </div>
+            </div>
+
+            <div class="mt-[1rem] flex flex-wrap md:justify-start items-center">
+              <h2 class="font-standard text-xl text-standards-black">Type Kano:</h2>
+              <div class="ml-[2rem] flex flex-wrap justify-start radio-formule-wrapper">
+                  {{ collection:kanos }}
+                      <div>
+                          <input type="radio" name="fields[kano]" id="{{ title }}" value="{{ title }}" hidden>
+                          <label class="cursor-pointer" for="{{ title }}">
+                            <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
+                            <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
+                          </label>
+                      </div>
+                  {{ /collection:kanos }}
+              </div>
+            </div>
+
+            <div>
+              <div class="text-standards-black flex gap-3 flex-wrap mb-[2rem] mt-[1rem] justify-start">
+                <label class="font-standard w-24 text-right text-xl text-standards-black" for="firstName">Opmerkingen:</label>
+                <textarea name="fields[opmerkingen]" id="opmerkingen" class="rounded-md  w-[31rem] h-[6rem] pl-[0.5rem] ml-[2rem] border-b-[1px] border-standards-grey text-standards-black" placeholder="Opmerkingen" required></textarea>
+              </div>
+            </div>
+
+            <p id="error"></p>
+            <div>
+              <button class="text-right submit" id="next1" type="button">Verder</button>
+            </div>
+        </div>
+
+        <div id="form2" class="transition-all form-2">
+          <h2 class="text-standards-black text-xl booking-font text-center">Gegevens</h2>
+          
+          <div class="text-standards-black flex gap-3 mb-[2rem] mt-[1rem] justify-start items-center mb-[1rem]">
+            <label class="font-standard w-24 text-right text-xl text-standards-black" for="firstName">Voornaam:</label>
+            <input type="text" id="firstName" name="fields[firstName]" class="w-[31rem] rounded-md h-[2.5rem] pl-[0.5rem] ml-[2rem] border-b-[1px] border-standards-grey text-standards-black" placeholder="Voornaam" required>
+          </div>
+
+          <div class="text-standards-black flex gap-3 mb-[2rem] mt-[1rem] justify-start items-center mb-[1rem]">
+            <label class="font-standard w-24 text-right text-xl text-standards-black" for="firstName">Achternaam:</label>
+            <input type="text" id="lastName" name="fields[lastName]" class="w-[31rem] rounded-md  h-[2.5rem]  pl-[0.5rem] ml-[2rem] border-b-[1px] border-standards-grey text-standards-black" placeholder="Achternaam" required>
+          </div>
+
+          <div class="text-standards-black flex gap-3 mb-[2rem] mt-[1rem] justify-start items-center mb-[1rem]">
+            <label class="font-standard w-24 text-right text-xl text-standards-black" for="firstName">Email:</label>
+            <input type="email" id="email" name="fields[email]" class="w-[31rem] h-[2.5rem] rounded-md  ml-[2rem]  pl-[0.5rem] border-b-[1px] border-standards-grey text-standards-black" placeholder="Email" required>
+          </div>
+
+          <div class="text-standards-black flex gap-3 mb-[2rem] mt-[1rem] justify-start items-center mb-[1rem]">
+            <label class="font-standard w-24 text-right text-xl text-standards-black" for="firstName">Telefoon:</label>
+            <input type="text" id="tel" name="fields[telnr]" class="w-[31rem] h-[2.5rem] ml-[2rem] rounded-md  border-b-[1px] pl-[0.5rem] border-standards-grey text-standards-black" placeholder="nummer" required>
+          </div>
+
+
+          <div class="flex gap-2 justify-between">
+            <div>
+              <button class="text-right back" id="back1" type="button">back</button>
+            </div>
+
+            <p id="error2"></p>
+
+            <div>
+              <button id="next2" class="text-right submit" type="button">verder</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="form3" class="transition-all form-2">
+          <h2 class="text-standards-black text-xl font-standard text-center">Overzicht</h2>
+  
+          <div class="text-standards-black " id="overview">
+          </div>
+          
+          <div class="text-standards-black">
+            <label class="text-standards-black" for="totalPrice">Totaal prijs:</label>
+            {{# price #}}
+          </div>
+  
+          <div class="flex gap-2 justify-between">        
+            <div>
+              <button class="text-right back" id="back2" type="button">back</button>
+            </div>
+  
+            <div>
+              <input type="submit" class="text-right submit" name="submit" id="submit">
+              <button class="text-right back" type="button" id="checkout-button">betalen</button>
+            </div>
+          </div>
+        </div>
+    </form>
   </section>
