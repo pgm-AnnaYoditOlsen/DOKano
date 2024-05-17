@@ -2,3 +2,14 @@ super: true
 name: Anna-Yodit
 id: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
 password_hash: $2y$12$Mj89rZcPZs2fmldvpPaLveXSTKJUZ3pyVEcmZ7u/bSJdb3B6LFQrC
+preferences:
+  forms:
+    boeking:
+      columns:
+        - datestamp
+        - voornaam
+        - achternaam
+        - datum
+  nav:
+    top_level:
+      'tools::forms::boeking': '@alias'
