@@ -1,4 +1,12 @@
 {{# standard layout file for the events$#}}
 
-
-<h1>dit is de layout van extarnel pages events enzo</h1>
+<section class="mt-[6rem] md:w-3/4 mx-auto px-[10px] py-[20px]">
+    <div class="relative mx-auto">
+        <img class="w-full h-[65vh] object-cover" src="{{ panel_image.url }}" alt="{{ panel_image.alt }}">
+        <span class="absolute bottom-0 left-0 bg-DOKano-yellow text-standards-white px-[1rem] py-[0.5rem] rounded-tr-[10px]">{{ date }}</span>
+    </div> 
+    <h1 class="text-center font-standard font-extrabold text-[36px] p-2">{{ title }}</h1>
+    <div class="md:columns-2">
+        {{ pagina_content }}
+    </div>  
+</section>

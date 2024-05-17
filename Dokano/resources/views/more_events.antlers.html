@@ -1,0 +1,45 @@
+{{# standard layout file for the more events page #}}
+
+<section>
+    <div class="relative">
+        <img class="object-cover lg:h-[65vh] w-full" src="{{ hero_image.url }}" alt="{{ hero_image.alt }}">
+        <img class="absolute bottom-0 " src="assets/img/more_events_top.svg" alt=" wave top">
+    </div>
+    <div class="text-standards-white bg-DOKano-lightblue px-[60px] py-[30px]">
+        <div class="flex items-center max-w-[71rem] mx-auto gap-10 ">
+            <div class="max-w-xl">
+                <h2 class="font-standard text-[32px] mb-[2rem]">{{ title }}</h2>
+                <p class="font-alternative">{{ content }}</p>
+            </div>
+    
+            <div class="hidden lg:block">
+                {{ collection:evenementen limit="1" }}
+                    <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}" alt="{{ panel_image.alt }}">
+                    <h2 class="mt-3">{{ title }}</h2>
+                    <p class="mb-4 mt-4">{{ beschrijving }}</p>
+                    <span class="bg-DOKano-yellow mt-10 text-standards-white px-[1rem] py-[0.5rem]  rounded-tr-[10px]">{{ date }}</span>
+                {{ /collection:evenementen }}
+            </div>
+        </div>
+    </div>
+    <img class="w-full" src="assets/img/more_events_bot.svg" alt="">
+
+    <div>
+        <div class="gap-2 flex mt-[3rem] flex-wrap justify-center mb-[2rem]">
+            {{ collection:evenementen limit="3" }}
+            <a href="{{ url }}" class="px-[2rem] max-w-[23rem] w-[23rem] py-[1rem]">
+                <div class="relative mx-auto w-full" style="height: 18rem;">
+                    <img class="w-full h-full object-cover" src="{{ panel_image.url }}" alt="{{ panel_image.alt }}">
+                    <span class="absolute bottom-0 left-0 bg-DOKano-yellow text-standards-white px-[1rem] py-[0.5rem] rounded-tr-[10px]">{{ date }}</span>
+                </div> 
+                <div class="mt-2">
+                    <h3 class="font-standard text-[24px] font-bold">{{ title }}</h3>
+                    <p class="w-full">{{ beschrijving }}</p>
+                </div>
+            </a>
+            {{ /collection:evenementen }}
+        </div>
+    </div>
+    
+    
+</section>

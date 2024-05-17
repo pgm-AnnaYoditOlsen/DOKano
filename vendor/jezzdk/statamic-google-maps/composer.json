@@ -1,0 +1,31 @@
+{
+    "name": "jezzdk/statamic-google-maps",
+    "autoload": {
+        "psr-4": {
+            "Jezzdk\\StatamicGoogleMaps\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jess Stopa"
+        }
+    ],
+    "support": {
+        "email": "jess@stopa.dk"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Google Maps",
+            "description": "Statamic Google Maps addon",
+            "editions": [
+                "free",
+                "pro"
+            ]
+        },
+        "laravel": {
+            "providers": [
+                "Jezzdk\\StatamicGoogleMaps\\ServiceProvider"
+            ]
+        }
+    }
+}
