@@ -33,15 +33,65 @@ tabs:
               display: Template
               localizable: true
       -
-        display: 'Section 2'
+        display: Vrijwilliger
         fields:
           -
-            handle: subtitle
+            handle: subtitle_volunteer
             field:
               type: text
-              display: Ondertitel
+              display: 'Ondertitel vrijwilliger'
+          -
+            handle: content_volunteer
+            field:
+              type: markdown
+              display: 'content vrijwilliger'
+          -
+            handle: form_field
+            field:
+              type: form
+              display: Formulier
+          -
+            handle: foto_volunteer
+            field:
+              max_files: 1
+              folder: img
+              type: assets
+              display: Foto
       -
-        display: 'Section 3'
+        display: Donaties
+        fields:
+          -
+            handle: subtitle_donations
+            field:
+              type: text
+              display: 'Ondertitel donaties'
+          -
+            handle: foto_donations
+            field:
+              max_files: 1
+              folder: img
+              type: assets
+              display: Foto
+          -
+            handle: content_donations
+            field:
+              type: markdown
+              display: 'Content donaties'
+      -
+        display: Vaarkaarten
+        fields:
+          -
+            handle: subtitle_sailing
+            field:
+              type: text
+              display: 'ondertitel vaarkaarten'
+          -
+            handle: sailing_charts
+            field:
+              max_files: 3
+              folder: vaarkaarten
+              type: assets
+              display: Vaarkaart
   sidebar:
     display: Sidebar
     sections:
