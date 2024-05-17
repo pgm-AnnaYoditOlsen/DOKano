@@ -135,3 +135,9 @@
   border: 2px solid var(--sec-grey);
   color: var(--sec-grey);
 }
+
+.slider-yellow{
+  width: 0%;
+  background-color: var(--main-yellow);
+  transition: all 0.5s ease;
+}
