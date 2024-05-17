@@ -61,7 +61,7 @@
                 <div class="ml-[2rem] flex flex-wrap justify-center radio-formule-wrapper">
                     {{ collection:paginas }}
                         <div>
-                            <input type="radio" name="formule" id="{{ title }}" value="{{ title }}" hidden>
+                            <input type="radio" name="fields[formulasform]" id="{{ title }}" value="{{ title }}" hidden>
                             <label for="{{ title }}"><h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2></label>
                         </div>
                     {{ /collection:paginas }}
@@ -115,7 +115,7 @@
 
             <p id="error"></p>
             <div>
-              <button class="text-right submit" id="next1" type="button">Verder</button>
+              <button class="text-right text-standards-white submit" id="next1" type="button">Verder</button>
             </div>
         </div>
 
@@ -145,13 +145,13 @@
 
           <div class="flex gap-2 justify-between">
             <div>
-              <button class="text-right back" id="back1" type="button">back</button>
+              <button class="text-right  back" id="back1" type="button">back</button>
             </div>
 
             <p id="error2"></p>
 
             <div>
-              <button id="next2" class="text-right submit" type="button">verder</button>
+              <button id="next2" class="text-right text-standards-white submit" type="button">verder</button>
             </div>
           </div>
         </div>
