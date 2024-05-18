@@ -38,7 +38,13 @@ return [
     */
 
     'widgets' => [
-        'getting_started',
+        // 'getting_started',
+        [ 
+            'type' => 'form',
+            'form' => 'boeking',
+            'fields' => ['date','voornaam', 'achternaam', 'email' ],
+            'limit' => 10,
+        ], 
     ],
 
     /*
@@ -56,7 +62,7 @@ return [
     |
     */
 
-    'date_format' => 'Y-m-d',
+    'date_format' => 'd-m-y',
 
     /*
     |--------------------------------------------------------------------------
