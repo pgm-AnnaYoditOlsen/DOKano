@@ -15,7 +15,6 @@ categories.forEach(category => {
 
     // Toon de kano's van de geselecteerde categorie
     const selectedCanoes = document.querySelectorAll(`[data-categories*="${selectedCategory}"]`);
-    console.log(selectedCanoes);
     selectedCanoes.forEach(canoe => {
       canoe.closest('div').classList.remove('hidden');
     });

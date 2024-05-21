@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24b82d636faa8eaf1eedb70f20b8c3b6",
+    "content-hash": "ef6b04312093efc83c58dc04724f61fd",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -5584,20 +5584,20 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.0.2",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "08cb2b70986e0f9d811a2fabc0d05f0b08a02b3a"
+                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/08cb2b70986e0f9d811a2fabc0d05f0b08a02b3a",
-                "reference": "08cb2b70986e0f9d811a2fabc0d05f0b08a02b3a",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/70e8836774a5c559c593db3cc75130d52a49f6ef",
+                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef",
                 "shasum": ""
             },
             "require": {
-                "ajthinking/archetype": "^1.0.3",
+                "ajthinking/archetype": "^1.0.3 || ^2.0",
                 "composer/semver": "^3.4",
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.3 || ^7.0",
@@ -5675,7 +5675,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.0.2"
+                "source": "https://github.com/statamic/cms/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -5683,7 +5683,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-05-10T21:19:02+00:00"
+            "time": "2024-05-20T16:25:09+00:00"
         },
         {
             "name": "statamic/collaboration",

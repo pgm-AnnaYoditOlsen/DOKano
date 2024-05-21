@@ -38,6 +38,16 @@ tabs:
                 - formule_categories
               type: terms
               display: formules
+          -
+            handle: info_kano
+            field:
+              type: textarea
+              display: 'booking info kano'
+          -
+            handle: amount
+            field:
+              type: integer
+              display: 'hoeveel kanos'
   sidebar:
     display: Sidebar
     sections:
@@ -58,3 +68,11 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: formule_categories
+            field:
+              type: terms
+              taxonomies:
+                - formule_categories
+              display: formules
+              mode: select

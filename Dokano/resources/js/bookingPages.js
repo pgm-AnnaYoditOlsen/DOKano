@@ -39,7 +39,7 @@ next2.onclick = function () {
 // Function to validate the form
 function validateForm() {
   const selectedFormulaInput = document.querySelector('[name="fields[formulasform]"]:checked');
-  const date = document.getElementById("datum").value;
+  const date = document.getElementById("datePicker").value;
   // const time = document.getElementById("voormiddag").value;
   const adults = document.getElementById("aantal_volwassenen").value;
   const children = document.getElementById("aantal_kinderen").value;
@@ -111,10 +111,10 @@ back1.onclick = function () {
 };
 
 function validateForm2() {
-  const firstname = document.getElementById("voornaam").value;
-  const lastname = document.getElementById("achternaam").value;
+  const firstname = document.getElementById("firstName").value;
+  const lastname = document.getElementById("lastName").value;
   const email = document.getElementById("email").value;
-  const phone = document.getElementById("telefoon").value;
+  const phone = document.getElementById("tel").value;
   const error = document.getElementById("error2");
   // Reset error message
   error.innerHTML = "";
