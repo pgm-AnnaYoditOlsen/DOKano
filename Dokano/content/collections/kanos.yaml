@@ -1,6 +1,8 @@
 title: Kanos
 template: default
 layout: layout
+taxonomies:
+  - formule_categories
 revisions: false
 sort_dir: asc
 date_behavior:

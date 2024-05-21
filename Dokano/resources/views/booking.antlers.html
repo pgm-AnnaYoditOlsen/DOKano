@@ -115,9 +115,8 @@
       <h2 class="font-standard text-xl text-standards-black">Type Kano:</h2>
       <div class="ml-8 flex flex-wrap justify-start radio-formule-wrapper">
         {{ collection:kanos }}
-        {{ dump }}
         <div>
-          <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required  data-categories="{{ formules | join }}">
+          <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required  data-categories="{{ formules}} {{ slug }} {{ /formules }}">
 
           <label class="cursor-pointer" for="{{ slug }}">
             <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
