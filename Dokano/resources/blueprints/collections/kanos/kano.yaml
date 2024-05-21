@@ -10,6 +10,8 @@ tabs:
             field:
               type: text
               required: true
+              validate:
+                - required
           -
             handle: name
             field:
@@ -29,6 +31,13 @@ tabs:
             field:
               type: textarea
               display: 'kano info'
+          -
+            handle: formules
+            field:
+              taxonomies:
+                - formule_categories
+              type: terms
+              display: formules
   sidebar:
     display: Sidebar
     sections:
@@ -40,3 +49,12 @@ tabs:
               type: slug
               localizable: true
               validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - kanos
+              max_items: 1
+              listable: false
+              localizable: true
