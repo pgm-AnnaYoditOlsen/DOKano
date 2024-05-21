@@ -7,13 +7,13 @@ next.addEventListener("click", () => {
   const email = document.getElementById("email").value;
   const phone = document.getElementById("tel").value;
 
-  const selectedFormulaInput = document.querySelector('[name="fields[formulasform]"]:checked');
+  const selectedFormulaInput = document.querySelector('[name="formule"]:checked');
   const formula = selectedFormulaInput ? selectedFormulaInput.value : '';
   const date = document.getElementById("datePicker").value;
   // const time = document.getElementById("voormiddag").value;
-  const adults = document.getElementById("volwassenen").value;
-  const children = document.getElementById("kinderen").value;
-  const selectedCanoeInput = document.querySelector('[name="fields[kano]"]:checked');
+  const adults = document.getElementById("aantal_volwassenen").value;
+  const children = document.getElementById("aantal_kinderen").value;
+  const selectedCanoeInput = document.querySelector('[name="type_kano"]:checked');
   const canoe = selectedCanoeInput ? selectedCanoeInput.value : '';
   const comments = document.getElementById("opmerkingen").value;
   overview.innerHTML = `

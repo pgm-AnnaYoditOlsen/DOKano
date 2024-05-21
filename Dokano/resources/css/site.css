@@ -130,6 +130,7 @@
   cursor: pointer;
   background-color: var(--sec-yellow);
   border-radius: 4rem;
+  color: var(--white);
   padding: 0.8rem 1rem;
 }
 
@@ -154,4 +155,51 @@
   width: 0%;
   background-color: var(--main-yellow);
   transition: all 0.5s ease;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip:before {
+  content: "i";
+  font-size: 14px;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 50%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+  position: absolute;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 12px;
+  text-align: center;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px; /* Adjust as needed */
+  width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
