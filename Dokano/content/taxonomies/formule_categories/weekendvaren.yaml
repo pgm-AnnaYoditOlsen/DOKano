@@ -1,4 +1,12 @@
 title: weekendvaren
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716299571
+updated_at: 1716371319
 blueprint: formule_category
+tijdstip:
+  - '13u30 - 15u00'
+  - '15u00 - 16u30'
+  - '16u30 - 18u00'
+  - '18u00 - 19u30'
+  - '19u30 - 21u00'
+  - '21u00 - 22u30'
+  - '22u30 - 00u00'

@@ -1,4 +1,10 @@
 title: teambuilding
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716299566
+updated_at: 1716371312
 blueprint: formule_category
+tijdstip:
+  - '3u00 - 4u30'
+  - '4u30 - 6u00'
+  - '6u00 - 7u30'
+  - '7u30 - 9u00'
+  - '9u00 - 10u30'
