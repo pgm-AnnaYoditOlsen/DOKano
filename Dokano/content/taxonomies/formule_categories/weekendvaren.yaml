@@ -1,6 +1,14 @@
 title: Weekendvaren
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716456632
+updated_at: 1716371319
 blueprint: formule_category
 price_adult: 15.0
 price_children: 5.0
+tijdstip:
+  - '13u30 - 15u00'
+  - '15u00 - 16u30'
+  - '16u30 - 18u00'
+  - '18u00 - 19u30'
+  - '19u30 - 21u00'
+  - '21u00 - 22u30'
+  - '22u30 - 00u00'

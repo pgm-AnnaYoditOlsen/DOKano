@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('form', 30)->nullable()->index();
             $table->jsonb('data')->nullable();
+
             $table->timestamps(6);
 
             $table->unique(['form', 'created_at']);

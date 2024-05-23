@@ -22,6 +22,28 @@ tabs:
             field:
               type: float
               display: 'Prijs kinderen'
+          -
+            handle: tijdstip
+            field:
+              type: checkboxes
+              display: tijdstip
+              options:
+                '0u00 - 1u30': '0u00 - 1u30'
+                '1u30 - 3u00': '1u30 - 3u00'
+                '3u00 - 4u30': '3u00 - 4u30'
+                '4u30 - 6u00': '4u30 - 6u00'
+                '6u00 - 7u30': '6u00 - 7u30'
+                '7u30 - 9u00': '7u30 - 9u00'
+                '9u00 - 10u30': '9u00 - 10u30'
+                '10u30 - 12u00': '10u30 - 12u00'
+                '12u00 - 13u30': '12u00 - 13u30'
+                '13u30 - 15u00': '13u30 - 15u00'
+                '15u00 - 16u30': '15u00 - 16u30'
+                '16u30 - 18u00': '16u30 - 18u00'
+                '18u00 - 19u30': '18u00 - 19u30'
+                '19u30 - 21u00': '19u30 - 21u00'
+                '21u00 - 22u30': '21u00 - 22u30'
+                '22u30 - 00u00': '22u30 - 00u00'
   sidebar:
     display: Sidebar
     sections:

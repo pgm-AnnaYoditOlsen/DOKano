@@ -38,7 +38,7 @@ next2.onclick = function () {
 
 // Function to validate the form
 function validateForm() {
-  const selectedFormulaInput = document.querySelector('[name="fields[formulasform]"]:checked');
+  const selectedFormulaInput = document.querySelector('[name="formule"]:checked');
   const date = document.getElementById("datePicker").value;
   // const time = document.getElementById("voormiddag").value;
   const adults = document.getElementById("aantal_volwassenen").value;
@@ -88,9 +88,9 @@ next1.onclick = function () {
     breadcrumb3.style.display = "none";
     form1.style.left = "-1450px";
     form1.style.display = "none";
+    console.log("form1 hidden");
     form2.style.left = "50%";
     form2.style.display = "block";
-
     updateSliderWidth("100%");
     changeFillColor("#e4a621");
   }

@@ -7,6 +7,7 @@ categories.forEach(category => {
   category.addEventListener('click', () => {
     // Haal de geselecteerde waarde van de categorie op
     const selectedCategory = category.value;
+
     
     // Verberg alle kano's
     canoes.forEach(canoe => {
