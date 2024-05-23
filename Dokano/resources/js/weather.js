@@ -8,7 +8,7 @@ const $weather = document.querySelector("#weather");
 fetch(URL_API_FORECAST)
   .then((response) => response.json())
   .then((data) => {
-    console.log("Raw data from API:", data); // Log the raw data for inspection
+    //console.log("Raw data from API:", data); // Log the raw data for inspection
     $weather.innerHTML = getHTMLWeatherForecast(data);
   })
   .catch((error) => {

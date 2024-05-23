@@ -5584,16 +5584,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.3.0",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef"
+                "reference": "d9c824dbe6a4880c459728cc9134382ab6005cf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/70e8836774a5c559c593db3cc75130d52a49f6ef",
-                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/d9c824dbe6a4880c459728cc9134382ab6005cf1",
+                "reference": "d9c824dbe6a4880c459728cc9134382ab6005cf1",
                 "shasum": ""
             },
             "require": {
@@ -5675,7 +5675,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.3.0"
+                "source": "https://github.com/statamic/cms/tree/v5.4.0"
             },
             "funding": [
                 {
@@ -5683,7 +5683,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-05-20T16:25:09+00:00"
+            "time": "2024-05-21T20:35:11+00:00"
         },
         {
             "name": "statamic/collaboration",

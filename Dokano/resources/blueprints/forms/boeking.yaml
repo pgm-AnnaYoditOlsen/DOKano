@@ -55,3 +55,8 @@ tabs:
             field:
               type: text
               display: 'Telefoon:'
+          -
+            handle: total_price
+            field:
+              type: text
+              display: 'Totaal prijs'
