@@ -27,8 +27,6 @@ $(document).ready(function() {
                 return [availableDates.includes(string)];
             }
         });
-
-        console.log(availableDates);
     }
 
     document.querySelectorAll('input[name="formule"]').forEach((radio) => {

@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             document.getElementById('totalPriceDisplay').innerText = '€ ' + data.totalPrice;
             document.getElementById('totaal_prijs').value = data.totalPrice;
-            console.log(data.totalPrice);
         })
         .catch(error => {
             console.error('Error:', error);

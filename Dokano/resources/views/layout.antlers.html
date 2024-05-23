@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" />
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <title>{{ title ?? site:name }}</title>
@@ -22,12 +23,9 @@
         <footer>
             {{ partial:footer }}
         </footer>
-        {{ vite src="resources/js/weather.js" }}
-        {{ vite src="resources/js/bookingPages.js" }}
-        {{ vite src="resources/js/overview.js" }}
         {{ vite src="resources/js/formuleKano.js" }}
-        {{ vite src="resources/js/dates.js" }}
         {{ vite src="resources/js/time.js" }}
-        {{ vite src="resources/js/price.js" }}
+        {{ vite src="resources/js/dates.js" }}
+        
     </body>
 </html>
