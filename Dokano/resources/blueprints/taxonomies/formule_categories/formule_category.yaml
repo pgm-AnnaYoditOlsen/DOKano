@@ -44,6 +44,18 @@ tabs:
                 '19u30 - 21u00': '19u30 - 21u00'
                 '21u00 - 22u30': '21u00 - 22u30'
                 '22u30 - 00u00': '22u30 - 00u00'
+          -
+            handle: available_days
+            field:
+              type: grid
+              display: 'Beschikbare dagen'
+              fields:
+                -
+                  handle: date
+                  field:
+                    type: date
+                    display: Datum
+                    replicator_preview: false
   sidebar:
     display: Sidebar
     sections:

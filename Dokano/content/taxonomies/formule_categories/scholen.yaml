@@ -1,14 +1,4 @@
-title: scholen
+title: Scholen
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716371304
+updated_at: 1716469829
 blueprint: formule_category
-tijdstip:
-  - '4u30 - 6u00'
-  - '6u00 - 7u30'
-  - '7u30 - 9u00'
-  - '9u00 - 10u30'
-  - '10u30 - 12u00'
-  - '16u30 - 18u00'
-  - '18u00 - 19u30'
-  - '19u30 - 21u00'
-  - '21u00 - 22u30'
