@@ -1,6 +1,6 @@
 title: Weekendvaren
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716500440
+updated_at: 1716501273
 blueprint: formule_category
 price_adult: 15.0
 price_children: 5.0
@@ -33,3 +33,9 @@ available_days:
   -
     id: lwj9ss35
     date: '2024-06-01'
+  -
+    id: lwjsj4df
+    date: '2024-05-17'
+  -
+    id: lwjsj8k2
+    date: '2024-05-18'
