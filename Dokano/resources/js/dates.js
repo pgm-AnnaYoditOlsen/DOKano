@@ -1,27 +1,34 @@
-$(document).ready(function() {
+let cachedAvailableDates = {};
 
-    function updateDatepicker(formule) {
+$(document).ready(function() {
+    async function fetchAvailableDates(formule) {
+        try {
+            const response = await fetch('/get-available-days?formule=' + formule);
+            const data = await response.json();
+            cachedAvailableDates[formule] = data;
+            return data;
+        } catch (error) {
+            console.error('Error fetching available dates:', error);
+            return [];
+        }
+    }
+
+    async function updateDatepicker(formule) {
         if (!formule) {
             return;
         }
 
-        let availableDates = [];
+        let availableDates = cachedAvailableDates[formule] || await fetchAvailableDates(formule);
 
-        fetch('/get-available-days?formule=' + formule)
-            .then(response => response.json())
-            .then(data => {
-                availableDates = data;
+        $('#datePicker').datepicker('destroy').datepicker({
+            dateFormat: 'dd-mm-yy',
+            beforeShowDay: function(date) {
+                const string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+                return [availableDates.includes(string)];
+            }
+        });
 
-                $('#datePicker').datepicker('destroy').datepicker({
-                    dateFormat: 'dd-mm-yy',
-                    beforeShowDay: function(date) {
-                        const string = jQuery.datepicker.formatDate('dd-mm-yy', date);
-                        return [availableDates.includes(string)];
-                    }
-                });
-
-                console.log(availableDates);
-            })
+        console.log(availableDates);
     }
 
     document.querySelectorAll('input[name="formule"]').forEach((radio) => {
@@ -36,4 +43,10 @@ $(document).ready(function() {
     if (initialCategory) {
         updateDatepicker(initialCategory.value);
     }
+
+    // Background fetching for all categories
+    document.querySelectorAll('input[name="formule"]').forEach((radio) => {
+        const formule = radio.value;
+        fetchAvailableDates(formule);
+    });
 });
