@@ -1,50 +1,46 @@
-let cachedAvailableDates = {};
-
-$(document).ready(function() {
-    async function fetchAvailableDates(formule) {
-        try {
-            const response = await fetch('/get-available-days?formule=' + formule);
-            const data = await response.json();
-            cachedAvailableDates[formule] = data;
-            return data;
-        } catch (error) {
-            console.error('Error fetching available dates:', error);
-            return [];
-        }
+document.addEventListener("DOMContentLoaded", function() {
+    // Functie om categorieën op te halen en te cachen
+    function fetchAndCacheCategories() {
+        fetch('get-available-days')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Fout bij het ophalen van beschikbare dagen');
+                }
+                return response.json();
+            })
+            .then(data => {
+                sessionStorage.setItem('categories', JSON.stringify(data));
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
-    async function updateDatepicker(formule) {
-        if (!formule) {
-            return;
-        }
+    // Functie om de datepicker te initialiseren
+    function initializeDatepicker(category) {
+        let categoriesData = JSON.parse(sessionStorage.getItem('categories'));
+        let availableDates = categoriesData[category] || [];
 
-        let availableDates = cachedAvailableDates[formule] || await fetchAvailableDates(formule);
-
-        $('#datePicker').datepicker('destroy').datepicker({
-            dateFormat: 'dd-mm-yy',
+        $('#datePicker').datepicker('destroy');
+        $('#datePicker').datepicker({
             beforeShowDay: function(date) {
-                const string = jQuery.datepicker.formatDate('dd-mm-yy', date);
-                return [availableDates.includes(string)];
+                let dateString = $.datepicker.formatDate('dd-mm-yy', date);
+                if (availableDates.includes(dateString)) {
+                    return [true, 'available-date', 'Beschikbaar'];
+                } else {
+                    return [false, '', 'Niet beschikbaar'];
+                }
             }
         });
     }
 
+    fetchAndCacheCategories();
+
     document.querySelectorAll('input[name="formule"]').forEach((radio) => {
         radio.addEventListener('change', function() {
             const selectedCategory = document.querySelector('input[name="formule"]:checked').value;
-            updateDatepicker(selectedCategory);
+            console.log('Geselecteerde categorie:', selectedCategory);
+            initializeDatepicker(selectedCategory);
         });
-    });
-
-    // Initieer de Datepicker bij het laden van de pagina
-    const initialCategory = document.querySelector('input[name="formule"]:checked');
-    if (initialCategory) {
-        updateDatepicker(initialCategory.value);
-    }
-
-    // Background fetching for all categories
-    document.querySelectorAll('input[name="formule"]').forEach((radio) => {
-        const formule = radio.value;
-        fetchAvailableDates(formule);
     });
 });
