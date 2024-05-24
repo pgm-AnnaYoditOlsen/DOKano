@@ -199,7 +199,11 @@
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -60px; /* Adjust as needed */
+  margin-left: -60px; 
   width: 140px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.none{
+  display: none;
 }

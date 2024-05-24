@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const canoeElement = document.querySelector(`[data-canoe-type="${canoeType}"]`);
                     if (canoeElement) {
                         if (remainingCanoes === 0) {
-                            canoeElement.classList.add('hidden');
+                            canoeElement.classList.add('none');
                         } else {
-                            canoeElement.classList.remove('hidden');
+                            canoeElement.classList.remove('none');
                         }
                     }
                 }

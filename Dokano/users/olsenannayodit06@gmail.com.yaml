@@ -13,4 +13,4 @@ preferences:
   nav:
     top_level:
       'tools::forms::boeking': '@alias'
-  theme: light
+  theme: dark

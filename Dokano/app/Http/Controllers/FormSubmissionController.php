@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Facades\Log;
+use Statamic\Facades\FormSubmission;
 
 class FormSubmissionController extends Controller
 {
@@ -14,11 +15,17 @@ class FormSubmissionController extends Controller
             Log::info('Checking availability for date: ' . $date);
 
             // Fetch all form submissions for the specific date
-            $formSubmissions = Entry::query()
-                ->where('collection', 'boeking')
-                ->where('data->datum', $date)
-                ->get();
+            $formSubmissions = FormSubmission::query()
+            ->where('form', 'boeking')
+            ->where('datum', $date)
+            ->get();
+
+            Log::info('Query executed:');
             Log::info('Form submissions for date ' . $date . ': ' . $formSubmissions->count());
+
+            foreach ($formSubmissions as $submission) {
+                Log::info('Submission Data: ' . json_encode($submission->data()));
+            }
 
             // Fetch all canoes
             $canoes = Entry::query()
