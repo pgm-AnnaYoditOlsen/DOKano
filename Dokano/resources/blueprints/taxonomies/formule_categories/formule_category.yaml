@@ -13,6 +13,16 @@ tabs:
               validate:
                 - required
           -
+            handle: price_adult
+            field:
+              type: float
+              display: 'Prijs volwassenen'
+          -
+            handle: price_children
+            field:
+              type: float
+              display: 'Prijs kinderen'
+          -
             handle: tijdstip
             field:
               type: checkboxes
