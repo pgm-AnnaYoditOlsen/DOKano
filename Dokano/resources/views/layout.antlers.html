@@ -7,6 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ title ?? site:name }}</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
     <body class="font-sans leading-normal text-gray-800">
@@ -24,5 +26,7 @@
         {{ vite src="resources/js/overview.js" }}
         {{ vite src="resources/js/formuleKano.js" }}
         {{ vite src="resources/js/time.js" }}
+        {{ vite src="resources/js/gsap/listFadeLeft.js" }}
+        {{ vite src="resources/js/canoeChecker.js" }}
     </body>
 </html>
