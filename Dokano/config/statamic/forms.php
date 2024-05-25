@@ -59,6 +59,7 @@ return [
     'exporters' => [
         'csv' => [
             'class' => Statamic\Forms\Exporters\CsvExporter::class,
+            'forms' => ['boeking'],
         ],
         'json' => [
             'class' => Statamic\Forms\Exporters\JsonExporter::class,
