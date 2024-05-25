@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedDate = bookingDateInput.value;
         const selectedTime = bookingTimeInput.value; // Get the selected time
         if (!selectedDate || !selectedTime) {
-            canoeAvailabilitySection.innerHTML = '<p>Please select both a date and a time.</p>';
+            canoeAvailabilitySection.innerHTML = '<p>Selecteer aub een datum en een tijdstip</p>';
             return;
         }
 

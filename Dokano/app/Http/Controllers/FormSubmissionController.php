@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -26,7 +27,6 @@ class FormSubmissionController extends Controller
             Log::info('Query executed:');
             Log::info('Form submissions for date ' . $date . ' and time ' . $time . ': ' . $formSubmissions->count());
 
-
             // Fetch all canoes
             $canoes = Entry::query()
                 ->where('collection', 'kanos')
@@ -46,10 +46,9 @@ class FormSubmissionController extends Controller
                     return isset($submissionData['type_kano']) && $submissionData['type_kano'] === $canoeType;
                 })->sum(function ($submission) {
                     $submissionData = $submission->data();
-                    $used = (isset($submissionData['aantal_volwassenen']) ? $submissionData['aantal_volwassenen'] : 0)
-                        + (isset($submissionData['aantal_kinderen']) ? $submissionData['aantal_kinderen'] : 0);
+                    $used = isset($submissionData['aantal_kanos']) ? $submissionData['aantal_kanos'] : 0;
                     Log::info('Submission ID: ' . $submission->id() . ', Canoe type: ' . $submissionData['type_kano'] . ', Used: ' . $used);
-                    return 1; // Assuming each booking uses one canoe
+                    return $used; // Use the 'aantal_kanos' field directly
                 });
 
                 Log::info('Canoe type: ' . $canoeType . ', Total used: ' . $totalUsed);

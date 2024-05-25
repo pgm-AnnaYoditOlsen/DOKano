@@ -10,7 +10,7 @@ next.addEventListener("click", () => {
   const selectedFormulaInput = document.querySelector('[name="formule"]:checked');
   const formula = selectedFormulaInput ? selectedFormulaInput.value : '';
   const date = document.getElementById("datePicker").value;
-  // const time = document.getElementById("voormiddag").value;
+  const time = document.getElementById("tijd").value;
   const adults = document.getElementById("aantal_volwassenen").value;
   const children = document.getElementById("aantal_kinderen").value;
   const selectedCanoeInput = document.querySelector('[name="type_kano"]:checked');
@@ -19,6 +19,7 @@ next.addEventListener("click", () => {
   overview.innerHTML = `
         <strong>${formula}</strong>
         <p>Datum: ${date}</p>  
+        <p>Tijd: ${time}</p>
         <p>Volwassenen: ${adults}</p>
         <p>Kinderen: ${children}</p>
         <p>Kano: ${canoe}</p>

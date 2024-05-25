@@ -207,3 +207,7 @@
 .none{
   display: none;
 }
+
+.open{
+  right: 0;
+}

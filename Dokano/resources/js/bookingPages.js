@@ -40,7 +40,7 @@ next2.onclick = function () {
 function validateForm() {
   const selectedFormulaInput = document.querySelector('[name="formule"]:checked');
   const date = document.getElementById("datePicker").value;
-  // const time = document.getElementById("voormiddag").value;
+  const time = document.getElementById("tijd").value;
   const adults = document.getElementById("aantal_volwassenen").value;
   const children = document.getElementById("aantal_kinderen").value;
   const selectedCanoeInput = document.querySelector(
@@ -59,10 +59,10 @@ function validateForm() {
   if (date === "") {
     error.innerHTML += "Selecteer alstublieft een datum.<br>";
   }
-  // if (time === "") {
-  //   error.innerHTML += "Selecteer alstublieft een tijd.<br>";
-  // }
-  if (adults === "0" && children === "0") {
+  if (time === "Kies uw tijd") {
+    error.innerHTML += "Selecteer alstublieft een tijd.<br>";
+  }
+  if (adults === "0" && children === "0" || adults === "" && children === "") {
     error.innerHTML +=
       "Voer alstublieft het aantal volwassenen of kinderen in.<br>";
   }

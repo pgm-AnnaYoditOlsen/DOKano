@@ -98,7 +98,7 @@
         <label class="font-standard text-xl text-right w-24 text-standards-black" for="tijd">tijd:</label>
         <p id="timeCheck"></p>
         <select name="tijd" id="tijd" class="block appearance-none w-full bg-white border text-standards-black border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:ring focus:border-blue-500">
-          <option disabled selected>Select a time</option>
+          <option disabled selected>Kies uw tijd</option>
         </select>
       </div>
     </div>
@@ -116,6 +116,14 @@
         <label class="booking-font w-24 text-right text-xl text-standards-black" for="aantal_kinderen">Aantal
           kinderen:</label>
         <input type="number" name="aantal_kinderen" id="aantal_kinderen"
+          class="w-20 ml-8 border-b-[1px] border-standards-grey text-standards-black" value="" min="0" max="25"
+          data-price="">
+      </div>
+
+      <div class="flex flex-wrap mt-8 justify-start gap-2 items-center">
+        <label class="booking-font w-24 text-right text-xl text-standards-black" for="aantal_kinderen">Aantal
+          kanos:</label>
+        <input type="number" name="aantal_kanos" id="aantal_kanos"
           class="w-20 ml-8 border-b-[1px] border-standards-grey text-standards-black" value="" min="0" max="25"
           data-price="">
       </div>

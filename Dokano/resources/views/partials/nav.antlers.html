@@ -3,12 +3,26 @@
             <div>
                 <li class="w-[8rem]"><a href="/"><img src="assets/img/logo.svg"></a></li>
             </div>
-            <div class="flex items-center">
+            <div class=" items-center lg:flex sm:hidden md:hidden">
                 {{ nav:navigation }}
                         <li class="ml-[3rem]"><a href="{{ url }}">{{ title }}</a></li>
                 {{ /nav:navigation }}
 
                 <li><a class="ml-[3rem] px-4 py-3 bg-DOKano-yellow hover:bg-amber-500 transition-all ease-linear rounded-[20rem]" href="/boeking">Boeking</a></li>
             </div>
-    </ul>
-</nav>
+
+            <div class="md:block sm:block lg:hidden">
+                <li id="hamburger"><img class="max-w-[4rem] w-full" src="assets/img/hamburger.png" alt="hamburger"></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="hamburgerMenu" class="absolute right-[-20rem] top-0">
+        <button class="unset" id="closeBtn">X</button>
+        <ul class="bg-standards-white min-w-[15rem] w-full min-h-[20rem] h-full">
+            {{ nav:navigation }}
+            <li class="text-standards-black ml-[3rem] pt-[2rem]"><a href="{{ url }}">{{ title }}</a></li>
+            {{ /nav:navigation }}
+            <li class="mt-[2rem] ml-[3rem]"><a class="] px-4 py-3 bg-DOKano-yellow hover:bg-amber-500 transition-all ease-linear rounded-[20rem]" href="/boeking">Boeking</a></li>
+        </ul>
+    </div>

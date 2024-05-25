@@ -16,8 +16,8 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <title>{{ title ?? site:name }}</title>
     </head>
-    <body class="font-sans leading-normal text-gray-800">
-        <header>
+    <body class="font-sans overflow-x-hidden leading-normal text-gray-800">
+        <header class="">
             {{ partial:nav }}
         </header>
         <div>
@@ -32,5 +32,6 @@
         {{ vite src="resources/js/canoeChecker.js" }}
         {{ vite src="resources/js/bookingPages.js" }}
         {{ vite src="resources/js/overview.js" }}
+        {{ vite src="resources/js/hamburger.js" }}
     </body>
 </html>

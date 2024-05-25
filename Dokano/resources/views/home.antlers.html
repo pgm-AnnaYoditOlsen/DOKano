@@ -1,5 +1,5 @@
 {{# standard layout file for the homepage #}}
-<section>
+<section class="">
     <div>
         <img class="w-full h-auto" src="assets/img/DOKano.svg" alt="DOKano Image">
         <img class="absolute w-[40%] top-40 left-1/2 transform -translate-x-1/2" src="assets/img/logo.svg" alt="Logo">
@@ -17,6 +17,7 @@
         </p>
     </div>
 
+  <section class="max-w-[80rem] w-full mx-auto">
     <section class="mt-[10rem] relative">
         <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[40rem]">
           {{ collection:evenementen limit="3"}}
@@ -111,6 +112,7 @@
   {{ sponsers }}
     <img class="max-w-[6rem] w-full h-[3rem] " src="{{ url }}" alt="{{ alt }}">
   {{ /sponsers }}
+  </section>
   </section>
 </section>
 
