@@ -15,6 +15,11 @@ tabs:
               type: text
               display: 'Datum:'
           -
+            handle: tijd
+            field:
+              type: text
+              display: Tijd
+          -
             handle: aantal_volwassenen
             field:
               type: text

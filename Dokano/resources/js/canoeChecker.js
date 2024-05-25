@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bookingDateInput = document.getElementById('datePicker');
+    const bookingTimeInput = document.getElementById('tijd'); // Add time input element
     const checkAvailabilityButton = document.getElementById('checkAvailability');
     const canoeAvailabilitySection = document.getElementById('canoeAvailability');
 
-    const fetchAvailableCanoes = async (date) => {
+    const fetchAvailableCanoes = async (date, time) => {
         try {
-            console.log(`Fetching available canoes for date: ${date}`);
-            const response = await fetch(`/api/check_availability?date=${date}`);
+            console.log(`Fetching available canoes for date: ${date} and time: ${time}`);
+            const response = await fetch(`/api/check_availability?date=${date}&time=${time}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -20,12 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateCanoeAvailability = async () => {
         const selectedDate = bookingDateInput.value;
-        if (!selectedDate) {
-            canoeAvailabilitySection.innerHTML = '<p>Please select a date.</p>';
+        const selectedTime = bookingTimeInput.value; // Get the selected time
+        if (!selectedDate || !selectedTime) {
+            canoeAvailabilitySection.innerHTML = '<p>Please select both a date and a time.</p>';
             return;
         }
 
-        const availability = await fetchAvailableCanoes(selectedDate);
+        const availability = await fetchAvailableCanoes(selectedDate, selectedTime);
         if (availability !== null) {
             if (availability.error) {
                 canoeAvailabilitySection.innerHTML = `<p>Error: ${availability.error}</p>`;
@@ -50,4 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     checkAvailabilityButton.addEventListener('click', updateCanoeAvailability);
+    bookingTimeInput.addEventListener('change', updateCanoeAvailability); // Add event listener for time input change
+    bookingDateInput.addEventListener('change', updateCanoeAvailability); // Ensure date change also triggers availability check
 });

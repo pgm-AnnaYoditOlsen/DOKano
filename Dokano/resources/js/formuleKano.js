@@ -5,19 +5,21 @@ const canoes = document.querySelectorAll('.radio-formule-wrapper input[name="typ
 // Voeg een click event listener toe aan elk categorie-element
 categories.forEach(category => {
   category.addEventListener('click', () => {
-    // Haal de geselecteerde waarde van de categorie op
-    const selectedCategory = category.value;
+    // Haal de geselecteerde waarde van de categorie op en zet om naar lowercase
+    const selectedCategory = category.value.toLowerCase();
 
-    
     // Verberg alle kano's
     canoes.forEach(canoe => {
       canoe.closest('div').classList.add('hidden');
     });
 
     // Toon de kano's van de geselecteerde categorie
-    const selectedCanoes = document.querySelectorAll(`[data-categories*="${selectedCategory}"]`);
+    const selectedCanoes = document.querySelectorAll(`[data-categories]`);
     selectedCanoes.forEach(canoe => {
-      canoe.closest('div').classList.remove('hidden');
+      const canoeCategories = canoe.getAttribute('data-categories').toLowerCase();
+      if (canoeCategories.includes(selectedCategory)) {
+        canoe.closest('div').classList.remove('hidden');
+      }
     });
   });
 });

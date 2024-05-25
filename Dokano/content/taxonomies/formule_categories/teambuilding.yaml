@@ -1,12 +1,15 @@
-title: teambuilding
+title: Teambuilding
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716469855
+updated_at: 1716632968
 blueprint: formule_category
-price_adult: 20.0
+tijdstip:
+  - '0u00 - 1u30'
+  - '1u30 - 3u00'
+  - '3u00 - 4u30'
+  - '4u30 - 6u00'
+  - '6u00 - 7u30'
+  - '7u30 - 9u00'
+  - '9u00 - 10u30'
 available_days:
   -
-    id: lwj9toea
-    date: '2024-05-28'
-  -
-    id: lwj9tv0j
-    date: '2024-05-30'
+    id: lwly1w29

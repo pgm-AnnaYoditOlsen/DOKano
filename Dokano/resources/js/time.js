@@ -1,37 +1,38 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//   const formuleSelect = document.querySelectorAll('.radio-formule-wrapper input[name="formule"]');
-//   const tijdSelect = document.getElementById('timeCheck'); // Corrected the selector
-
-//   // Check if tijdSelect is not null
-//   if (tijdSelect) {
-//     formuleSelect.forEach(formule => {
-//       formule.addEventListener('click', () => {
-//         const selectedFormule = formule.value;
-//         console.log(selectedFormule);
-//         tijdSelect.innerHTML = selectedFormule; // Set innerHTML to the selected value
-//       });
-//     });
-//   }
-// });
 document.addEventListener('DOMContentLoaded', () => {
-  const formuleSelect = document.querySelectorAll('.radio-formule-wrapper input[name="formule"]');
-  const tijdSelect = document.getElementById('timeCheck'); // Corrected the selector
-  const tijdDropdown = document.getElementById('tijd'); // Select the dropdown
+  const formulaRadios = document.querySelectorAll('input[name="formule"]');
+  const timeSelect = document.getElementById('tijd');
 
-  // Check if tijdSelect is not null
-  if (tijdSelect) {
-    // Event listener for radio buttons
-    formuleSelect.forEach(formule => {
-      formule.addEventListener('click', () => {
-        const selectedFormule = formule.value;
-        tijdSelect.innerHTML = selectedFormule; // Set innerHTML to the selected value
+  const fetchAvailableTimes = async (formula) => {
+      try {
+          const response = await fetch(`/api/get_available_times?formula=${formula}`);
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const times = await response.json();
+          return times;
+      } catch (error) {
+          console.error('Error fetching available times:', error);
+          return null;
+      }
+  };
+
+  const updateAvailableTimes = async (formula) => {
+      const times = await fetchAvailableTimes(formula);
+      if (times !== null) {
+          timeSelect.innerHTML = '<option disabled selected>Select a time</option>';
+          times.forEach(time => {
+              const option = document.createElement('option');
+              option.value = time;
+              option.textContent = time;
+              timeSelect.appendChild(option);
+          });
+      }
+  };
+
+  formulaRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+          const formula = radio.value;
+          updateAvailableTimes(formula);
       });
-    });
-
-    // Event listener for the dropdown
-    tijdDropdown.addEventListener('change', () => {
-      const selectedTime = tijdDropdown.value;
-      tijdSelect.innerHTML = selectedTime; // Set innerHTML to the selected time
-    });
-  }
+  });
 });
