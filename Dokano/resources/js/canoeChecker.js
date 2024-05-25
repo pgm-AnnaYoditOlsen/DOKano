@@ -8,10 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             console.log(`Fetching available canoes for date: ${date} and time: ${time}`);
             const response = await fetch(`/api/check_availability?date=${date}&time=${time}`);
+            console.log('Response status:', response.status);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            const data = await response.json();
+            const textData = await response.text(); // Fetch as text first
+            console.log('Raw response text:', textData);
+            const data = JSON.parse(textData); // Then parse it to JSON
             return data;
         } catch (error) {
             console.error('Error fetching available canoes:', error);
@@ -52,6 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     checkAvailabilityButton.addEventListener('click', updateCanoeAvailability);
-    bookingTimeInput.addEventListener('change', updateCanoeAvailability); // Add event listener for time input change
-    bookingDateInput.addEventListener('change', updateCanoeAvailability); // Ensure date change also triggers availability check
 });

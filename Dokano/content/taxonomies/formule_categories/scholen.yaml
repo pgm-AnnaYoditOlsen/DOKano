@@ -1,6 +1,6 @@
 title: Scholen
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716632046
+updated_at: 1716634421
 blueprint: formule_category
 tijdstip:
   - '4u30 - 6u00'
@@ -12,3 +12,7 @@ tijdstip:
   - '18u00 - 19u30'
   - '19u30 - 21u00'
   - '21u00 - 22u30'
+available_days:
+  -
+    id: lwlzt4sq
+    date: '2024-05-31'
