@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     formuleSelect.forEach(formule => {
       formule.addEventListener('click', () => {
         const selectedFormule = formule.value;
-        console.log(selectedFormule);
         tijdSelect.innerHTML = selectedFormule; // Set innerHTML to the selected value
       });
     });

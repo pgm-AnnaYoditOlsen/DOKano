@@ -48,6 +48,12 @@ tabs:
             field:
               type: integer
               display: 'hoeveel kanos'
+          -
+            handle: info_kanos
+            field:
+              remove_empty_nodes: false
+              type: bard
+              display: 'info kano'
   sidebar:
     display: Sidebar
     sections:
