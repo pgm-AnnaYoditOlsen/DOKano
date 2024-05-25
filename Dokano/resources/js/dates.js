@@ -36,10 +36,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     fetchAndCacheCategories();
 
+    document.getElementById('datePicker').disabled = true;
+
+    // datepicker initialiseren wanneer een formule wordt geselecteerd
     document.querySelectorAll('input[name="formule"]').forEach((radio) => {
         radio.addEventListener('change', function() {
             const selectedCategory = document.querySelector('input[name="formule"]:checked').value;
             console.log('Geselecteerde categorie:', selectedCategory);
+            document.getElementById('datePicker').disabled = false;
             initializeDatepicker(selectedCategory);
         });
     });
