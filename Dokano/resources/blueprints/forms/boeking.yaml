@@ -14,7 +14,6 @@ tabs:
             field:
               type: text
               display: 'Datum:'
-              input_type: date
           -
             handle: aantal_volwassenen
             field:
@@ -59,4 +58,4 @@ tabs:
             handle: total_price
             field:
               type: text
-              display: 'Totaal prijs'
+              display: 'Totaal prijs:'

@@ -1,6 +1,6 @@
 title: weekendvaren
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716558398
+updated_at: 1716501273
 blueprint: formule_category
 price_adult: 15.0
 price_children: 5.0
@@ -12,3 +12,30 @@ tijdstip:
   - '19u30 - 21u00'
   - '21u00 - 22u30'
   - '22u30 - 00u00'
+grid_field:
+  -
+    id: lwj9jvl9
+    date_field: '2024-05-25'
+dagen:
+  -
+    id: lwj9nzux
+    available_days: '2024-05-25'
+available_days:
+  -
+    id: lwjs1cj3
+    date: '2024-05-22'
+  -
+    id: lwj9r9x9
+    date: '2024-05-25'
+  -
+    id: lwj9rput
+    date: '2024-05-26'
+  -
+    id: lwj9ss35
+    date: '2024-06-01'
+  -
+    id: lwjsj4df
+    date: '2024-05-17'
+  -
+    id: lwjsj8k2
+    date: '2024-05-18'
