@@ -1,4 +1,4 @@
-// import { gsap } from "gsap";
+import { gsap } from "gsap";
 
 const loadingAnimation = (callback) => {
   const $loadingContainer = document.getElementById("loading");

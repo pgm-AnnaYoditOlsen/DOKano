@@ -7,8 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ title ?? site:name }}</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" />
@@ -28,10 +26,16 @@
         </footer>
         {{ vite src="resources/js/formuleKano.js" }}
         {{ vite src="resources/js/time.js" }}
-        {{ vite src="resources/js/gsap/listFadeLeft.js" }}
         {{ vite src="resources/js/canoeChecker.js" }}
         {{ vite src="resources/js/bookingPages.js" }}
         {{ vite src="resources/js/overview.js" }}
         {{ vite src="resources/js/hamburger.js" }}
+        {{# gsap #}}
+        {{ vite src="resources/js/gsap/listFadeLeft.js" }}
+        {{ vite src="resources/js/gsap/fadeUp.js" }}
+        {{ vite src="resources/js/gsap/listFade.js" }}
+        {{ vite src="resources/js/gsap/loading.js"  }}
+
+        {{ vite src="resources/js/gsap/app.js"}}
     </body>
 </html>
