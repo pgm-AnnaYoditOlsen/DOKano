@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateAvailableTimes = async (formula) => {
       const times = await fetchAvailableTimes(formula);
       if (times !== null) {
-          timeSelect.innerHTML = '<option disabled selected>Select a time</option>';
+          timeSelect.innerHTML = '<option disabled selected>Kies uw tijd</option>';
           times.forEach(time => {
               const option = document.createElement('option');
               option.value = time;

@@ -4,6 +4,12 @@ blueprint: scoreboard
 title: Scoreboard
 teams:
   -
+    id: lwqoabed
+    naam: Dries
+    kilogram: 115kg
+    type: new_set
+    enabled: true
+  -
     id: lw98hfyr
     team_foto: img/dokano-score-1.jpg
     naam: 'Missen - CIU - CUP'
@@ -49,5 +55,5 @@ teams:
     type: new_set
     enabled: true
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1715870145
+updated_at: 1716917403
 ---

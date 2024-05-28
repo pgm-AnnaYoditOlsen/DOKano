@@ -94,7 +94,7 @@
     </section>
 
     <section class="mt-[7rem] relative">
-      <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
+      <div class="activitys gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
         {{ activity_photos }}
         <img id="activity{{index}}" class="min-w-full px-[1rem] snap-center relative h-[30rem] object-cover w-full mx-auto"
           src="{{ url }}" alt="{{ alt }}">
@@ -114,7 +114,7 @@
       <div class="scoreboard__list">
         {{ collection:scoreboard }}
         <div class="teams max-w-[50rem] w-full mx-auto">
-          {{ teams }}
+          {{ teams limit="6"}}
           <div class="flex sm:gap-[4rem] mb-5 flex-wrap justify-center items-center">
             <img class="max-w-[5rem] sm:block hidden w-full h-[5rem]" src="assets/img/Crown.svg" alt="crown">
             {{ if !team_foto:url }}

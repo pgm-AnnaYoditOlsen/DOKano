@@ -40,5 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Observe and set active points for activity items
     observeAndSetActivePoints("[id^='activity']", ".activity-nav-point", "bg-DOKano-lightblue");
+  
+    // Observe and set active points for carousel items
+    observeAndSetActivePoints("[id^='carousel']", ".carousel-nav-point", "bg-DOKano-lightblue");
   });
   
