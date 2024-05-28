@@ -4,6 +4,10 @@
 
 /* This is all you. */
 
+body{
+  scroll-behavior: smooth;
+}
+
 :root {
   --main-yellow: hsl(42, 81%, 60%);
   --sec-yellow: hsl(41, 78%, 51%);

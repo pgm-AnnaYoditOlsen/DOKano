@@ -4,9 +4,7 @@
   <div id="loading" class="bg-DOKano-lightblue fixed top-0 min-h-screen h-screen w-full z-10">
     <div class="overflow-hidden">
       <img class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-auto"
-        data-animation="loadingImage"
-        src="assets/img/gele_kano.svg"
-        alt="kano" />
+        data-animation="loadingImage" src="assets/img/gele_kano.svg" alt="kano" />
     </div>
   </div>
 </section>
@@ -32,11 +30,10 @@
   <section class="fade-up max-w-[80rem] w-full mx-auto">
     <section class="mt-[10rem] relative">
       <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[40rem]">
-        {{ collection:evenementen limit="3"}}
-        <a href="{{ url }}" class="relative min-w-full px-[2rem] py-[1rem] snap-center">
+        {{ collection:evenementen limit="3" }}
+        <a id="event{{index}}" href="{{ url }}" class="relative min-w-full px-[2rem] py-[1rem] snap-center">
           <div>
-            <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}"
-              alt="{{ panel_image.alt }}">
+            <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}" alt="{{ panel_image.alt }}">
           </div>
           <div>
             <h3 class="font-standard text-[24px] font-bold">{{ title }}</h3>
@@ -45,6 +42,14 @@
         </a>
         {{ /collection:evenementen }}
       </div>
+  
+      <div class="flex justify-center mt-4">
+        {{ collection:evenementen limit="3" }}
+        <a href="#event{{index}}" class="nav-point event-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
+        {{ /collection:evenementen }}
+      </div>
+
+
       <div class="flex justify-center mt-[3rem]">
         <a href="/evenementen"
           class=" hover:bg-standards-black hover:text-standards-white transition duration-300 ease-in-out inline-block text-standards-black font-bold py-2 px-4 rounded-full border border-standards-black">Meer
@@ -91,11 +96,18 @@
     <section class="mt-[7rem] relative">
       <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
         {{ activity_photos }}
-        <img class="min-w-full px-[1rem] snap-center relative  h-[30rem] object-cover w-full mx-auto" src="{{ url }}"
-          alt="{{ alt }}">
+        <img id="activity{{index}}" class="min-w-full px-[1rem] snap-center relative h-[30rem] object-cover w-full mx-auto"
+          src="{{ url }}" alt="{{ alt }}">
+        {{ /activity_photos }}
+      </div>
+    
+      <div class="flex justify-center mt-4">
+        {{ activity_photos }}
+        <a href="#activity{{index}}" class="nav-point activity-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
         {{ /activity_photos }}
       </div>
     </section>
+    
 
     <section class="mt-[7rem]">
       <h2 class="text-center font-standard mb-[2rem] text-[36px]">Scoreboard</h2>
@@ -120,9 +132,9 @@
         {{ /collection:scoreboard }}
       </div>
     </section>
-    
-    
-    
+
+
+
 
 
 
@@ -162,4 +174,6 @@
   });
 </script>
 
+
+{{ vite src="resources/js/points.js" }}
 {{ vite src="resources/js/weather.js" }}
