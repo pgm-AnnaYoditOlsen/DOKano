@@ -1,6 +1,6 @@
 title: Scholen
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716634421
+updated_at: 1716987692
 blueprint: formule_category
 tijdstip:
   - '4u30 - 6u00'
@@ -16,3 +16,5 @@ available_days:
   -
     id: lwlzt4sq
     date: '2024-05-31'
+price_adult: 15.0
+price_children: 5.0
