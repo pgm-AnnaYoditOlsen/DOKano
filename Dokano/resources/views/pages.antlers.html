@@ -17,8 +17,14 @@
             </div>
         </div>
         <div>
-            <img class="object-cover h-80 xl:h-96 md:max-w-xs lg:max-w-md xl:max-w-lg" src="{{ foto.url }}"
-                alt="{{ foto.alt}}">
+            {{ if slug == "weekendvaren" }}
+                <img class="object-cover h-80 xl:h-96 md:max-w-xs lg:max-w-md xl:max-w-lg" src="{{ foto.url }}" alt="{{ foto.alt}}">
+            {{ else }}
+                <div>
+                    <p>Voormiddag</p>
+                    
+                </div>
+            {{ /if }}
         </div>
     </div>
 </section>

@@ -64,6 +64,10 @@ return [
         'json' => [
             'class' => Statamic\Forms\Exporters\JsonExporter::class,
         ],
+        'excel' => [
+            'class' => App\Exporters\ExcelExporter::class,
+            'forms' => ['boeking'],
+        ],
     ],
 
 ];

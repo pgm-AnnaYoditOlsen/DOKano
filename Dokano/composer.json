@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.9",
         "mollie/laravel-mollie": "^3.0",
         "nomala/statamic-google-places": "^1.2",
+        "phpoffice/phpspreadsheet": "^2.1",
         "statamic/cms": "^5.0",
         "statamic/collaboration": "^1.0",
         "statamic/eloquent-driver": "^4.0"

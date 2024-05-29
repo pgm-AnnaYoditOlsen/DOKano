@@ -16,29 +16,23 @@ class CalculatePriceController extends Controller
         $amountAdults = $request->input('amountAdults');
         $amountChildren = $request->input('amountChildren');
 
-        // Haal de taxonomie op
         $taxonomy = Taxonomy::findByHandle('formule_categories');
 
-        // Controleer of de taxonomie correct is opgehaald
         if ($taxonomy) {
-            // Query de termen van de taxonomie
             $termen = $taxonomy->queryTerms()->where('slug', $formule)->get();
         
-            // Controleer of er termen zijn gevonden
             if ($termen->isNotEmpty()) {
-                // Haal de eerste gevonden term op (aannemende dat formule uniek is)
                 $categorieTerm = $termen->first();
         
-                // Haal de prijsinformatie op uit de term
                 $categorieName = $categorieTerm->value('title');
                 $priceAdult = $categorieTerm->get('price_adult');
                 $priceChild = $categorieTerm->get('price_children');
 
-                // Bereken de totaalprijs
-                $totalPrice = $amountAdults * $priceAdult + $amountChildren * $priceChild;
 
-                // Stuur de totaalprijs terug als JSON-respons
-                return response()->json(['totalPrice' => $totalPrice]);
+                $totalPrice = $amountAdults * $priceAdult + $amountChildren * $priceChild;
+                $formattedPrice = number_format($totalPrice, 2, '.', '');
+                
+                return response()->json(['totalPrice' => $formattedPrice]);
 
             } else {
                 Log::error('Geen term gevonden voor categorie ' . $formule);
