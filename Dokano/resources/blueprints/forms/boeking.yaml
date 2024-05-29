@@ -69,3 +69,8 @@ tabs:
             field:
               type: text
               display: 'Aantal kanos:'
+          -
+            handle: payment_status
+            field:
+              type: text
+              display: 'betalings status'

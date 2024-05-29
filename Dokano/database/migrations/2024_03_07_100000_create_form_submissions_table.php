@@ -12,6 +12,9 @@ return new class extends Migration
             $table->id();
             $table->string('form', 30)->nullable()->index();
             $table->jsonb('data')->nullable();
+            $table->string('payment_id', 45)->nullable()->index();
+            $table->string('payment_status', 20)->nullable()->index();
+            $table->string('payment_method', 50)->nullable()->index();
 
             $table->timestamps(6);
 

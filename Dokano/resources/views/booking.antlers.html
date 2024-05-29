@@ -67,7 +67,7 @@
 </section>
 
 <section class="mx-auto max-w-2xl">
-  {{ form:create in="boeking" }}
+  {{ form:create in="boeking" action="{route:mollie}" }}
   {{ if errors }}
     <div class="bg-red-300 text-white p-2"> {{ errors }} {{ value }}<br>
       {{ /errors }}
@@ -130,7 +130,7 @@
     </div>
 
     <div class="my-[3rem]">
-      <button id="checkAvailability" class="p-2 bg-DOKano-yellow w-full text-standards-white rounded">
+      <button type="" id="checkAvailability" class="p-2 bg-DOKano-yellow w-full text-standards-white rounded">
         Check de beschikbare kano's
       </button>
     </div>
@@ -240,13 +240,21 @@
       </div>
 
       <div>
-        <input type="submit" class="text-right submit" name="submit" id="submit">
-        <button class="text-right back" type="button" id="checkout-button">betalen</button>
+        <button class="text-right back" type="submit" id="checkout-button">betalen</button>
       </div>
     </div>
   </div>
   {{ /form:create in="boeking" }}
 </section>
+<script>
+  document.getElementById('checkout-button').addEventListener('click', function(event) {
+    const totalPrice = parseFloat(document.getElementById('totaal_prijs').value);
+    if (totalPrice <= 0) {
+      event.preventDefault();
+      alert('The total price must be greater than zero.');
+    }
+  });
+</script>
 {{ vite src="resources/js/overview.js" }}
 {{ vite src="resources/js/price.js" }}
 {{ vite src="resources/js/datepicker.js" }}
