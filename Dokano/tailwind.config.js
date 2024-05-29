@@ -18,7 +18,8 @@ theme: {
                 },
                 DOKano: {
                     lightblue: '#85C5D3', 
-                    yellow: '#FFC400', 
+                    yellow: '#E3A722',
+                    hoveredYellow: '#e38e22',
                     orange: '#FF793E',
                     darkGreen: '#0C4D54',
                 },

@@ -1,46 +1,65 @@
-<div class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:justify-between">
-    <section class="mx-auto items-center">
-        <h1 class="text-3xl mt-12 mb-5 items-center text-center">{{ title }}</h1>
-        <div class="md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:gap-20">
-            <iframe class="h-80 lg:h-96 lg:w-1/2 mb-4 md:pt-6 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5962.457370745179!2d3.7283403135091757!3d51.07331268155892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c371f8fbead23f%3A0x5564e9e2d3764ec1!2sDOKANO%20-%20kano&#39;s!5e0!3m2!1snl!2sbe!4v1702149068272!5m2!1snl!2sbe"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <div class="custom max-w-xs xl:max-w-lg">
-                {{content}}
+<div class="relative overflow-hidden">
+    <div>
+        <section class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:justify-between items-center">
+            <h1 class="text-3xl font-bold mt-12 mb-5 items-center text-center">{{ title }}</h1>
+            <div class="md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:gap-20">
+                <iframe class="h-80 lg:h-96 lg:w-1/2 mb-4 md:pt-6 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5962.457370745179!2d3.7283403135091757!3d51.07331268155892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c371f8fbead23f%3A0x5564e9e2d3764ec1!2sDOKANO%20-%20kano&#39;s!5e0!3m2!1snl!2sbe!4v1702149068272!5m2!1snl!2sbe" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="custom max-w-xs xl:max-w-lg">
+                    {{content}}
+                </div>
             </div>
-        </div>
-    </section>
-    
-    <section>
-        <h2 class="text-3xl mt-12 mb-5 items-center text-center">{{ subtitle_volunteer }}</h2>
+        </section>
+        <img class="w-1/7 absolute top-[10%] left-2/3 -z-20" src="assets/vlak3.svg" alt="achtergrond foto">
+    </div>
+
+    <section class="mx-auto items-center max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:justify-between">
+        <h2 class="text-3xl font-bold mt-12 mb-5 items-center text-center">{{ subtitle_volunteer }}</h2>
         <div class="md:max-w-2xl lg:max-w-4xl xl:max-w-6xl lg:flex lg:flex-row-reverse lg:justify-between">
             <div class="rounded">
-                <img class="object-cover w-full h-80 xl:h-96 lg:max-w-md xl:max-w-lg rounded" src="{{ foto_volunteer.url }}" alt="{{ foto_volunteer.alt}}">
+                <img class="object-cover w-full h-80 xl:h-96 lg:max-w-md xl:max-w-lg rounded" src="{{ foto_volunteer.url }}" alt="{{ foto_volunteer.alt }}">
             </div>
             <div class="custom lg:max-w-md xl:max-w-lg">
                 {{ content_volunteer }}
             </div>
         </div>
     </section>
-    
-    <section>
-        <h2 class="text-3xl mt-12 mb-5 items-center text-center">{{ subtitle_donations }}</h2>
+
+<div>
+    <section class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:justify-between mt-16">
+        <h2 class="text-3xl font-bold mb-5 items-center text-center">{{ subtitle_donations }}</h2>
         <div class="md:max-w-2xl lg:max-w-4xl xl:max-w-6xl lg:flex lg:justify-between">
             <div class="rounded">
                 <img class="object-cover w-full h-80 xl:h-96 lg:max-w-md xl:max-w-lg rounded" src="{{ foto_donations.url }}" alt="{{ foto_donations.alt}}">
             </div>
             <div class="custom lg:max-w-md xl:max-w-lg">
                 {{ content_donations }}
+                <div class="relative flex items-center justify-center  w-full mt-8">
+                    <div class="relative flex items-center justify-center w-56 lg:w-60 h-32 p-3">
+                        <span class="absolute text-center text-white -mt-4">
+                            <p class="text-lg font-bold lg:text-xl lg:font-extrabold">Doneer hier!</p>
+                            <p class="text-md">BE61890534226117</p>
+                        </span>
+                        <img class="w-full h-auto -z-10" src="assets/donate_splash.svg" alt="donatie splash">
+                    </div>
+                    <img class="hidden lg:block w-64 h-72 rotate-45" src="assets/dolphin.svg" alt="dolfijn">
+                </div>
             </div>
         </div>
     </section>
-    
-    <section class="py-12">
-        <h2 class="text-3xl mt-12 mb-5 items-center text-center">{{ subtitle_sailing }}</h2>
-        <div class="pb-10 gap-2 overflow-x-auto flex snap-x scroll-smooth md:max-w-xs lg:max-w-md">
+    <img class="w-1/7 h-1/4 absolute top-[60%] -right-40 -z-20" src="assets/vlak2.svg" alt="achtergrond foto">
+</div>
+
+    <section class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:justify-between py-12">
+        <h2 class="text-3xl font-bold mt-12 mb-5 items-center text-center">{{ subtitle_sailing }}</h2>
+        <div class="pb-10 gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto md:max-w-2xl">
             {{ sailing_charts }}
-                <a class="min-w-full snap-center relative p-2" href="{{ url }}" download>
-                    <p class="mb-2">{{ alt }}</p>
-                    <img class="object-cover object-center h-80 xl:h-96 w-full" src="{{ url }}" alt="{{ alt }}">
-                </a>
+            <a class="min-w-full snap-center relative p-2" href="{{ url }}" download>
+                <p class="mb-4 font-bold">{{ alt }}</p>
+                <img class="rounded object-cover object-top h-80 xl:h-96 w-full" src="{{ url }}" alt="{{ alt }}">
+                <div class="flex justify-center">
+                    <button class="bg-DOKano-yellow hover:bg-DOKano-hoveredYellow text-white font-bold py-2 px-4 rounded-full mt-2">Download {{ alt }}</button>
+                </div>
+            </a>
             {{ /sailing_charts }}
         </div>              
     </section>
