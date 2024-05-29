@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Payment;
 use Mollie\Laravel\Facades\Mollie;
-
 class MollieController extends Controller
 {
     public function mollie(Request $request)
@@ -13,9 +12,8 @@ class MollieController extends Controller
         $payment = Mollie::api()->payments->create([
             "amount" => [
                 "currency" => "EUR",
-                "value" => "23.00" , 
+                "value" => $request->total_price , 
             ],
-            //$request->totalPrice
             "description" => $request->formule,
             "redirectUrl" => route('payment.success'),
             // "webhookUrl" => route('webhooks.mollie'),
