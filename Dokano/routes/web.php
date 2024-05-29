@@ -11,7 +11,6 @@ use App\Http\Controllers\TimeCheckerController;
 
 
 Route::get('/api/get_available_times', [TimeCheckerController::class, 'getAvailableTimes']);
-
 Route::post('/calculate-price', [CalculatePriceController::class, 'calculatePrice']);
 Route::get('/get-available-days', [AvailableDaysController::class, 'getAvailableDays']);
 Route::get('/api/check_availability', [FormSubmissionController::class, 'checkAvailability']);

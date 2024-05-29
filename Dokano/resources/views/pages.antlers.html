@@ -20,10 +20,16 @@
             {{ if slug == "weekendvaren" }}
                 <img class="object-cover h-80 xl:h-96 md:max-w-xs lg:max-w-md xl:max-w-lg" src="{{ foto.url }}" alt="{{ foto.alt}}">
             {{ else }}
+            <div>
                 <div>
                     <p>Voormiddag</p>
-                    
+                    {{ table_one | table }}
                 </div>
+                <div>
+                    <p>Namiddag</p>
+                    {{ table_two | table }}
+                </div>
+            </div>
             {{ /if }}
         </div>
     </div>
