@@ -3,12 +3,10 @@ const URL_API_FORECAST =
 
 const $weather = document.querySelector("#weather");
 
-
 // Fetch weather forecast data
 fetch(URL_API_FORECAST)
   .then((response) => response.json())
   .then((data) => {
-    //console.log("Raw data from API:", data); // Log the raw data for inspection
     $weather.innerHTML = getHTMLWeatherForecast(data);
   })
   .catch((error) => {
@@ -54,12 +52,12 @@ function getHTMLWeatherForecast(w) {
   }
 
   return forecastDays
-    .map((forecastDay) => {
+    .map((forecastDay, index) => {
       const { dayOfWeek, dayOfMonth, month } = getDayOfWeek(forecastDay.datetime);
       const isWeekend = dayOfWeek === "Za" || dayOfWeek === "Zo";
 
       return `
-        <div class="weather-ghent ${isWeekend ? 'weekend' : ''}">
+        <div class="weather-ghent day-${index + 1} ${isWeekend ? 'weekend' : ''}">
           <h2 class="day text-3xl">${dayOfWeek}</h2>
           <div class="text-2xl flex date">
             <p>${dayOfMonth}</p>

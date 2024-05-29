@@ -8,7 +8,8 @@
 </div>
 
 <section class="bg-DOKano-lightblue">
-    <div class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:justify-between items-center pt-12 pb-6">
+    <div
+        class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:justify-between items-center pt-12 pb-6">
         <div class="max-w-xs md:max-w-sm xl:max-w-lg text-standards-white pb-12 font-standard">
             <h1 class="text-3xl lg:text-4xl pb-6">{{ title }}</h1>
             <div class="custom">
@@ -32,14 +33,24 @@
 </div>
 
 <section>
-    <div class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:justify-between items-center pt-12 pb-6">
+    <div
+        class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:justify-between items-center pt-12 pb-6">
         <div class="custom max-w-xs md:max-w-sm xl:max-w-lg pb-12">
             {{ info }}
         </div>
-        <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth md:max-w-xs lg:max-w-md">
-            {{ foto_carousel }}
-                <img class="min-w-full  snap-center relative object-cover h-80 xl:h-96" src="{{ url }}" alt="{{ alt}}">
-            {{ /foto_carousel }}
+        <div>
+            <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth md:max-w-xs lg:max-w-md">
+                {{ foto_carousel }}
+                <img id="carousel{{index}}" class="min-w-full snap-center relative object-cover h-80 xl:h-96" src="{{ url }}" alt="{{ alt }}">
+              {{ /foto_carousel }}
+            </div>
+            <div class="flex justify-center mt-4">
+                {{ foto_carousel }}
+                <a href="#carousel{{index}}"
+                    class="nav-point carousel-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
+                {{ /foto_carousel }}
+            </div>
         </div>
     </div>
 </section>
+{{ vite src="resources/js/points.js" }}

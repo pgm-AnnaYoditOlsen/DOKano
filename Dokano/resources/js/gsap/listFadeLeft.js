@@ -23,9 +23,8 @@ export const listLeftFader = () => {
       scrollTrigger: {
         trigger: element,
         start: "top bottom",
-        end: "bottom bottom",
-        toggleActions: "restart none none reverse",
-        markers: true,
+        end: "50% 50%",
+        toggleActions: "play none none none",
       }
     });
   });

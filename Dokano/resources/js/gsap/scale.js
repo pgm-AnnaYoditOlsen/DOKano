@@ -1,3 +1,5 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,12 +17,12 @@ export const scale = () => {
     gsap.to(activity, {
       scale: 1,
       duration: 1,
-      ease: "elastic.out(0.3, 0.3)", // Bouncy ease
+      ease: "elastic.out(0.5, 0.3)",
       scrollTrigger: {
         trigger: activity,
         start: "top bottom",
         end: "bottom bottom",
-        toggleActions: "restart none none reverse",
+        toggleActions: "play none none none",
       },
     });
   });
