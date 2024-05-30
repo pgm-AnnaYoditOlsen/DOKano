@@ -16,29 +16,29 @@
                 {{ content }}
             </div>
         </div>
-        <div class="mt-8 mb-10 max-w-xs lg:max-w-sm xl:max-w-lg">
+        <div class="mt-8 mb-10 max-w-xs lg:max-w-sm xl:max-w-[35rem]">
             {{ if slug == "weekendvaren" }}
                 <img class="object-cover h-80 xl:h-96 md:max-w-xs lg:max-w-md xl:max-w-lg" src="{{ foto.url }}" alt="{{ foto.alt}}">
             {{ else }}
             <div>
-                <p class="text-standards-white text-lg">Voormiddag</p>
+                <p class="text-standards-white text-lg font-bold">Voormiddag</p>
                 <table class="bg-white -ml-2">
                     {{ table_one }}
                         <tr>
                         {{ cells }}
-                            <td class="p-3 border-8 border-DOKano-lightblue" >{{ value | markdown }}</td>
+                            <td class="text-sm p-3 border-8 border-DOKano-lightblue" >{{ value | markdown }}</td>
                         {{ /cells }}
                         </tr>
                     {{ /table_one }}
                 </table>
             </div>
             <div class="mt-8">
-                <p class="text-standards-white text-lg">Namiddag</p>
+                <p class="text-standards-white text-lg font-bold">Namiddag</p>
                 <table class="bg-white -ml-2">
                     {{ table_two }}
                         <tr>
                         {{ cells }}
-                            <td class="p-3 border-8 border-DOKano-lightblue">{{ value | markdown }}</td>
+                            <td class="text-sm p-3 border-8 border-DOKano-lightblue">{{ value | markdown }}</td>
                         {{ /cells }}
                         </tr>
                     {{ /table_two }}
@@ -61,13 +61,14 @@
         <div>
             <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth md:max-w-xs lg:max-w-md">
                 {{ foto_carousel }}
-                <img id="carousel{{index}}" class="min-w-full snap-center relative object-cover h-80 xl:h-96" src="{{ url }}" alt="{{ alt }}">
-              {{ /foto_carousel }}
+                    <img id="carousel{{index}}" class="min-w-full snap-center relative object-cover h-80 xl:h-96" src="{{ url }}" alt="{{ alt }}">
+                {{ /foto_carousel }}
             </div>
             <div class="flex justify-center mt-4">
                 {{ foto_carousel }}
-                <a href="#carousel{{index}}"
-                    class="nav-point carousel-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
+                    <a href="#carousel{{index}}"
+                    class="nav-point carousel-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer">
+                    </a>
                 {{ /foto_carousel }}
             </div>
         </div>

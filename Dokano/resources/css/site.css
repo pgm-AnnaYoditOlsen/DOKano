@@ -108,13 +108,10 @@ body{
 
 .radio-formule {
   cursor: pointer;
-  display: flex;
-  justify-content: center;
   font-family: "Chaloops Regular";
   background-color: var(--sec-grey);
-  padding: 0.62rem;
-  margin: 0.32rem;
-  border-radius: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: .625rem;
   text-align: center;
   width: 10rem;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -185,7 +182,7 @@ body{
   width: 20px;
   position: absolute;
   top: -8px;
-  left: 50%;
+  left: .625rem;
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -204,7 +201,7 @@ body{
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -60px; 
+  margin-left: -55px; 
   width: 140px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
