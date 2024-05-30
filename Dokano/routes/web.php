@@ -7,6 +7,7 @@ use App\Http\Controllers\AvailableDaysController;
 use App\Http\Controllers\TimeCheckerController;
 use App\Http\Controllers\MollieController;
 
+
 Route::get('/api/get_available_times', [TimeCheckerController::class, 'getAvailableTimes']);
 Route::post('/calculate-price', [CalculatePriceController::class, 'calculatePrice']);
 Route::get('/get-available-days', [AvailableDaysController::class, 'getAvailableDays']);
@@ -16,3 +17,14 @@ Route::post('/submit_form', [FormSubmissionController::class, 'submitForm']);
 Route::post('mollie', [MollieController::class, 'mollie'])->name('mollie');
 Route::get('success', [MollieController::class, 'success'])->name('payment.success');
 Route::get('cancel', [MollieController::class, 'cancel'])->name('payment.cancel');
+Route::post('webhooks', [MollieController::class, 'webhooks'])
+    ->withoutMiddleware([
+        \App\Http\Middleware\VerifyCsrfToken::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+    ])
+    ->name('webhooks.mollie');
+
+    Route::get("home" , function(){
+        return view("home");
+    });

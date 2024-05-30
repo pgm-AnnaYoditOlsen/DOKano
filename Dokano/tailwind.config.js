@@ -21,6 +21,7 @@ theme: {
                     yellow: '#FFC400', 
                     orange: '#FF793E',
                     darkGreen: '#0C4D54',
+                    darkBlue: '#3A7EB4',
                 },
             },
             fontFamily: {
