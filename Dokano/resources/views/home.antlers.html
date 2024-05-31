@@ -32,12 +32,11 @@
 
   <section class="fade-up max-w-[80rem] w-full mx-auto">
     <section class="mt-[10rem] relative">
-      <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[40rem]">
+      <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[40rem] hide-scrollbar">
         {{ collection:evenementen limit="3" }}
         <a id="event{{index}}" href="{{ url }}" class="relative min-w-full px-[2rem] py-[1rem] snap-center">
           <div>
-            <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}"
-              alt="{{ panel_image.alt }}">
+            <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}" alt="{{ panel_image.alt }}">
           </div>
           <div>
             <h3 class="font-standard text-[24px] font-bold">{{ title }}</h3>
@@ -46,6 +45,7 @@
         </a>
         {{ /collection:evenementen }}
       </div>
+
 
       <div class="flex justify-center mt-4">
         {{ collection:evenementen limit="3" }}
@@ -99,7 +99,7 @@
     </section>
 
     <section class="mt-[7rem] relative">
-      <div class="activitys gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
+      <div class="activitys gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem] hide-scrollbar">
         {{ activity_photos }}
         <img id="activity{{index}}"
           class="min-w-full px-[1rem] snap-center relative h-[30rem] object-cover w-full mx-auto" src="{{ url }}"
@@ -123,7 +123,7 @@
         <div class="teams max-w-[50rem] w-full mx-auto">
           {{ teams limit="6"}}
           <div class="flex sm:gap-[4rem] mb-5 flex-wrap justify-center items-center">
-            <img class="max-w-[5rem] sm:block hidden w-full h-[5rem]" src="assets/img/Crown.svg" alt="crown">
+            <dotlottie-player class="max-w-[10rem] sm:block hidden w-full h-[10rem]" autoplay="true" loop="true" mode="normal" src="assets/img/crown.lottie"></dotlottie-player>
             {{ if !team_foto:url }}
             <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="assets/img/DOKano.svg" alt="dokano">
             {{ else }}

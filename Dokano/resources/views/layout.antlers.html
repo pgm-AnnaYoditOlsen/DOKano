@@ -1,7 +1,11 @@
 {{# standard layout file for the site #}}
 
 <!doctype html>
+{{ if response_code == 404}}
+<html class="footerbg" lang="{{ site:short_locale }}">
+{{else}}
 <html lang="{{ site:short_locale }}">
+{{/if}}
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +34,10 @@
             {{ template_content }}
         </div>
         <footer>
-            {{ partial:footer }}
+            {{ if response_code == 404}}
+            {{ else }}
+                {{ partial:footer }}
+            {{ /if }}
         </footer>
         {{ vite src="resources/js/formuleKano.js" }}
         {{ vite src="resources/js/time.js" }}
