@@ -1,6 +1,8 @@
-<dotlottie-player class="w-full mt-[-1rem] h-full" autoplay="true" loop="true" mode="normal"
-    src="assets/img/waves.lottie"></dotlottie-player>
-<section class="flex m-[-0.5rem] justify-around bg-DOKano-darkBlue p-5 text-standards-white">
+<dotlottie-player class="w-full -mb-4 h-full" autoplay="true" loop="true" mode="normal"
+    src="assets/img/waves.lottie">
+</dotlottie-player>
+
+<section class="flex justify-around bg-DOKano-darkBlue p-5 text-standards-white">
     <div>
         <div class="mb-3">
             {{ dokano_info:adres }}
@@ -9,22 +11,29 @@
         <div>
             {{ dokano_info:openingsuren }}
         </div>
-
     </div>
 
     <div>
         <ul class="flex gap-6 mt-[5rem]">
-            <li><a href="https://www.facebook.com/dokanogent" target="_blank"><img src="assets/img/facebook.svg"
-                        alt="facebook logo"></a></li>
-            <li><a href="https://www.instagram.com/dokanogent" target="_blank"><img src="assets/img/instagram.svg"
-                        alt="instagram logo"></a></li>
+            <li>
+                <a href="https://www.facebook.com/dokanogent" target="_blank">
+                    <img src="assets/img/facebook.svg" alt="facebook logo">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/dokanogent" target="_blank">
+                    <img src="assets/img/instagram.svg" alt="instagram logo">
+                </a>
+            </li>
         </ul>
     </div>
 
     <nav>
         <ul>
             {{ nav:footer }}
-            <li class="ml-[3rem]"><a href="{{ url }}">{{ title }}</a></li>
+                <li class="ml-[3rem]">
+                    <a href="{{ url }}">{{ title }}</a>
+                </li>
             {{ /nav:footer }}
         </ul>
     </nav>
