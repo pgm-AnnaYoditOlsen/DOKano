@@ -1,5 +1,5 @@
 {{# standard layout file for the homepage #}}
-
+{{#
 <section>
   <div id="loading" class="bg-DOKano-lightblue fixed top-0 min-h-screen h-screen w-full z-10">
     <div class="overflow-hidden">
@@ -7,15 +7,18 @@
         data-animation="loadingImage" src="assets/img/gele_kano.svg" alt="kano" />
     </div>
   </div>
-</section>
+</section> #}}
 
 <section class="">
   <div>
-    <img class="w-full h-auto" src="assets/img/DOKano.svg" alt="DOKano Image">
+    <img class="min-w-[100vw] min-h-[100vh] w-full h-auto" src="assets/img/bgHome.png" alt="DOKano Image">
+    <dotlottie-player class="absolute top-[20rem] left-[26.5rem] -rotate-[40deg] w-[30rem] mt-[-1rem] h-full" autoplay="true" loop="true" mode="normal" src="assets/img/kanoVaarder.lottie"></dotlottie-player>
     <img class="absolute w-[40%] top-40 left-1/2 transform -translate-x-1/2" src="assets/img/logo.svg" alt="Logo">
   </div>
+  
 
-  <div class="fade-up flex flex-col mx-auto md:mt-[-24rem] sm:mt-[-13rem] text-center">
+
+  <div class="fade-up flex flex-col mx-auto md:mt-[-14rem] sm:mt-[-13rem] text-center">
     <h1 class="text-[36px] font-standard">
       {{ title }}
     </h1>
@@ -33,7 +36,8 @@
         {{ collection:evenementen limit="3" }}
         <a id="event{{index}}" href="{{ url }}" class="relative min-w-full px-[2rem] py-[1rem] snap-center">
           <div>
-            <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}" alt="{{ panel_image.alt }}">
+            <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}"
+              alt="{{ panel_image.alt }}">
           </div>
           <div>
             <h3 class="font-standard text-[24px] font-bold">{{ title }}</h3>
@@ -42,10 +46,11 @@
         </a>
         {{ /collection:evenementen }}
       </div>
-  
+
       <div class="flex justify-center mt-4">
         {{ collection:evenementen limit="3" }}
-        <a href="#event{{index}}" class="nav-point event-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
+        <a href="#event{{index}}"
+          class="nav-point event-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
         {{ /collection:evenementen }}
       </div>
 
@@ -96,18 +101,20 @@
     <section class="mt-[7rem] relative">
       <div class="activitys gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem]">
         {{ activity_photos }}
-        <img id="activity{{index}}" class="min-w-full px-[1rem] snap-center relative h-[30rem] object-cover w-full mx-auto"
-          src="{{ url }}" alt="{{ alt }}">
+        <img id="activity{{index}}"
+          class="min-w-full px-[1rem] snap-center relative h-[30rem] object-cover w-full mx-auto" src="{{ url }}"
+          alt="{{ alt }}">
         {{ /activity_photos }}
       </div>
-    
+
       <div class="flex justify-center mt-4">
         {{ activity_photos }}
-        <a href="#activity{{index}}" class="nav-point activity-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
+        <a href="#activity{{index}}"
+          class="nav-point activity-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
         {{ /activity_photos }}
       </div>
     </section>
-    
+
 
     <section class="mt-[7rem]">
       <h2 class="text-center font-standard mb-[2rem] text-[36px]">Scoreboard</h2>
