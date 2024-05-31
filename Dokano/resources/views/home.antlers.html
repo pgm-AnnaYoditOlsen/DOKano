@@ -10,11 +10,14 @@
 </section> -->
 
 <section class="">
-  <div class="relative w-full">
+  <div class="relative w-full ml-[-0.03rem] mt-[-0.5rem] -z-40">
     <img class="min-w-[100vw] min-h-[100vh] w-full h-auto" src="assets/img/bgHome.png" alt="DOKano Image">
-    <img class="absolute w-3/4 md:w-1/2 lg:w-[30%] top-[15%] md:top-24 lg:top-64 left-1/2 transform -translate-x-1/2" src="assets/img/logo.svg" alt="Logo">
-    <dotlottie-player class="absolute top-[12rem] md:top-[15rem] lg:top-80 xl:top-[30rem] 2xl:top-[38rem] left-1/2 w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80 xl:w-[30rem] xl:h-[30rem] transform -translate-x-1/2  -rotate-[40deg]" autoplay loop mode="normal" src="assets/img/kanoVaarder.lottie"></dotlottie-player>
-</div>
+    <img class="absolute w-3/4 md:w-1/2 lg:w-[30%] top-[15%] md:top-24 lg:top-64 left-1/2 transform -translate-x-1/2"
+      src="assets/img/logo.svg" alt="Logo">
+    <dotlottie-player
+      class="absolute top-[12rem] md:top-[15rem] lg:top-80 xl:top-[27rem] 2xl:top-[38rem] left-1/2 w-40 h-40 md:w-60 md:h-60 lg:w-80 lg:h-80 xl:w-[30rem] xl:h-[30rem] transform -translate-x-1/2  -rotate-[40deg]"
+      autoplay loop mode="normal" src="assets/img/kanoVaarder.lottie"></dotlottie-player>
+  </div>
 
   <div class="fade-up flex flex-col mx-auto md:mt-[-14rem] sm:mt-[-13rem] text-center">
     <h1 class="text-[36px] font-standard">
@@ -32,16 +35,16 @@
     <section class="mt-[10rem] relative">
       <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[40rem] hide-scrollbar">
         {{ collection:evenementen limit="3" }}
-          <a id="event{{index}}" href="{{ url }}" class="relative min-w-full px-[2rem] py-[1rem] snap-center">
-            <div>
-              <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}"
-                alt="{{ panel_image.alt }}">
-            </div>
-            <div>
-              <h3 class="font-standard text-[24px] font-bold">{{ title }}</h3>
-              <p>{{ beschrijving }}</p>
-            </div>
-          </a>
+        <a id="event{{index}}" href="{{ url }}" class="relative min-w-full px-[2rem] py-[1rem] snap-center">
+          <div>
+            <img class="max-w-[40rem] w-full h-[17rem] object-cover" src="{{ panel_image.url }}"
+              alt="{{ panel_image.alt }}">
+          </div>
+          <div>
+            <h3 class="font-standard text-[24px] font-bold">{{ title }}</h3>
+            <p>{{ beschrijving }}</p>
+          </div>
+        </a>
         {{ /collection:evenementen }}
       </div>
 
@@ -61,15 +64,16 @@
     </section>
 
     <section class="mt-[8rem] relative">
-      <div class="fix-grid mb-[3rem] px-[2] mx-w-[80%] md:grid md:grid-cols-2 justify-items-center md:grid-rows-2 lg:grid-cols-3 lg:col-auto lg:grid-rows-1 gap-[2rem]">
+      <div
+        class="fix-grid mb-[3rem] px-[2] mx-w-[80%] md:grid md:grid-cols-2 justify-items-center md:grid-rows-2 lg:grid-cols-3 lg:col-auto lg:grid-rows-1 gap-[2rem]">
         {{ collection:paginas limit="3" }}
-          <a href="{{ url }}"
-            class="fade-up pageIndex mx-[2rem] mb-[2rem] pb-[1rem] card-highlight text-standards-white block bg-DOKano-lightblue rounded-xl lg:w-72">
-            <img class="lg:col-auto rounded-xl max-h-[10rem] w-full object-cover" src="{{ hero_image.url }}"
-              alt="{{ hero_image.alt }}">
-            <h3 class="p-3 text-center font-standard text-2xl">{{ title }}</h3>
-            <p class="p-3 text-center font-alternative text-sm">{{home_info}}</p>
-          </a>
+        <a href="{{ url }}"
+          class="fade-up pageIndex mx-[2rem] mb-[2rem] pb-[1rem] card-highlight text-standards-white block bg-DOKano-lightblue rounded-xl lg:w-72">
+          <img class="lg:col-auto rounded-xl max-h-[10rem] w-full object-cover" src="{{ hero_image.url }}"
+            alt="{{ hero_image.alt }}">
+          <h3 class="p-3 text-center font-standard text-2xl">{{ title }}</h3>
+          <p class="p-3 text-center font-alternative text-sm">{{home_info}}</p>
+        </a>
         {{ /collection:paginas }}
       </div>
     </section>
@@ -80,16 +84,17 @@
         alt="canoe wave">
       <div class="flex list__canoes flex-wrap justify-center gap-[4rem] mt-[8rem]">
         {{ collection:kanos limit="3" }}
-          <div class="list__items__canoes max-w-[13.3rem] w-full">
-            <img class="max-w-[20rem] w-full" src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
-            <h3 class="text-center font-standard text-2xl">{{ name }}</h3>
-            <p class="text-center font-alternative text-sm">{{ info }}</p>
-          </div>
+        <div class="list__items__canoes max-w-[13.3rem] w-full">
+          <img class="max-w-[20rem] w-full" src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
+          <h3 class="text-center font-standard text-2xl">{{ name }}</h3>
+          <p class="text-center font-alternative text-sm">{{ info }}</p>
+        </div>
         {{ /collection:kanos }}
       </div>
     </section>
 
-    <section class="max-w-[40rem] mt-[7rem] w-full mx-auto flex flex-col justify-center mx-auto font-standard md:max-w-[30rem] w-full px-2">
+    <section
+      class="max-w-[40rem] mt-[7rem] w-full mx-auto flex flex-col justify-center mx-auto font-standard md:max-w-[30rem] w-full px-2">
       <h2 class="text-[60px] text-DOKano-yellow text-center font-alternative">{{title_drijfvuil}}</h2>
       <h3 class="text-[36px] font-bold text-center font-standard">{{teaser_drijfvuil}}</h3>
       <p class="mt-[1.5rem] font-alternative">{{text_drijfvuil}}</p>
@@ -98,15 +103,15 @@
     <section class="mt-[7rem] relative">
       <div class="activitys gap-2 overflow-x-auto flex snap-x scroll-smooth mx-auto max-w-[50rem] hide-scrollbar">
         {{ activity_photos }}
-          <img id="activity{{index}}"
-            class="min-w-full px-[1rem] snap-center relative h-[30rem] object-cover w-full mx-auto" src="{{ url }}"
-            alt="{{ alt }}">
+        <img id="activity{{index}}"
+          class="min-w-full px-[1rem] snap-center relative h-[30rem] object-cover w-full mx-auto" src="{{ url }}"
+          alt="{{ alt }}">
         {{ /activity_photos }}
       </div>
 
       <div class="flex justify-center mt-4">
         {{ activity_photos }}
-          <a href="#activity{{index}}"
+        <a href="#activity{{index}}"
           class="nav-point activity-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
         {{ /activity_photos }}
       </div>
@@ -119,7 +124,8 @@
         <div class="teams max-w-[50rem] w-full mx-auto">
           {{ teams limit="6"}}
           <div class="flex sm:gap-[4rem] mb-5 flex-wrap justify-center items-center">
-            <dotlottie-player class="max-w-[10rem] sm:block hidden w-full h-[10rem]" autoplay="true" loop="true" mode="normal" src="assets/img/crown.lottie"></dotlottie-player>
+            <dotlottie-player class="max-w-[10rem] sm:block hidden w-full h-[10rem]" autoplay="true" loop="true"
+              mode="normal" src="assets/img/crown.lottie"></dotlottie-player>
             {{ if !team_foto:url }}
             <img class="max-w-[5rem] w-full h-[5rem] rounded-full" src="assets/img/DOKano.svg" alt="dokano">
             {{ else }}
@@ -145,7 +151,7 @@
       <h2 class="text-center mb-[3rem]  font-standard text-[36px]">Met dank aan onze sponsors</h2>
       <section class="w-80 lg:w-[60rem] mx-auto flex flex-wrap gap-5">
         {{ sponsers }}
-          <img class="h-12 " src="{{ url }}" alt="{{ alt }}">
+        <img class="h-12 " src="{{ url }}" alt="{{ alt }}">
         {{ /sponsers }}
       </section>
     </section>
