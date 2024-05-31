@@ -24,7 +24,3 @@ Route::post('webhooks', [MollieController::class, 'webhooks'])
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
     ])
     ->name('webhooks.mollie');
-
-    Route::get("home" , function(){
-        return view("home");
-    });
