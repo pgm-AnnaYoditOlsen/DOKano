@@ -1,6 +1,6 @@
 title: Jeugdbeweging
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716990705
+updated_at: 1717494607
 blueprint: formule_category
 tijdstip:
   - '1u30 - 3u00'
@@ -13,5 +13,14 @@ available_days:
   -
     id: lwlympwy
     date: '2024-05-30'
+  -
+    id: lx07unj6
+    date: '2024-06-05'
+  -
+    id: lx07v36p
+    date: '2024-06-06'
+  -
+    id: lx07v5lr
+    date: '2024-06-07'
 price_adult: 15.0
 price_children: 5.0
