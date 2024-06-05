@@ -14,7 +14,7 @@ theme: {
                 standards: {
                     white: '#FFFFFF',
                     black: '#000000', 
-                    grey: '#C5CAD8',
+                    grey: '#c5cad86d',
                     lightgrey: '#FAFAFA',
                     bordergrey: '#e5e7eb',
                 },
@@ -29,7 +29,7 @@ theme: {
             },
             //condendsed font
             fontFamily: {
-                standard: ['Futura PT', 'sans-serif'],
+                standard: ['Futura PT Condensed', 'sans-serif'],
                 alternative: ['New Spirit Condensed', 'serif'],
             },
         },

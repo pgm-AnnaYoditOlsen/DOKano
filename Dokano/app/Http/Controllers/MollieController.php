@@ -29,7 +29,7 @@ class MollieController extends Controller
             ],
             "description" => $request->formule,
             "redirectUrl" => route('payment.success'),
-            // "webhookUrl" => route('webhooks.mollie'),
+            "webhookUrl" => route('webhooks.mollie'),
             "metadata" => [
                 "order_id" => time(),
                 "data" => json_encode($request->all()),
@@ -83,6 +83,7 @@ class MollieController extends Controller
     public function webhooks(Request $request)
     {
         $paymentId = $request->id;
+        Log::info('Webhook received for payment ID: ' . $paymentId);
         $payment = Mollie::api()->payments->get($paymentId);
 
         $formData = json_decode($payment->metadata->data, true);
@@ -94,12 +95,17 @@ class MollieController extends Controller
             });
 
             foreach ($submissions as $submission) {
+                $submissionData = $submission->data()->toArray();
                 if ($payment->isPaid()) {
-                    $submission->data(array_merge($submission->data(), [
+                    Log::info('Payment is paid for payment ID: ' . $paymentId);
+                    $submission->data(array_merge($submissionData, [
                         'payment_status' => 'paid'
                     ]));
                 } elseif ($payment->isFailed() || $payment->isExpired() || $payment->isCanceled()) {
-                    return redirect()->route('payment.cancel')->with('error', 'Payment failed, expired or canceled.');
+                    Log::info('Payment failed, expired, or canceled for payment ID: ' . $paymentId);
+                    $submission->data(array_merge($submissionData, [
+                        'payment_status' => 'canceled'
+                    ]));
                 }
                 $submission->save();
             }
