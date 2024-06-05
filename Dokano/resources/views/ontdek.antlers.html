@@ -3,7 +3,10 @@
         <section class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:justify-between items-center">
             <h1 class="text-3xl font-bold mt-12 mb-5 items-center text-center">{{ title }}</h1>
             <div class="md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:items-center md:gap-20">
-                <iframe class="h-80 lg:h-96 lg:w-1/2 mb-4 md:pt-6 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5962.457370745179!2d3.7283403135091757!3d51.07331268155892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c371f8fbead23f%3A0x5564e9e2d3764ec1!2sDOKANO%20-%20kano&#39;s!5e0!3m2!1snl!2sbe!4v1702149068272!5m2!1snl!2sbe" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="h-80 lg:h-96 lg:w-1/2 mb-4 md:pt-6 rounded"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5962.457370745179!2d3.7283403135091757!3d51.07331268155892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c371f8fbead23f%3A0x5564e9e2d3764ec1!2sDOKANO%20-%20kano&#39;s!5e0!3m2!1snl!2sbe!4v1702149068272!5m2!1snl!2sbe"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div class="custom max-w-xs xl:max-w-lg">
                     {{content}}
                 </div>
@@ -16,19 +19,39 @@
         <h2 class="text-3xl font-bold mt-12 mb-5 items-center text-center">{{ subtitle_volunteer }}</h2>
         <div class="md:max-w-2xl lg:max-w-4xl xl:max-w-6xl lg:flex lg:flex-row-reverse lg:justify-between">
             <div class="rounded">
-                <img class="object-cover w-full h-80 xl:h-96 lg:max-w-md xl:max-w-lg rounded" src="{{ foto_volunteer.url }}" alt="{{ foto_volunteer.alt }}">
+                <img class="object-cover w-full h-80 xl:h-96 lg:max-w-md xl:max-w-lg rounded"
+                    src="{{ foto_volunteer.url }}" alt="{{ foto_volunteer.alt }}">
             </div>
             <div class="custom lg:max-w-md xl:max-w-lg">
                 {{ content_volunteer }}
-                
+
                 {{ collection:pages in="vrijwilligers" }}
-                    <input type="text" name="naam" placeholder="Naam">
-                    <input type="email" name="email" placeholder="Email">
-                    <input type="text" name="gsm" placeholder="GSM">
-                    <textarea name="beschikbaarheid" placeholder="Beschikbaarheid"></textarea>
-                    <button type="submit">Submit</button>
-                {{ /collection:pages in="vrijwilligers" }} 
-            
+                <div class="mt-4">
+                    <label for="naam" class="block text-black font-bold mb-2">Naam*</label>
+                    <input type="text" id="naam" name="naam" placeholder="Naam..."
+                        class="w-full px-3 py-2 border border-gray-300 rounded">
+                </div>
+                <div class="mt-4">
+                    <label for="email" class="block text-black font-bold mb-2">E-mail*</label>
+                    <input type="email" id="email" name="email" placeholder="E-mail..."
+                        class="w-full px-3 py-2 border border-gray-300 rounded">
+                </div>
+                <div class="mt-4">
+                    <label for="gsm" class="block text-black font-bold mb-2">Gsm-nummer*</label>
+                    <input type="text" id="gsm" name="gsm" placeholder="Gsm nummer..."
+                        class="w-full px-3 py-2 border border-gray-300 rounded">
+                </div>
+                <div class="mt-4">
+                    <label for="beschikbaarheid" class="block text-black font-bold mb-2">Beschikbaarheid*</label>
+                    <textarea id="beschikbaarheid" name="beschikbaarheid" placeholder="Beschikbaarheid..."
+                        class="w-full px-3 py-2 border border-gray-300 rounded"></textarea>
+                </div>
+                <div class="mt-4">
+                    <button type="submit"
+                        class="bg-DOKano-yellow hover:bg-DOKano-hoveredYellow smooth-hover text-white font-bold py-2 px-4 rounded-full">Submit</button>
+                </div>
+                {{ /collection:pages in="vrijwilligers" }}
+
             </div>
         </div>
     </section>
@@ -38,7 +61,8 @@
             <h2 class="text-3xl font-bold mb-5 items-center text-center">{{ subtitle_donations }}</h2>
             <div class="md:max-w-2xl lg:max-w-4xl xl:max-w-6xl lg:flex lg:justify-between">
                 <div class="rounded">
-                    <img class="object-cover w-full h-80 xl:h-96 lg:max-w-md xl:max-w-lg rounded" src="{{ foto_donations.url }}" alt="{{ foto_donations.alt}}">
+                    <img class="object-cover w-full h-80 xl:h-96 lg:max-w-md xl:max-w-lg rounded"
+                        src="{{ foto_donations.url }}" alt="{{ foto_donations.alt}}">
                 </div>
                 <div class="custom lg:max-w-md xl:max-w-lg">
                     {{ content_donations }}
@@ -66,10 +90,12 @@
                 <p class="mb-4 font-bold">{{ alt }}</p>
                 <img class="rounded object-cover object-top h-80 xl:h-96 w-full" src="{{ url }}" alt="{{ alt }}">
                 <div class="flex justify-center">
-                    <button class="bg-DOKano-yellow hover:bg-DOKano-hoveredYellow text-white font-bold py-2 px-4 rounded-full mt-2">Download {{ alt }}</button>
+                    <button
+                        class="bg-DOKano-yellow hover:bg-DOKano-hoveredYellow text-white font-bold py-2 px-4 rounded-full mt-2">Download
+                        {{ alt }}</button>
                 </div>
             </a>
             {{ /sailing_charts }}
-        </div>              
+        </div>
     </section>
 </div>
