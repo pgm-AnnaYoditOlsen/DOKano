@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Functie om categorieën op te halen en te cachen
+
     function fetchAndCacheCategories() {
         fetch('get-available-days')
             .then(response => {
@@ -10,22 +10,63 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(data => {
                 sessionStorage.setItem('categories', JSON.stringify(data));
+                console.log('Fetched and cached categories:', data);
             })
             .catch(error => {
                 console.error(error);
             });
     }
 
-    // Functie om de datepicker te initialiseren
+    function convertToDayIndex(day) {
+        const days = {
+            'zo': 0,
+            'ma': 1,
+            'di': 2,
+            'wo': 3,
+            'do': 4,
+            'vr': 5,
+            'za': 6
+        };
+        return days[day];
+    }
+
+    function isFutureFixedDay(date, fixedDays) {
+        let currentDayOfWeek = date.getDay();
+        let fixedDayIndices = fixedDays.map(day => convertToDayIndex(day));
+        let today = new Date();
+
+        return fixedDayIndices.includes(currentDayOfWeek) && date >= today;
+    }
+
     function initializeDatepicker(category) {
         let categoriesData = JSON.parse(sessionStorage.getItem('categories'));
-        let availableDates = categoriesData[category] || [];
+        if (!categoriesData || !categoriesData[category]) {
+            console.error('Categorie data niet gevonden voor:', category);
+            return;
+        }
+
+        let availableDates = categoriesData[category].availableDates || [];
+        let fixedDays = categoriesData[category].fixedDays || [];
+        let notAvailableDates = categoriesData[category].notAvailableDates || [];
+
+        console.log('Initialiseer datepicker voor categorie:', category, availableDates, fixedDays, notAvailableDates);
 
         $('#datePicker').datepicker('destroy');
         $('#datePicker').datepicker({
+            dateFormat: 'dd-mm-yy',
             beforeShowDay: function(date) {
                 let dateString = $.datepicker.formatDate('dd-mm-yy', date);
-                if (availableDates.includes(dateString)) {
+                let today = new Date();
+
+                if (notAvailableDates.includes(dateString)) {
+                    return [false, '', 'Niet beschikbaar'];
+                }
+
+                if (date < today) {
+                    return [false, '', 'Niet beschikbaar'];
+                }
+
+                if (availableDates.includes(dateString) || isFutureFixedDay(date, fixedDays)) {
                     return [true, 'available-date', 'Beschikbaar'];
                 } else {
                     return [false, '', 'Niet beschikbaar'];
@@ -38,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('datePicker').disabled = true;
 
-    // datepicker initialiseren wanneer een formule wordt geselecteerd
     document.querySelectorAll('input[name="formule"]').forEach((radio) => {
         radio.addEventListener('change', function() {
             const selectedCategory = document.querySelector('input[name="formule"]:checked').value;

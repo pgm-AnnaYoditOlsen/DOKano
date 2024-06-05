@@ -1,6 +1,6 @@
 title: Weekendvaren
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716987711
+updated_at: 1717582602
 blueprint: formule_category
 price_adult: 15.0
 price_children: 5.0
@@ -20,22 +20,19 @@ dagen:
   -
     id: lwj9nzux
     available_days: '2024-05-25'
+fixed_days:
+  - za
+  - zo
+not_available:
+  -
+    id: lx0z2ty0
+    days: '2024-06-08'
+    date: '2024-06-08'
+  -
+    id: lx0z33j5
+    days: '2024-06-15'
+    date: '2024-06-15'
 available_days:
   -
-    id: lwjs1cj3
-    date: '2024-05-22'
-  -
-    id: lwj9r9x9
-    date: '2024-05-25'
-  -
-    id: lwj9rput
-    date: '2024-05-26'
-  -
-    id: lwj9ss35
-    date: '2024-06-01'
-  -
-    id: lwjsj4df
-    date: '2024-05-17'
-  -
-    id: lwjsj8k2
-    date: '2024-05-18'
+    id: lx1l1x0f
+    date: '2024-06-04'
