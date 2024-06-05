@@ -113,8 +113,8 @@
         <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
           for="aantal_volwassenen">Aantal
           volwassenen:</label>
-        <input type="number" name="aantal_volwassenen" id="aantal_volwassenen" value=""
-          class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="" required min="0" max="25"
+        <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
+          class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="0" required min="0" max="25"
           data-price="">
       </div>
 
@@ -123,29 +123,36 @@
           for="aantal_kinderen">Aantal
           kinderen:</label>
         <input type="number" name="aantal_kinderen" id="aantal_kinderen"
-          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="" min="0" max="25"
+          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="0" min="0" max="25"
           data-price="">
       </div>
 
       <div class="flex flex-col md:flex-row  md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kanos">Aantal
+        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
+          for="aantal_kinderen">Aantal
           kanos:</label>
         <input type="number" name="aantal_kanos" id="aantal_kanos"
-          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="" min="0" max="25"
+          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="0" min="0" max="25"
           data-price="">
       </div>
     </div>
 
     <div class="mx-auto max-w-[88%] md:max-w-full mt-8 mb-4">
-      <button type="button" id="checkAvailability" class="p-2 bg-standards-grey font-alternative text-[18px] hover:text-standards-white hover:bg-DOKano-yellow smooth-hover w-full text-standards-black rounded">
+      <button type="button" id="checkAvailability"
+        class="p-2 bg-standards-grey font-alternative text-[18px] hover:text-standards-white hover:bg-DOKano-yellow smooth-hover w-full text-standards-black rounded">
         Check de beschikbare kano's
       </button>
 
-      <div class="flex justify-center gap-9 my-4">
-        <button type="button" id="showCanoes" class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kano's</button>
-        <button type="button" id="showKayaks" class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kajaks</button>
-      </div>
 
+
+      <div class="flex justify-center gap-9 my-4">
+        <button type="button" id="showCanoes"
+          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kano's</button>
+        <button type="button" id="showBoth"
+          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Beide</button>
+        <button type="button" id="showKayaks"
+          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kajaks</button>
+      </div>
 
       <div class="mt-4 flex flex-wrap justify-between md:justify-start items-center md:gap-8">
         <div class="w-24 md:text-right">
@@ -193,107 +200,108 @@
           {{ /collection:kanos }}
         </div>
       </div>
+    </div>
 
-      <div class="bg-standards-white p-4 rounded-lg shadow-lg max-w-full w-full mx-auto">
-        <h2 class="font-standard text-md text-standards-black text-center">Beschikbaarheid kanos</h2>
-        <div id="canoeAvailability"></div>
+    <div class="bg-standards-white p-4 rounded-lg shadow-lg max-w-full w-full mx-auto">
+      <h2 class="font-standard text-md text-standards-black text-center">Beschikbaarheid kanos</h2>
+      <div id="canoeAvailability"></div>
+    </div>
+
+    <div class="flex gap-3 flex-wrap md:gap-8 mx-auto max-w-[88%] md:max-w-full mt-8 mb-4">
+      <div class="w-24 md:text-right">
+        <label class="font-standard text-md text-standards-black" for="opmerkingen">Opmerkingen:</label>
+      </div>
+      <textarea name="opmerkingen" id="opmerkingen"
+        class="w-[31rem] h-24 border-b-2 border-standards-grey text-standards-black text-sm"
+        placeholder="Geef hier uw extra opmerkingen" required></textarea>
+    </div>
+
+    <div class="mx-auto max-w-[88%] md:max-w-full">
+      <p id="error"></p>
+      <button class="text-right submit" id="next1" type="button">Verder</button>
+    </div>
+  </div>
+
+  <div id="form2" class="transition-all form-2 mx-auto max-w-[88%] md:max-w-full items-center">
+    <h2 class="text-standards-black text-xl text-center">Gegevens</h2>
+
+    <div class="mx-auto md:w-3/5">
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="voornaam">Voornaam:</label>
+        <input type="text" name="voornaam" id="firstName"
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Voornaam" required>
       </div>
 
-      <div class="flex gap-3 flex-wrap md:gap-8 mx-auto max-w-[88%] md:max-w-full mt-8 mb-4">
-        <div class="w-24 md:text-right">
-          <label class="font-standard text-md text-standards-black" for="opmerkingen">Opmerkingen:</label>
-        </div>
-        <textarea name="opmerkingen" id="opmerkingen"
-          class="w-[31rem] h-24 border-b-2 border-standards-grey text-standards-black text-sm"
-          placeholder="Geef hier uw extra opmerkingen" required></textarea>
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="achternaam">Achternaam:</label>
+        <input type="text" name="achternaam" id="lastName"
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Achternaam" required>
       </div>
 
-      <div class="mx-auto max-w-[88%] md:max-w-full">
-        <p id="error"></p>
-        <button class="text-right submit" id="next1" type="button">Verder</button>
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="email">Email:</label>
+        <input type="email" name="email" id="email"
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Email" required autocomplete="on">
+      </div>
+
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="telefoon">Telefoon:</label>
+        <input type="tel" name="telefoon" id="tel"
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Nummer" required>
       </div>
     </div>
 
-    <div id="form2" class="transition-all form-2 mx-auto max-w-[88%] md:max-w-full items-center">
-      <h2 class="text-standards-black text-xl text-center">Gegevens</h2>
-
-      <div class="mx-auto md:w-3/5">
-        <div
-          class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-          <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
-            for="voornaam">Voornaam:</label>
-          <input type="text" name="voornaam" id="firstName"
-            class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
-            placeholder="Voornaam" required>
-        </div>
-
-        <div
-          class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-          <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
-            for="achternaam">Achternaam:</label>
-          <input type="text" name="achternaam" id="lastName"
-            class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
-            placeholder="Achternaam" required>
-        </div>
-
-        <div
-          class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-          <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
-            for="email">Email:</label>
-          <input type="email" name="email" id="email"
-            class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
-            placeholder="Email" required autocomplete="on">
-        </div>
-
-        <div
-          class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-          <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
-            for="telefoon">Telefoon:</label>
-          <input type="tel" name="telefoon" id="tel"
-            class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
-            placeholder="Nummer" required>
-        </div>
+    <div class="flex gap-2 justify-between">
+      <div>
+        <button class="text-right back" id="back1" type="button">back</button>
       </div>
 
-      <div class="flex gap-2 justify-between">
-        <div>
-          <button class="text-right back" id="back1" type="button">back</button>
-        </div>
+      <p id="error2"></p>
 
-        <p id="error2"></p>
-
-        <div>
-          <button id="next2" class="text-right submit" type="button">verder</button>
-        </div>
+      <div>
+        <button id="next2" class="text-right submit" type="button">verder</button>
       </div>
     </div>
+  </div>
 
-    <div id="form3" class="transition-all form-2 mx-auto max-w-[88%] md:max-w-full items-center">
-      <h2 class="text-standards-black text-xl text-center">Overzicht</h2>
+  <div id="form3" class="transition-all form-2 mx-auto max-w-[88%] md:max-w-full items-center">
+    <h2 class="text-standards-black text-xl text-center">Overzicht</h2>
 
-      <div class="text-standards-black mt-8" id="overview">
+    <div class="text-standards-black mt-8" id="overview">
+    </div>
+    <div class="text-standards-black flex gap-2">
+      <label class="text-standards-black" for="total_price">Totaal prijs:</label>
+      <p id="totalPriceDisplay"></p>
+      <input type="hidden" name="total_price" id="totaal_prijs">
+    </div>
+
+
+    <div class="flex gap-2 justify-between">
+      <div>
+        <button class="text-right back" id="back2" type="button">back</button>
       </div>
-      <div class="text-standards-black flex gap-2">
-        <label class="text-standards-black" for="total_price">Totaal prijs:</label>
-        <p id="totalPriceDisplay"></p>
-        <input type="hidden" name="total_price" id="totaal_prijs">
-      </div>
 
-
-      <div class="flex gap-2 justify-between">
-        <div>
-          <button class="text-right back" id="back2" type="button">back</button>
-        </div>
-
-        <div>
-          <button class="text-right back" type="submit" id="checkout-button">betalen</button>
-        </div>
+      <div>
+        <button class="text-right back" type="submit" id="checkout-button">betalen</button>
       </div>
     </div>
-    {{ /form:create in="boeking" }}
+  </div>
+  {{ /form:create in="boeking" }}
 </section>
 
-{{ vite src="resources/js/toggleCanoesAndKayaks.js"}}
+{{ vite src="resources/js/toggleCanoesAndKayaks.js" }}
 {{ vite src="resources/js/overview.js" }}
 {{ vite src="resources/js/price.js" }}
 {{ vite src="resources/js/datepicker.js" }}

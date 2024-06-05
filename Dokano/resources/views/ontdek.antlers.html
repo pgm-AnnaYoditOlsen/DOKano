@@ -20,6 +20,15 @@
             </div>
             <div class="custom lg:max-w-md xl:max-w-lg">
                 {{ content_volunteer }}
+                
+                {{ collection:pages in="vrijwilligers" }}
+                    <input type="text" name="naam" placeholder="Naam">
+                    <input type="email" name="email" placeholder="Email">
+                    <input type="text" name="gsm" placeholder="GSM">
+                    <textarea name="beschikbaarheid" placeholder="Beschikbaarheid"></textarea>
+                    <button type="submit">Submit</button>
+                {{ /collection:pages in="vrijwilligers" }} 
+            
             </div>
         </div>
     </section>

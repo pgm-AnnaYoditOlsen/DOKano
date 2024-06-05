@@ -27,3 +27,12 @@ document.querySelectorAll('.canoe-item').forEach(function(item) {
     item.classList.add('block');
     item.classList.remove('hidden');
 });
+
+//show both canoes and kayaks
+document.getElementById('showBoth').addEventListener('click', function() {
+    console.log('showBoth clicked');
+    document.querySelectorAll('.canoe-item').forEach(function(item) {
+        item.classList.add('block');
+        item.classList.remove('hidden');
+    });
+});
