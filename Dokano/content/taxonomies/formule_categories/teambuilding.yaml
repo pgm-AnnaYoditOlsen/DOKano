@@ -1,6 +1,6 @@
 title: Teambuilding
 updated_by: c3156d07-bd3b-4b0e-8dc5-9cb5f495810c
-updated_at: 1716987703
+updated_at: 1717529634
 blueprint: formule_category
 tijdstip:
   - '0u00 - 1u30'
@@ -13,6 +13,10 @@ tijdstip:
 available_days:
   -
     id: lwly1w29
-    date: '2024-05-31'
-price_adult: 15.0
-price_children: 5.0
+    date: '2024-06-11'
+  -
+    id: lx0ssjcj
+    date: '2024-06-13'
+fixed_days:
+  - di
+  - do

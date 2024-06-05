@@ -13,7 +13,6 @@ class AvailableDaysController extends Controller
 {
     public function getAvailableDays(Request $request)
     {
-        
         $taxonomy = Taxonomy::findByHandle('formule_categories');
         $terms = $taxonomy->queryTerms()->get();
 
@@ -23,6 +22,8 @@ class AvailableDaysController extends Controller
             foreach ($terms as $term) {
                 $title = $term->title;
                 $days = $term->get('available_days') ?? [];
+                $fixedDays = $term->get('fixed_days') ?? [];
+                Log::info('Vaste dagen', $fixedDays);
 
                 $availableDates = [];
                 foreach ($days as $item) {
@@ -30,13 +31,20 @@ class AvailableDaysController extends Controller
                     if ($datum && Carbon::createFromFormat('Y-m-d', $datum)->isFuture()) {
                         $formattedDate = Carbon::createFromFormat('Y-m-d', $datum)->format('d-m-Y');
                         $availableDates[] = $formattedDate;
-                        $allAvailableDates[$title][] = $formattedDate;
                     }
                 }
+
+                $allAvailableDates[$title] = [
+                    'availableDates' => $availableDates,
+                    'fixedDays' => $fixedDays
+                ];
             }
+
+            Log::info('Beschikbare datums per categorie', $allAvailableDates);
             return response()->json($allAvailableDates);
         } else {
             Log::info('Geen termen gevonden.');
+            return response()->json([]);
         }
     }
 }

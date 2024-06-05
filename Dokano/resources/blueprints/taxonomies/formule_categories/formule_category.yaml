@@ -45,6 +45,19 @@ tabs:
                 '21u00 - 22u30': '21u00 - 22u30'
                 '22u30 - 00u00': '22u30 - 00u00'
           -
+            handle: fixed_days
+            field:
+              type: checkboxes
+              display: 'Vaste dagen'
+              options:
+                ma: maandag
+                di: dinsdag
+                wo: woensdag
+                do: donderdag
+                vr: vrijdag
+                za: zaterdag
+                zo: zondag
+          -
             handle: available_days
             field:
               type: grid
@@ -56,6 +69,17 @@ tabs:
                     type: date
                     display: Datum
                     replicator_preview: false
+          -
+            handle: not_available
+            field:
+              type: grid
+              display: 'Niet beschikbare dagen'
+              fields:
+                -
+                  handle: days
+                  field:
+                    type: date
+                    display: dagen
   sidebar:
     display: Sidebar
     sections:
