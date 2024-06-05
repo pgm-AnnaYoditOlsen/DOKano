@@ -27,6 +27,7 @@ theme: {
                     darkBlue: '#3A7EB4',
                 },
             },
+            //condendsed font
             fontFamily: {
                 standard: ['Futura PT', 'sans-serif'],
                 alternative: ['New Spirit Condensed', 'serif'],
