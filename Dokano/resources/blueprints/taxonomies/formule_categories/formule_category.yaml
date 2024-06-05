@@ -76,10 +76,10 @@ tabs:
               display: 'Niet beschikbare dagen'
               fields:
                 -
-                  handle: days
+                  handle: date
                   field:
                     type: date
-                    display: dagen
+                    display: Datum
   sidebar:
     display: Sidebar
     sections:

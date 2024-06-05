@@ -23,7 +23,7 @@ class AvailableDaysController extends Controller
                 $title = $term->title;
                 $days = $term->get('available_days') ?? [];
                 $fixedDays = $term->get('fixed_days') ?? [];
-                Log::info('Vaste dagen', $fixedDays);
+                $notAvailable = $term->get('not_available') ?? [];
 
                 $availableDates = [];
                 foreach ($days as $item) {
@@ -34,9 +34,19 @@ class AvailableDaysController extends Controller
                     }
                 }
 
+                $notAvailableDates = [];
+                foreach ($notAvailable as $item) {
+                    $datum = $item['date'];
+                    if ($datum && Carbon::createFromFormat('Y-m-d', $datum)->isFuture()) {
+                        $formattedDate = Carbon::createFromFormat('Y-m-d', $datum)->format('d-m-Y');
+                        $notAvailableDates[] = $formattedDate;
+                    }
+                }
+
                 $allAvailableDates[$title] = [
+                    'fixedDays' => $fixedDays,
                     'availableDates' => $availableDates,
-                    'fixedDays' => $fixedDays
+                    'notAvailableDates' => $notAvailableDates
                 ];
             }
 
