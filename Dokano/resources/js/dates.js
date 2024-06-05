@@ -17,16 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
-    // Functie om te controleren of een datum een vaste dag is
-    function isFixedDay(date, fixedDays) {
-        const daysMap = {
-            'zo': 0, // Zondag
-            'ma': 1, // Maandag
-            'di': 2, // Dinsdag
-            'wo': 3, // Woensdag
-            'do': 4, // Donderdag
-            'vr': 5, // Vrijdag
-            'za': 6  // Zaterdag
+    function convertToDayIndex(day) {
+        const days = {
+            'zo': 0,
+            'ma': 1,
+            'di': 2,
+            'wo': 3,
+            'do': 4,
+            'vr': 5,
+            'za': 6
         };
         return days[day];
     }
