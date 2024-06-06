@@ -8,8 +8,7 @@
 </div>
 
 <section class="bg-DOKano-lightblue">
-    <div
-        class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:gap-20 lg:gap-40 pt-12 pb-6">
+    <div class="mx-auto max-w-xs md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:flex md:gap-20 lg:gap-40 pt-12 pb-6">
         <div class="max-w-xs lg:max-w-md xl:max-w-lg text-standards-white pb-12 font-standard">
             <h1 class="text-3xl lg:text-4xl pb-6">{{ title }}</h1>
             <div class="custom">
@@ -18,17 +17,20 @@
         </div>
         <div class="mt-8 mb-10 max-w-xs lg:max-w-full xl:max-w-full">
             {{ if slug == "weekendvaren" }}
-                <img class="object-cover h-80 xl:h-96 md:max-w-xs lg:max-w-md xl:max-w-lg" src="{{ foto.url }}" alt="{{ foto.alt}}">
+            <img class="object-cover h-80 xl:h-96 md:max-w-xs lg:max-w-md xl:max-w-lg" src="{{ foto.url }}"
+                alt="{{ foto.alt}}">
             {{ else }}
             <div class="w-full">
                 <p class="text-standards-white text-lg font-bold">Voormiddag</p>
                 <table class="bg-white -ml-2 w-full">
                     {{ table_one }}
-                        <tr>
+                    <tr>
                         {{ cells }}
-                            <td class="lg:first:w-[7.5rem] md:first:text-center text-sm p-3 border-8 border-DOKano-lightblue" >{{ value | markdown }}</td>
+                        <td
+                            class="lg:first:w-[7.5rem] md:first:text-center text-sm p-3 border-8 border-DOKano-lightblue">
+                            {{ value | markdown }}</td>
                         {{ /cells }}
-                        </tr>
+                    </tr>
                     {{ /table_one }}
                 </table>
             </div>
@@ -36,11 +38,13 @@
                 <p class="text-standards-white text-lg font-bold">Namiddag</p>
                 <table class="bg-white -ml-2 w-full">
                     {{ table_two }}
-                        <tr>
+                    <tr>
                         {{ cells }}
-                            <td class="lg:first:w-[7.5rem] md:first:text-center text-sm p-3 border-8 border-DOKano-lightblue">{{ value | markdown }}</td>
+                        <td
+                            class="lg:first:w-[7.5rem] md:first:text-center text-sm p-3 border-8 border-DOKano-lightblue">
+                            {{ value | markdown }}</td>
                         {{ /cells }}
-                        </tr>
+                    </tr>
                     {{ /table_two }}
                 </table>
             </div>
@@ -61,17 +65,18 @@
         <div>
             <div class="gap-2 overflow-x-auto flex snap-x scroll-smooth md:max-w-xs lg:max-w-md hide-scrollbar">
                 {{ foto_carousel }}
-                    <img id="carousel{{index}}" class="min-w-full snap-center relative object-cover h-80 xl:h-96" src="{{ url }}" alt="{{ alt }}">
+                <img id="carousel{{index}}" class="min-w-full snap-center relative object-cover h-80 xl:h-96"
+                    src="{{ url }}" alt="{{ alt }}">
                 {{ /foto_carousel }}
             </div>
             <div class="flex justify-center mt-4">
                 {{ foto_carousel }}
-                    <a href="#carousel{{index}}"
-                    class="nav-point carousel-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer">
-                    </a>
+                <a href="#carousel{{index}}"
+                    class="nav-point carousel-nav-point w-[10px] h-[10px] bg-standards-grey hover:bg-DOKano-lightblue rounded-full mx-[5px] cursor-pointer"></a>
                 {{ /foto_carousel }}
             </div>
         </div>
     </div>
 </section>
+{{ vite src="resources/js/carousel.js" }}
 {{ vite src="resources/js/points.js" }}
