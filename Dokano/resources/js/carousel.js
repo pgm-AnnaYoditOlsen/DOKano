@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupCarousel(containerSelector, itemSelector, navPointSelector) {
       const carousel = document.querySelector(containerSelector);
       const items = document.querySelectorAll(itemSelector);
-      const navPoints = document.querySelectorAll(navPointSelector);
       let index = 0;
 
       function scrollCarousel() {
