@@ -67,7 +67,7 @@
 </section>
 
 <section class="mx-auto max-w-2xl">
-  {{ form:create in="boeking" action="{route:mollie}" }}
+  {{ form:create in="boeking" action="{{ route:mollie }}" }}
   {{ if errors }}
     <div class="bg-red-300 text-white p-2"> {{ errors }} {{ value }}<br>
       {{ /errors }}
@@ -123,7 +123,7 @@
       </div>
 
       <div class="flex flex-col md:flex-row  md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kinderen">Aantal
+        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kanos">Aantal
           kanos:</label>
         <input type="number" name="aantal_kanos" id="aantal_kanos"
           class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="" min="0" max="25"

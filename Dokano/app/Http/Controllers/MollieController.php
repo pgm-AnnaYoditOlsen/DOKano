@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
 use Statamic\Facades\Form;
+use Statamic\Facades\Entry;
 use Statamic\Facades\Taxonomy;
+use Revolution\Google\Sheets\Facades\Sheets;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 
 class MollieController extends Controller
@@ -16,7 +19,7 @@ class MollieController extends Controller
         session()->put('formData', $request->all());
 
         $price = $this->calculatePrice($request);
-        Log::info('Calculated price: ' . $price);
+        // Log::info('Calculated price: ' . $price);
 
         if ($price < 1.00) { // Mollie minimum amount check
             $price = '1.00'; // Set to minimum allowed amount
@@ -126,11 +129,60 @@ class MollieController extends Controller
             return redirect()->route('payment.cancel')->with('error', 'Form data not found.');
         }
 
+        // Send the form data to the Google Spreadsheet
+        $this->sendToSpreadsheet($formData);
+
         // Form submission is already created in mollie method, just return a success response here
         session()->forget('formData'); // Clear form data from session
         session()->forget('paymentId'); // Clear payment ID from session
-
+        
         return redirect("/")->with('success', 'Payment received. Your order is pending.');
+    }
+
+    public function sendToSpreadsheet($formData)
+    {
+        $sheetName = 'Boekingen';
+        $spreadsheetId = config('google.post_spreadsheet_id');
+        
+        // Headers die alleen één keer moeten worden toegevoegd
+        $headers = ['Formule', 'Voornaam', 'Achternaam', 'Email', 'Telefoon', 'Datum', 'Tijd', 'Aantal volwassenen', 'Aantal kinderen', 'Aantal kano\'s', 'Type kano', 'Opmerkingen', 'Totaal prijs', 'Betalings status'];
+
+        // Gegevensrij met formuliergegevens
+        $rowData = [
+            $formData['formule'] ?? '',
+            $formData['voornaam'] ?? '',
+            $formData['achternaam'] ?? '',
+            $formData['email'] ?? '',
+            $formData['telefoon'] ?? '',
+            $formData['datum'] ?? '',
+            $formData['tijd'] ?? '',
+            $formData['aantal_volwassenen'] ?? '',
+            $formData['aantal_kinderen'] ?? '',
+            $formData['aantal_kanos'] ?? '',
+            $formData['type_kano'] ?? '',
+            $formData['opmerkingen'] ?? '',
+            $formData['total_price'] ?? '',
+            $formData['payment_status'] ?? '',
+        ];
+
+        // Controleer of er al gegevens in de sheet staan
+        $existingData = Sheets::spreadsheet($spreadsheetId)
+            ->sheet($sheetName)
+            ->all();
+
+        // Als de sheet leeg is (behalve de eerste rij met headers), voeg dan de headers toe
+        if (empty($existingData) || count($existingData) === 0) {
+            $sheetData = [
+                $headers,
+                $rowData,
+            ];
+        } else {
+            $sheetData = [$rowData];
+        }
+
+        Sheets::spreadsheet($spreadsheetId)
+            ->sheet($sheetName)
+            ->append($sheetData);
     }
 
     public function cancel()

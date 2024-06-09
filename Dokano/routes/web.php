@@ -7,12 +7,15 @@ use App\Http\Controllers\AvailableDaysController;
 use App\Http\Controllers\TimeCheckerController;
 use App\Http\Controllers\MollieController;
 
+use App\Http\Controllers\GoogleSpreedSheetController;
+Route::get('/test', [GoogleSpreedSheetController::class, 'index']);
 
-Route::get('/api/get_available_times', [TimeCheckerController::class, 'getAvailableTimes']);
+
+Route::post('/submit_form', [FormSubmissionController::class, 'submitForm']);
+Route::get('/api/check_availability', [FormSubmissionController::class, 'checkAvailability']);
 Route::post('/calculate-price', [CalculatePriceController::class, 'calculatePrice']);
 Route::get('/get-available-days', [AvailableDaysController::class, 'getAvailableDays']);
-Route::get('/api/check_availability', [FormSubmissionController::class, 'checkAvailability']);
-Route::post('/submit_form', [FormSubmissionController::class, 'submitForm']);
+Route::get('/api/get_available_times', [TimeCheckerController::class, 'getAvailableTimes']);
 
 Route::post('mollie', [MollieController::class, 'mollie'])->name('mollie');
 Route::get('success', [MollieController::class, 'success'])->name('payment.success');
@@ -24,3 +27,5 @@ Route::post('webhooks', [MollieController::class, 'webhooks'])
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
     ])
     ->name('webhooks.mollie');
+
+Route::post('/submit-booking', [GoogleSpreedSheetController::class, 'submitBooking']);
