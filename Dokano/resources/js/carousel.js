@@ -10,13 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
           left: index * carousel.clientWidth,
           behavior: 'smooth'
         });
-        updateNavPoints();
       }
 
       setInterval(scrollCarousel, 3000); // Change the interval as needed
-
-      // Initial update for nav points
-      updateNavPoints();
     }
 
     // Setup carousels

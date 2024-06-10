@@ -43,6 +43,7 @@ function validateForm() {
   const time = document.getElementById("tijd").value;
   const adults = document.getElementById("aantal_volwassenen").value;
   const children = document.getElementById("aantal_kinderen").value;
+  const amountCanoe = document.getElementById("aantal_kanos").value;
   const selectedCanoeInput = document.querySelector(
     '[name="type_kano"]:checked'
   );
@@ -53,7 +54,7 @@ function validateForm() {
   // Reset error message
   error.innerHTML = "";
 
-  if (selectedFormulaInput === "") {
+  if (!selectedFormulaInput) {
     error.innerHTML += "Selecteer alstublieft een formule.<br>";
   }
   if (date === "") {
@@ -62,9 +63,8 @@ function validateForm() {
   if (time === "Kies uw tijd") {
     error.innerHTML += "Selecteer alstublieft een tijd.<br>";
   }
-  if (adults === "0" && children === "0" || adults === "" && children === "") {
-    error.innerHTML +=
-      "Voer alstublieft het aantal volwassenen of kinderen in.<br>";
+  if ((adults === "0" && children === "0") || (adults === "" && children === "")) {
+    error.innerHTML += "Voer alstublieft het aantal volwassenen of kinderen in.<br>";
   }
   if (canoe === "") {
     error.innerHTML += "Selecteer alstublieft een kano.<br>";
@@ -72,16 +72,14 @@ function validateForm() {
   if (comments === "") {
     error.innerHTML += "Voer alstublieft een opmerking in.<br>";
   }
-
-  if (error.innerHTML !== "") {
-    error.style = "color: red; font-size: 1rem; margin-top: 1rem;";
-    return false;
+  if (amountCanoe === "0" || amountCanoe === "") {
+    error.innerHTML += "Voer alstublieft het aantal kano's in.<br>";
   }
 
-  return true;
+  return error.innerHTML === "";
 }
 
-next1.onclick = function () {
+next1.onclick = function (event) {
   if (validateForm()) {
     breadcrumb1.style.display = "none";
     breadcrumb2.style.display = "block";
@@ -94,6 +92,10 @@ next1.onclick = function () {
     console.log("form2 shown");
     updateSliderWidth("100%");
     changeFillColor("#e4a621");
+  } else {
+    // Prevent default action if there are errors
+    event.preventDefault();
+    event.stopPropagation();
   }
 };
 
@@ -137,10 +139,12 @@ function validateForm2() {
     error.style = "color: red; font-size: 1rem; margin-top: 1rem;";
     return false;
   }
+  if (error.innerHTML === "") {
+    BFormOk = true;
+  }
 
   return true;
 }
-
 
 next2.onclick = function () {
   if(validateForm2()){
