@@ -10,6 +10,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "google/apiclient": "^2.16",
         "jezzdk/statamic-google-maps": "^2.1",
         "laravel/framework": "^11",
         "laravel/reverb": "@beta",
@@ -17,6 +18,7 @@
         "mollie/laravel-mollie": "^3.0",
         "nomala/statamic-google-places": "^1.2",
         "phpoffice/phpspreadsheet": "^2.1",
+        "revolution/laravel-google-sheets": "^7.0",
         "statamic/cms": "^5.0",
         "statamic/collaboration": "^1.0",
         "statamic/eloquent-driver": "^4.0"

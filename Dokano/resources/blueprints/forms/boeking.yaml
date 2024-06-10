@@ -30,6 +30,11 @@ tabs:
               type: text
               display: 'Aantal Kinderen:'
           -
+            handle: aantal_kanos
+            field:
+              type: text
+              display: 'Aantal kanos:'
+          -
             handle: type_kano
             field:
               type: text
@@ -64,11 +69,6 @@ tabs:
             field:
               type: text
               display: 'Totaal prijs:'
-          -
-            handle: aantal_kanos
-            field:
-              type: text
-              display: 'Aantal kanos:'
           -
             handle: payment_status
             field:

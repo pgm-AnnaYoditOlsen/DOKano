@@ -67,7 +67,7 @@
 </section>
 
 <section class="mx-auto max-w-2xl">
-  {{ form:create in="boeking" action="{route:mollie}" }}
+  {{ form:create in="boeking" action="{{ route:mollie }}" }}
   {{ if errors }}
   <div class="bg-red-300 text-white p-2"> {{ errors }} {{ value }}<br>
     {{ /errors }}

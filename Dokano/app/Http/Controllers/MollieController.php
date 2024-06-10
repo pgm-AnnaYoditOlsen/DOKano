@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
 use Statamic\Facades\Form;
+use Statamic\Facades\Entry;
 use Statamic\Facades\Taxonomy;
+use Revolution\Google\Sheets\Facades\Sheets;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 
 class MollieController extends Controller
@@ -15,7 +18,7 @@ class MollieController extends Controller
         session()->put('formData', $request->all());
 
         $price = $this->calculatePrice($request);
-        Log::info('Calculated price: ' . $price);
+        // Log::info('Calculated price: ' . $price);
 
         if ($price < 1.00) { // Mollie minimum amount check
             $price = '1.00'; // Set to minimum allowed amount
@@ -103,6 +106,8 @@ class MollieController extends Controller
             return redirect()->route('payment.cancel')->with('error', 'Form data not found.');
         }
 
+        $this->sendToSpreadsheet($formData);
+
         $form = Form::find('boeking');
         $submissions = $form->submissions()->filter(function($submission) use ($paymentId) {
             return $submission->get('payment_id') === $paymentId;
@@ -122,8 +127,50 @@ class MollieController extends Controller
 
         session()->forget('formData'); // Clear form data from session
         session()->forget('paymentId'); // Clear payment ID from session
-
+        
         return redirect("/")->with('success', 'Payment received. Your order is pending.');
+    }
+
+    public function sendToSpreadsheet($formData)
+    {
+        $sheetName = 'Boekingen';
+        $spreadsheetId = config('google.post_spreadsheet_id');
+        
+        $headers = ['Formule', 'Voornaam', 'Achternaam', 'Email', 'Telefoon', 'Datum', 'Tijd', 'Aantal volwassenen', 'Aantal kinderen', 'Aantal kano\'s', 'Type kano', 'Opmerkingen', 'Totaal prijs', 'Betalings status'];
+
+        $rowData = [
+            $formData['formule'] ?? '',
+            $formData['voornaam'] ?? '',
+            $formData['achternaam'] ?? '',
+            $formData['email'] ?? '',
+            $formData['telefoon'] ?? '',
+            $formData['datum'] ?? '',
+            $formData['tijd'] ?? '',
+            $formData['aantal_volwassenen'] ?? '',
+            $formData['aantal_kinderen'] ?? '',
+            $formData['aantal_kanos'] ?? '',
+            $formData['type_kano'] ?? '',
+            $formData['opmerkingen'] ?? '',
+            $formData['total_price'] ?? '',
+            $formData['payment_status'] ?? '',
+        ];
+
+        $existingData = Sheets::spreadsheet($spreadsheetId)
+            ->sheet($sheetName)
+            ->all();
+
+        if (empty($existingData) || count($existingData) === 0) {
+            $sheetData = [
+                $headers,
+                $rowData,
+            ];
+        } else {
+            $sheetData = [$rowData];
+        }
+
+        Sheets::spreadsheet($spreadsheetId)
+            ->sheet($sheetName)
+            ->append($sheetData);
     }
 
     public function cancel()

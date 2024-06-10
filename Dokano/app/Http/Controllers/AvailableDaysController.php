@@ -50,7 +50,6 @@ class AvailableDaysController extends Controller
                 ];
             }
 
-            Log::info('Beschikbare datums per categorie', $allAvailableDates);
             return response()->json($allAvailableDates);
         } else {
             Log::info('Geen termen gevonden.');
