@@ -7,7 +7,8 @@ const $weather = document.querySelector("#weather");
 fetch(URL_API_FORECAST)
   .then((response) => response.json())
   .then((data) => {
-    $weather.innerHTML = getHTMLWeatherForecast(data);
+    updateWeatherForecast(data);
+    window.addEventListener('resize', () => updateWeatherForecast(data));
   })
   .catch((error) => {
     console.error("Error fetching weather forecast data:", error);
@@ -42,9 +43,22 @@ function getDayOfWeek(localtime) {
   };
 }
 
+function updateWeatherForecast(data) {
+  const screenWidth = window.innerWidth;
+  let daysToShow = 7;
+
+  if (screenWidth <= 768) {
+    daysToShow = 1;
+  } else if (screenWidth <= 1024) {
+    daysToShow = 3;
+  }
+
+  $weather.innerHTML = getHTMLWeatherForecast(data, daysToShow);
+}
+
 // Generate HTML for weather forecast
-function getHTMLWeatherForecast(w) {
-  const forecastDays = w.days.slice(0, 7); // Only take the next 7 days
+function getHTMLWeatherForecast(w, daysToShow) {
+  const forecastDays = w.days.slice(0, daysToShow); // Take the number of days based on screen size
 
   if (!forecastDays || !Array.isArray(forecastDays)) {
     console.error("Error: Forecast data is missing or in the wrong format.");

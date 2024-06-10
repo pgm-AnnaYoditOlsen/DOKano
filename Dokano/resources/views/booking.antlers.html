@@ -69,9 +69,9 @@
 <section class="mx-auto max-w-2xl">
   {{ form:create in="boeking" action="{{ route:mollie }}" }}
   {{ if errors }}
-    <div class="bg-red-300 text-white p-2"> {{ errors }} {{ value }}<br>
-      {{ /errors }}
-    </div>
+  <div class="bg-red-300 text-white p-2"> {{ errors }} {{ value }}<br>
+    {{ /errors }}
+  </div>
   {{ /if }}
 
   <div id="form1" class="transition-all relative">
@@ -81,12 +81,12 @@
       </div>
       <div class="flex flex-wrap gap-2 radio-formule-wrapper w-full md:w-3/4">
         {{ taxonomy:formule_categories }}
-          <div>
-            <input type="radio" name="formule" id="{{ title }}" value="{{ title }}" hidden>
-            <label for="{{ title }}">
-              <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
-            </label>
-          </div>
+        <div>
+          <input type="radio" name="formule" id="{{ title }}" value="{{ title }}" hidden>
+          <label for="{{ title }}">
+            <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
+          </label>
+        </div>
         {{ /taxonomy:formule_categories }}
       </div>
     </div>
@@ -94,12 +94,15 @@
     <div class="md:flex items-center mx-auto max-w-[88%] mt-6 md:gap-8">
       <div class="flex flex-col md:flex-row justify-start md:items-center mb-1 md:mb-0 md:gap-8">
         <label class="font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="datum">Datum:</label>
-        <input type="text" name="datum" id="datePicker" class="border-b-2 border-standards-bordergrey text-standards-black text-md h-8 md:w-64 px-2" placeholder="klik hier om een datum te kiezen">
+        <input type="text" name="datum" id="datePicker"
+          class="border-b-2 border-standards-bordergrey text-standards-black text-md h-8 md:w-64 px-2"
+          placeholder="klik hier om een datum te kiezen">
       </div>
-    
+
       <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 md:mt-0 mb-1 md:mb-0 md:gap-8">
         <label class="font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="tijd">Tijd:</label>
-        <select name="tijd" id="tijd" class="h-8 text-gray-400 text-md bg-standards-lightgrey border-b-2 border-standards-bordergrey hover:border-gray-400 py-1 px-2 focus:outline-none focus:ring focus:border-blue-500">
+        <select name="tijd" id="tijd"
+          class="h-8 text-gray-400 text-md bg-standards-lightgrey border-b-2 border-standards-bordergrey hover:border-gray-400 py-1 px-2 focus:outline-none focus:ring focus:border-blue-500">
           <option disabled selected>Kies uw tijd</option>
         </select>
       </div>
@@ -107,41 +110,58 @@
 
     <div class="mx-auto max-w-[88%] md:max-w-full">
       <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_volwassenen">Aantal
+        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
+          for="aantal_volwassenen">Aantal
           volwassenen:</label>
-        <input type="number" name="aantal_volwassenen" id="aantal_volwassenen" value=""
-          class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="" required
-          min="0" max="25" data-price="">
+        <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
+          class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="0" required min="0" max="25"
+          data-price="">
       </div>
 
       <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kinderen">Aantal
+        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
+          for="aantal_kinderen">Aantal
           kinderen:</label>
         <input type="number" name="aantal_kinderen" id="aantal_kinderen"
-          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="" min="0" max="25"
+          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="0" min="0" max="25"
           data-price="">
       </div>
 
       <div class="flex flex-col md:flex-row  md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kanos">Aantal
-          kanos:</label>
+        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
+          for="aantal_kinderen">Aantal
+          kano's / kajaks:</label>
         <input type="number" name="aantal_kanos" id="aantal_kanos"
-          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="" min="0" max="25"
+          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="0" min="0" max="25"
           data-price="">
       </div>
     </div>
 
     <div class="mx-auto max-w-[88%] md:max-w-full mt-8 mb-4">
-      <button type="" id="checkAvailability" class="p-2 bg-DOKano-yellow w-full text-standards-white rounded">
-        Check de beschikbare kano's
+      <button type="button" id="checkAvailability"
+        class="p-2 bg-standards-grey font-alternative text-[18px] hover:text-standards-white hover:bg-DOKano-yellow smooth-hover w-full text-standards-black rounded">
+        Check de beschikbare kano's / kajaks
       </button>
+
+
+
+      <div class="flex justify-center gap-9 my-4">
+        <button type="button" id="showCanoes"
+          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kano's</button>
+        <button type="button" id="showBoth"
+          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Beide</button>
+        <button type="button" id="showKayaks"
+          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kajaks</button>
+      </div>
 
       <div class="mt-4 flex flex-wrap justify-between md:justify-start items-center md:gap-8">
         <div class="w-24 md:text-right">
-          <h2 class="font-standard text-md text-standards-black">Type Kano:</h2>
+          <h2 class="font-standard text-md text-standards-black">Type Kano's / kajaks:</h2>
         </div>
-        <div class="flex flex-wrap justify-between md:w-4/5 radio-formule-wrapper">
+        <div class="flex flex-wrap justify-between md:w-4/5 radio-formule-wrapper" id="canoeList">
           {{ collection:kanos }}
+          {{ if kajak }}
+          <div class="canoe-item kayaks flex gap-3 flex-wrap">
             <div data-canoe-type="{{ title }}">
               <div class="tooltip">
                 <div class="tooltiptext">
@@ -150,20 +170,40 @@
                   {{info_kanos}}
                 </div>
               </div>
-              <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required  data-categories="{{ formules}} {{ slug }} {{ /formules }}">
-    
+              <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required
+                data-categories="{{ formules }} {{ slug }} {{ /formules }}">
               <label class="cursor-pointer" for="{{ slug }}">
                 <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
                 <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
               </label>
             </div>
+          </div>
+          {{ else }}
+          <div class="canoe-item canoes flex gap-3 flex-wrap">
+            <div data-canoe-type="{{ title }}">
+              <div class="tooltip">
+                <div class="tooltiptext">
+                  <strong>{{title}}: </strong>
+                  <br>
+                  {{info_kanos}}
+                </div>
+              </div>
+              <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required
+                data-categories="{{ formules }} {{ slug }} {{ /formules }}">
+              <label class="cursor-pointer" for="{{ slug }}">
+                <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
+                <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
+              </label>
+            </div>
+          </div>
+          {{ /if }}
           {{ /collection:kanos }}
         </div>
       </div>
     </div>
-    
+
     <div class="bg-standards-white p-4 rounded-lg shadow-lg max-w-full w-full mx-auto">
-      <h2 class="font-standard text-md text-standards-black text-center">Beschikbaarheid kanos</h2>  
+      <h2 class="font-standard text-md text-standards-black text-center">Beschikbaarheid kanos</h2>
       <div id="canoeAvailability"></div>
     </div>
 
@@ -186,32 +226,40 @@
     <h2 class="text-standards-black text-xl text-center">Gegevens</h2>
 
     <div class="mx-auto md:w-3/5">
-      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="voornaam">Voornaam:</label>
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="voornaam">Voornaam:</label>
         <input type="text" name="voornaam" id="firstName"
-          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black" placeholder="Voornaam"
-          required>
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Voornaam" required>
       </div>
-  
-      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="achternaam">Achternaam:</label>
+
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="achternaam">Achternaam:</label>
         <input type="text" name="achternaam" id="lastName"
-          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black" placeholder="Achternaam"
-          required>
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Achternaam" required>
       </div>
-  
-      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="email">Email:</label>
+
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="email">Email:</label>
         <input type="email" name="email" id="email"
-          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black" placeholder="Email"
-          required autocomplete="on">
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Email" required autocomplete="on">
       </div>
-  
-      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
-        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="telefoon">Telefoon:</label>
+
+      <div
+        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+        <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
+          for="telefoon">Telefoon:</label>
         <input type="tel" name="telefoon" id="tel"
-          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black" placeholder="Nummer"
-          required>
+          class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
+          placeholder="Nummer" required>
       </div>
     </div>
 
@@ -238,7 +286,7 @@
       <p id="totalPriceDisplay"></p>
       <input type="hidden" name="total_price" id="totaal_prijs">
     </div>
-    
+
 
     <div class="flex gap-2 justify-between">
       <div>
@@ -253,6 +301,7 @@
   {{ /form:create in="boeking" }}
 </section>
 
+{{ vite src="resources/js/toggleCanoesAndKayaks.js" }}
 {{ vite src="resources/js/overview.js" }}
 {{ vite src="resources/js/price.js" }}
 {{ vite src="resources/js/datepicker.js" }}

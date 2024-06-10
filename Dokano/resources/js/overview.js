@@ -16,12 +16,15 @@ next.addEventListener("click", () => {
   const selectedCanoeInput = document.querySelector('[name="type_kano"]:checked');
   const canoe = selectedCanoeInput ? selectedCanoeInput.value : '';
   const comments = document.getElementById("opmerkingen").value;
+  const amountCanoe = document.getElementById("aantal_kanos").value; 
+
   overview.innerHTML = `
         <strong>${formula}</strong>
         <p>Datum: ${date}</p>  
         <p>Tijd: ${time}</p>
         <p>Volwassenen: ${adults}</p>
         <p>Kinderen: ${children}</p>
+        <p>Aantal kano's: ${amountCanoe}</p>
         <p>Kano: ${canoe}</p>
         <p>Opmerkingen: ${comments}</p>
         <hr>

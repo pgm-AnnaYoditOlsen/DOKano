@@ -1,16 +1,26 @@
 <nav class="bg-DOKano-lightblue p-5 text-standards-white">
-    <ul class="flex items-center justify-around"> 
+    <ul class="flex items-center justify-around">
         <div>
+            {{ if response_code == 404}}
+            <li class="w-[8rem]"><a href="/"><img src="../assets/img/logo.svg" alt="Logo"></a></li>
+            {{else}}
             <li class="w-[8rem]"><a href="/"><img src="assets/img/logo.svg" alt="Logo"></a></li>
+            {{/if}}
         </div>
         <div class="items-center hidden lg:flex">
             {{ nav:navigation }}
-                <li class="ml-[3rem]"><a href="{{ url }}">{{ title }}</a></li>
+            <li class="ml-[3rem]"><a href="{{ url }}">{{ title }}</a></li>
             {{ /nav:navigation }}
-            <li><a class="ml-[3rem] px-4 py-3 bg-DOKano-yellow hover:bg-amber-500 transition-all ease-linear rounded-[20rem]" href="/boeking">Boeking</a></li>
+            <li><a class="ml-[3rem] px-4 py-3 bg-DOKano-yellow hover:bg-amber-500 transition-all ease-linear rounded-[20rem]"
+                    href="/boeking">Boeking</a></li>
         </div>
         <div class="lg:hidden flex">
-            <li id="hamburger"><img class="max-w-[4rem] w-full" src="assets/img/hamburger.png" alt="Hamburger Menu"></li>
+            {{ if response_code == 404}}
+                <li id="hamburger"><img class="max-w-[4rem] w-full" src="../assets/img/hamburger.png" alt="Hamburger Menu">
+            {{else}}
+                <li id="hamburger"><img class="max-w-[4rem] w-full" src="assets/img/hamburger.png" alt="Hamburger Menu">
+            {{/if}}
+            </li>
         </div>
     </ul>
 </nav>
@@ -19,8 +29,10 @@
     <ul class="fixed right-0 top-0 z-50 bg-standards-white max-w-[15rem] w-full max-h-[30rem] h-full">
         <button class="unset text-xl pl-[3rem] pt-[3rem]" id="closeBtn">X</button>
         {{ nav:navigation }}
-            <li class="text-standards-black ml-[3rem] pt-[2rem]"><a href="{{ url }}">{{ title }}</a></li>
+        <li class="text-standards-black ml-[3rem] pt-[2rem]"><a href="{{ url }}">{{ title }}</a></li>
         {{ /nav:navigation }}
-        <li class="mt-[2rem] ml-[3rem]"><a class="px-4 py-3 bg-DOKano-yellow hover:bg-amber-500 transition-all ease-linear rounded-[20rem]" href="/boeking">Boeking</a></li>
+        <li class="mt-[2rem] ml-[3rem]"><a
+                class="px-4 py-3 bg-DOKano-yellow hover:bg-amber-500 transition-all ease-linear rounded-[20rem]"
+                href="/boeking">Boeking</a></li>
     </ul>
 </div>

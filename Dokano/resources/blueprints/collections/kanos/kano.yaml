@@ -54,6 +54,11 @@ tabs:
               remove_empty_nodes: false
               type: bard
               display: 'info kano'
+          -
+            handle: kajak
+            field:
+              type: toggle
+              display: Kajak
   sidebar:
     display: Sidebar
     sections:

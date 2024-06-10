@@ -14,7 +14,7 @@ body{
   --main-blue: hsl(191, 40%, 76%);
   --sec-blue: hsl(191, 47%, 67%);
   --main-grey: hsl(227, 16%, 89%);
-  --sec-grey: hsl(224, 20%, 81%);
+  --sec-grey: #c5cad86d;
   --turquoise: hsl(157, 59%, 52%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
@@ -225,4 +225,8 @@ body{
 .hide-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+.smooth-hover {
+  transition: background-color 0.3s ease-in-out;
 }

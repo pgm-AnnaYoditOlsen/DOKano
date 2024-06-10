@@ -1,0 +1,43 @@
+title: vrijwilliger
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: naam
+            field:
+              type: text
+              display: Naam
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+          -
+            handle: gsm
+            field:
+              type: text
+              display: Gsm
+          -
+            handle: beschikbaarheid
+            field:
+              type: textarea
+              display: Beschikbaarheid
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

@@ -91,6 +91,7 @@ next1.onclick = function () {
     console.log("form1 hidden");
     form2.style.left = "50%";
     form2.style.display = "block";
+    console.log("form2 shown");
     updateSliderWidth("100%");
     changeFillColor("#e4a621");
   }

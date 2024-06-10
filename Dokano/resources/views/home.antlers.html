@@ -48,7 +48,6 @@
         {{ /collection:evenementen }}
       </div>
 
-
       <div class="flex justify-center mt-4">
         {{ collection:evenementen limit="3" }}
         <a href="#event{{index}}"
@@ -58,7 +57,7 @@
 
       <div class="flex justify-center mt-[3rem]">
         <a href="/evenementen"
-          class=" hover:bg-standards-black hover:text-standards-white transition duration-300 ease-in-out inline-block text-standards-black font-bold py-2 px-4 rounded-full border border-standards-black">Meer
+          class="hover:bg-standards-black hover:text-standards-white transition duration-300 ease-in-out inline-block text-standards-black font-bold py-2 px-4 rounded-full border border-standards-black">Meer
           evenementen</a>
       </div>
     </section>
@@ -179,5 +178,6 @@
   });
 </script>
 
+{{vite src="resources/js/carousel.js"}}
 {{ vite src="resources/js/points.js" }}
 {{ vite src="resources/js/weather.js" }}
