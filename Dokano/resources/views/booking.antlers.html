@@ -250,7 +250,7 @@
           for="email">Email:</label>
         <input type="email" name="email" id="email"
           class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
-          placeholder="Email" required autocomplete="on">
+          placeholder="Email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" autocomplete="on" required>
       </div>
 
       <div
@@ -259,7 +259,7 @@
           for="telefoon">Telefoon:</label>
         <input type="tel" name="telefoon" id="tel"
           class="w-full md:w-60 h-8 pl-1 text-sm border-b-2 border-standards-grey text-standards-black"
-          placeholder="Nummer" required>
+          placeholder="Nummer" pattern="\+?[0-9]{10,15}" required>
       </div>
     </div>
 

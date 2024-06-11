@@ -130,13 +130,17 @@ function validateForm2() {
   }
   if (email === "") {
     error.innerHTML += "Gelieve uw email in te voeren.<br>";
+  } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      error.innerHTML += "Gelieve een geldig e-mailadres in te voeren.<br>";
   }
   if (phone === "") {
-    error.innerHTML += "Gelieve uw telefoonnummer in te voeren.<br>";
+      error.innerHTML += "Gelieve uw telefoonnummer in te voeren.<br>";
+  } else if (!/\+?[0-9]{10,15}/.test(phone)) {
+      error.innerHTML += "Gelieve een geldig telefoonnummer in te voeren.<br>";
   }
 
   if (error.innerHTML !== "") {
-    error.style = "color: red; font-size: 1rem; margin-top: 1rem;";
+    error.style = "color: red; font-size: 0.5rem; margin-top: 1rem;";
     return false;
   }
   if (error.innerHTML === "") {
