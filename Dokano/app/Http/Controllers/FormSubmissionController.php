@@ -73,10 +73,11 @@ class FormSubmissionController extends Controller
             Log::info('Submitting form with data: ' . json_encode($data));
 
             // Save the form submission
-            Entry::make()
-                ->collection('boeking')
+            FormSubmission::make()
+                ->where('form', 'boeking')
                 ->data($data)
                 ->save();
+
 
             return response()->json(['message' => 'Form submitted successfully']);
         } catch (\Exception $e) {
