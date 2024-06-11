@@ -17,3 +17,15 @@ preferences:
     top_level:
       'tools::forms::boeking': '@alias'
   theme: light
+  collections:
+    boeking:
+      filters:
+        booking:
+          display: booking
+      columns:
+        - title
+        - author
+        - slug
+        - status
+        - template
+        - content
