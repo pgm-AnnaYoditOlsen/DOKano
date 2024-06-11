@@ -113,26 +113,26 @@ document.addEventListener("DOMContentLoaded", () => {
         error.innerHTML = "";
 
         if (!selectedFormulaInput) {
-            error.innerHTML += "Selecteer alstublieft een formule.<br>";
+            error.innerHTML += "Gelieve een formule te selecteren.<br>";
         }
         if (date === "") {
-            error.innerHTML += "Selecteer alstublieft een datum.<br>";
+            error.innerHTML += "Gelieve een datum te selecteren.<br>";
         }
         if (time === "Kies uw tijd") {
-            error.innerHTML += "Selecteer alstublieft een tijd.<br>";
+            error.innerHTML += "Gelieve een tijd te selecteren.<br>";
         }
         if ((adults === "0" && children === "0") || (adults === "" && children === "")) {
-            error.innerHTML += "Voer alstublieft het aantal volwassenen of kinderen in.<br>";
+            error.innerHTML += "Gelieve het aantal volwassenen en/of kinderen in te voeren.<br>";
         }
         if (canoe === "") {
-            error.innerHTML += "Selecteer alstublieft een kano.<br>";
-        }
-        if (comments === "") {
-            error.innerHTML += "Voer alstublieft een opmerking in.<br>";
+            error.innerHTML += "Gelieve een kano te selecteren.<br>";
         }
         if (amountCanoe === "0" || amountCanoe === "") {
-            error.innerHTML += "Voer alstublieft het aantal kano's in.<br>";
+            error.innerHTML += "Gelieve het aantal kano's in te voeren.<br>";
         }
+        // if (comments === "") {
+        //     error.innerHTML += "Voer alstublieft een opmerking in.<br>";
+        // }
 
         return error.innerHTML === "";
     }

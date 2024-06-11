@@ -48,7 +48,7 @@ function validateForm() {
     '[name="type_kano"]:checked'
   );
   const canoe = selectedCanoeInput ? selectedCanoeInput.value : "";
-  const comments = document.getElementById("opmerkingen").value;
+  // const comments = document.getElementById("opmerkingen").value;
   const error = document.getElementById("error");
 
   // Reset error message
@@ -58,23 +58,23 @@ function validateForm() {
     error.innerHTML += "Gelieve een formule te selecteren.<br>";
   }
   if (date === "") {
-    error.innerHTML += "Selecteer alstublieft een datum.<br>";
+    error.innerHTML += "Gelieve een datum te selecteren.<br>";
   }
   if (time === "Kies uw tijd") {
-    error.innerHTML += "Selecteer alstublieft een tijd.<br>";
+    error.innerHTML += "Gelieve een tijd te selecteren.<br>";
   }
   if ((adults === "0" && children === "0") || (adults === "" && children === "")) {
-    error.innerHTML += "Voer alstublieft het aantal volwassenen of kinderen in.<br>";
-  }
-  if (canoe === "") {
-    error.innerHTML += "Selecteer alstublieft een kano.<br>";
-  }
-  if (comments === "") {
-    error.innerHTML += "Voer alstublieft een opmerking in.<br>";
+    error.innerHTML += "Gelieve het aantal volwassenen en/of kinderen in te voeren.<br>";
   }
   if (amountCanoe === "0" || amountCanoe === "") {
-    error.innerHTML += "Voer alstublieft het aantal kano's in.<br>";
+    error.innerHTML += "Gelieve het aantal kano's in te voeren.<br>";
   }
+  if (canoe === "") {
+    error.innerHTML += "Gelieve een kano te selecteren.<br>";
+  }
+  // if (comments === "") {
+  //   error.innerHTML += "Voer alstublieft een opmerking in.<br>";
+  // }
 
   return error.innerHTML === "";
 }
@@ -123,16 +123,16 @@ function validateForm2() {
   error.innerHTML = "";
 
   if (firstname === "") {
-    error.innerHTML += "Voer alstublieft uw voornaam in.<br>";
+    error.innerHTML += "Gelieve uw voornaam in te voeren..<br>";
   }
   if (lastname === "") {
-    error.innerHTML += "Voer alstublieft uw achternaam in.<br>";
+    error.innerHTML += "Gelieve uw achternaam in te voeren..<br>";
   }
   if (email === "") {
-    error.innerHTML += "Voer alstublieft uw e-mailadres in.<br>";
+    error.innerHTML += "Gelieve uw email in te voeren.<br>";
   }
   if (phone === "") {
-    error.innerHTML += "Voer alstublieft uw telefoonnummer in.<br>";
+    error.innerHTML += "Gelieve uw telefoonnummer in te voeren.<br>";
   }
 
   if (error.innerHTML !== "") {
