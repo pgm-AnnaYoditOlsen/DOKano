@@ -82,6 +82,9 @@ return [
             ],
         ],
 
+        'mailgun' => [
+            'transport' => 'mailgun',
+        ],
     ],
 
     /*

@@ -6,10 +6,7 @@ use App\Http\Controllers\CalculatePriceController;
 use App\Http\Controllers\AvailableDaysController;
 use App\Http\Controllers\TimeCheckerController;
 use App\Http\Controllers\MollieController;
-
 use App\Http\Controllers\GoogleSpreedSheetController;
-Route::get('/test', [GoogleSpreedSheetController::class, 'index']);
-
 
 Route::post('/submit_form', [FormSubmissionController::class, 'submitForm']);
 Route::get('/api/check_availability', [FormSubmissionController::class, 'checkAvailability']);

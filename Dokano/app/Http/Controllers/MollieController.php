@@ -8,6 +8,8 @@ use Statamic\Facades\Entry;
 use Statamic\Facades\Taxonomy;
 use Revolution\Google\Sheets\Facades\Sheets;
 use Carbon\Carbon;
+use App\Mail\BookingConfirmed;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 
 class MollieController extends Controller
@@ -106,7 +108,15 @@ class MollieController extends Controller
             return redirect()->route('payment.cancel')->with('error', 'Form data not found.');
         }
 
+        // Save form data to Google Sheets
         $this->sendToSpreadsheet($formData);
+
+        // Send confirmation email
+        if (isset($formData['email']) && !empty($formData['email'])) {
+            Mail::to($formData['email'])->send(new BookingConfirmed($formData));
+        } else {
+            Log::error('No email address found in form data.');
+        }  
 
         $form = Form::find('boeking');
         $submissions = $form->submissions()->filter(function($submission) use ($paymentId) {

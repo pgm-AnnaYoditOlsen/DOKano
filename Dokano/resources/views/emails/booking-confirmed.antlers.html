@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boekingsbevestiging</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-2xl mx-auto py-8 px-4">
+        <h1 class="text-3xl font-semibold text-gray-800">Boekingsbevestiging</h1>
+        <p class="mt-4 text-gray-600">Beste {{ $formData['voornaam'] }} {{ $formData['achternaam'] }},</p>
+        <p class="mt-4 text-gray-600">Hartelijk dank voor je boeking. Hier zijn de details:</p>
+        <ul class="mt-4">
+            <li><span class="font-semibold">Formule:</span> {{ $formData['formule'] }}</li>
+            <li><span class="font-semibold">Datum:</span> {{ $formData['datum'] }}</li>
+            <li><span class="font-semibold">Tijd:</span> {{ $formData['tijd'] }}</li>
+            <li><span class="font-semibold">Aantal Volwassenen:</span> {{ $formData['aantal_volwassenen'] }}</li>
+            <li><span class="font-semibold">Aantal Kinderen:</span> {{ $formData['aantal_kinderen'] }}</li>
+            <li><span class="font-semibold">Type Kano:</span> {{ $formData['type_kano'] }}</li>
+            <li><span class="font-semibold">Opmerkingen:</span> {{ $formData['opmerkingen'] }}</li>
+        </ul>
+        <p class="mt-4"><span class="font-semibold">Totaalprijs:</span> {{ $formData['total_price'] }}</p>
+        <p class="mt-4"><span class="font-semibold">Betalingsstatus:</span> {{ $formData['payment_status'] }}</p>
+        <p class="mt-4 text-gray-600">We kijken ernaar uit je te verwelkomen!</p>
+    </div>
+</body>
+</html>
