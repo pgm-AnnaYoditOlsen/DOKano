@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const aantalKanosInput = document.getElementById("aantal_kanos");
     const categories = document.querySelectorAll('.radio-formule-wrapper input[name="formule"]');
     const canoes = document.querySelectorAll('.radio-formule-wrapper input[name="type_kano"]');
-    const error = document.getElementById("error");
+    const error = document.getElementById("errorCanoe");
 
     let availableCanoes = {};
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return false; // Prevent form submission or moving to next step
             }
         } else {
-            error.innerHTML = "Selecteer alstublieft een kano.";
+            error.innerHTML = "Gelieve een aantal kano's in te voeren.";
             return false; // Prevent form submission or moving to next step
         }
         return true;

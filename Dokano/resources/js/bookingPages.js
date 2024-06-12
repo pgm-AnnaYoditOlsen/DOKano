@@ -18,6 +18,7 @@ const breadcrumb1 = document.getElementById("breadcrumb-1-small");
 const breadcrumb2 = document.getElementById("breadcrumb-2-small");
 const breadcrumb3 = document.getElementById("breadcrumb-3-small");
 
+
 //booking check
 let BFormOk = false;
 
@@ -115,36 +116,36 @@ back1.onclick = function () {
 
 function validateForm2() {
   const firstname = document.getElementById("firstName").value;
-  const lastname = document.getElementById("lastName").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("tel").value;
+  const lastname = document.getElementById("lastName") ? document.getElementById("lastName").value : "";
+  const email = document.getElementById("email") ? document.getElementById("email").value : "";
+  const phone = document.getElementById("tel") ? document.getElementById("tel").value : "";
   const error = document.getElementById("error2");
+
   // Reset error message
   error.innerHTML = "";
 
+  let isValid = true;
   if (firstname === "") {
-    error.innerHTML += "Gelieve uw voornaam in te voeren..<br>";
+    error.innerHTML += "Gelieve uw voornaam in te voeren.<br>";
+    document.getElementById("firstName").focus();
   }
   if (lastname === "") {
-    error.innerHTML += "Gelieve uw achternaam in te voeren..<br>";
+    error.innerHTML += "Gelieve uw achternaam in te voeren.<br>";
   }
   if (email === "") {
     error.innerHTML += "Gelieve uw email in te voeren.<br>";
   } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-      error.innerHTML += "Gelieve een geldig e-mailadres in te voeren.<br>";
+    error.innerHTML += "Gelieve een geldig e-mailadres in te voeren.<br>";
   }
   if (phone === "") {
-      error.innerHTML += "Gelieve uw telefoonnummer in te voeren.<br>";
+    error.innerHTML += "Gelieve uw telefoonnummer in te voeren.<br>";
   } else if (!/\+?[0-9]{10,15}/.test(phone)) {
-      error.innerHTML += "Gelieve een geldig telefoonnummer in te voeren.<br>";
+    error.innerHTML += "Gelieve een geldig telefoonnummer in te voeren.<br>";
   }
 
-  if (error.innerHTML !== "") {
+  if (!isValid) {
     error.style = "color: red; font-size: 0.5rem; margin-top: 1rem;";
     return false;
-  }
-  if (error.innerHTML === "") {
-    BFormOk = true;
   }
 
   return true;

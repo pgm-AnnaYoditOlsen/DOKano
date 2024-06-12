@@ -110,25 +110,27 @@
 
     <div class="mx-auto max-w-[88%] md:max-w-full">
       <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
-          for="aantal_volwassenen">Aantal
-          volwassenen:</label>
+        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_volwassenen">
+          Aantal volwassenen:
+        </label>  
         <div class="flex items-center">
-          <button type="button" id="minusAdult" class="px-2 py-1 bg-gray-300">-</button>
+          <button type="button" id="minusAdult" class="button px-2 py-1 bg-gray-300">-</button>
           <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
-              class="border-b-2 w-20 border-standards-grey text-standards-black h-full mx-2" value="0" required min="0"
-              max="25" data-price="">
-          <button type="button" id="plusAdult" class="px-2 py-1 bg-gray-300">+</button>
+            class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="0" min="0" max="25">
+          <button type="button" id="plusAdult" class="button px-2 py-1 bg-gray-300">+</button>
         </div>
       </div>
-
+      
       <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
-          for="aantal_kinderen">Aantal
-          kinderen:</label>
-        <input type="number" name="aantal_kinderen" id="aantal_kinderen"
-          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="0" min="0" max="25"
-          data-price="">
+          <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kinderen">
+              Aantal kinderen:
+          </label>
+          <div class="flex items-center">
+            <button type="button" id="minusChild" class="button px-2 py-1 bg-gray-300">-</button>
+              <input type="number" name="aantal_kinderen" id="aantal_kinderen"
+                  class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="0"  min="0" max="25">
+                  <button type="button" id="plusChild" class="button px-2 py-1 bg-gray-300">+</button>
+          </div>
       </div>
 
       <div class="flex flex-col md:flex-row  md:items-center mt-6 mb-1 md:gap-8">
@@ -220,6 +222,7 @@
 
     <div class="mx-auto max-w-[88%] md:max-w-full">
       <p id="error" class="text-red-600"></p>
+      <p id="errorCanoe" class="text-red-600"></p>
       <button class="text-right submit" id="next1" type="button">Verder</button>
     </div>
   </div>
@@ -228,8 +231,7 @@
     <h2 class="text-standards-black text-xl text-center">Gegevens</h2>
 
     <div class="mx-auto md:w-3/5">
-      <div
-        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
         <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
           for="voornaam">Voornaam:</label>
         <input type="text" name="voornaam" id="firstName"
@@ -237,8 +239,7 @@
           placeholder="Voornaam" required>
       </div>
 
-      <div
-        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
         <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
           for="achternaam">Achternaam:</label>
         <input type="text" name="achternaam" id="lastName"
@@ -246,8 +247,7 @@
           placeholder="Achternaam" required>
       </div>
 
-      <div
-        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
         <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
           for="email">Email:</label>
         <input type="email" name="email" id="email"
@@ -255,8 +255,7 @@
           placeholder="Email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" autocomplete="on" required>
       </div>
 
-      <div
-        class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
+      <div class="text-standards-black flex flex-col md:flex-row md:items-center md:gap-8 mb-8 mt-8 justify-start mb-[1rem]">
         <label class="w-24 font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right"
           for="telefoon">Telefoon:</label>
         <input type="tel" name="telefoon" id="tel"
@@ -308,3 +307,6 @@
 {{ vite src="resources/js/price.js" }}
 {{ vite src="resources/js/datepicker.js" }}
 {{ vite src="resources/js/dates.js" }}
+{{ vite src="resources/js/numberControls.js" }}
+{{ vite src="resources/js/bookingPages.js" }}
+{{ vite src="resources/js/canoeChecker.js" }}
