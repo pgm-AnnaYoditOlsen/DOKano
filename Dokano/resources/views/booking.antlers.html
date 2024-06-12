@@ -113,9 +113,13 @@
         <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
           for="aantal_volwassenen">Aantal
           volwassenen:</label>
-        <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
-          class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="0" required min="0" max="25"
-          data-price="">
+        <div class="flex items-center">
+          <button type="button" id="minusAdult" class="px-2 py-1 bg-gray-300">-</button>
+          <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
+              class="border-b-2 w-20 border-standards-grey text-standards-black h-full mx-2" value="0" required min="0"
+              max="25" data-price="">
+          <button type="button" id="plusAdult" class="px-2 py-1 bg-gray-300">+</button>
+        </div>
       </div>
 
       <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
@@ -142,8 +146,6 @@
         class="p-2 bg-standards-grey font-alternative text-[18px] hover:text-standards-white hover:bg-DOKano-yellow smooth-hover w-full text-standards-black rounded">
         Check de beschikbare kano's / kajaks
       </button>
-
-
 
       <div class="flex justify-center gap-9 my-4">
         <button type="button" id="showCanoes"
