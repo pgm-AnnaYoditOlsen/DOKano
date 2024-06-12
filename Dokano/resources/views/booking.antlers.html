@@ -66,7 +66,7 @@
   </div>
 </section>
 
-<section class="mx-auto max-w-2xl">
+<section class="mx-auto max-w-[45rem]">
   {{ form:create in="boeking" action="{{ route:mollie }}" }}
   {{ if errors }}
   <div class="bg-red-300 text-white p-2"> {{ errors }} {{ value }}<br>
@@ -84,7 +84,7 @@
         <div>
           <input type="radio" name="formule" id="{{ title }}" value="{{ title }}" hidden>
           <label for="{{ title }}">
-            <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
+            <h2 class="text-standards-black radio-formule">{{ title }}</h2>
           </label>
         </div>
         {{ /taxonomy:formule_categories }}
@@ -109,37 +109,43 @@
     </div>
 
     <div class="mx-auto max-w-[88%] md:max-w-full">
-      <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_volwassenen">
-          Aantal volwassenen:
-        </label>  
-        <div class="flex items-center">
-          <button type="button" id="minusAdult" class="button px-2 py-1 bg-gray-300">-</button>
-          <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
-            class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="0" min="0" max="25">
-          <button type="button" id="plusAdult" class="button px-2 py-1 bg-gray-300">+</button>
-        </div>
-      </div>
-      
-      <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
-          <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kinderen">
-              Aantal kinderen:
+      <div class="md:flex md:justify-between">
+        <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:gap-8 mt-6 mb-1">
+          <label for="aantal_volwassenen" class="max-w-24 md:w-auto font-standard text-md text-standards-black md:text-right">
+            Aantal volwassenen:
           </label>
           <div class="flex items-center">
-            <button type="button" id="minusChild" class="button px-2 py-1 bg-gray-300">-</button>
-              <input type="number" name="aantal_kinderen" id="aantal_kinderen"
-                  class="border-b-2 w-20 border-standards-grey text-standards-black h-full" value="0"  min="0" max="25">
-                  <button type="button" id="plusChild" class="button px-2 py-1 bg-gray-300">+</button>
+            <button type="button" id="minusAdult" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
+            <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
+              class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0" min="0" max="25">
+            <button type="button" id="plusAdult" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
           </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
+            <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kinderen">
+                Aantal kinderen:
+            </label>
+            <div class="flex items-center">
+              <button type="button" id="minusChild" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
+              <input type="number" name="aantal_kinderen" id="aantal_kinderen"
+                  class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0"  min="0" max="25">
+              <button type="button" id="plusChild" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
+            </div>
+        </div>
       </div>
 
       <div class="flex flex-col md:flex-row  md:items-center mt-6 mb-1 md:gap-8">
         <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
           for="aantal_kinderen">Aantal
           kano's / kajaks:</label>
-        <input type="number" name="aantal_kanos" id="aantal_kanos"
-          class="w-20 border-b-2 border-standards-grey text-standards-black h-full" value="0" min="0" max="25"
-          data-price="">
+        <div class="flex items-center"> 
+          <button type="button" id="minusCanoe" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
+            <input type="number" name="aantal_kanos" id="aantal_kanos"
+              class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0" min="1"
+              data-price="">
+          <button type="button" id="plusCanoe" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
+        </div>
       </div>
     </div>
 
