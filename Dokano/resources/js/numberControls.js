@@ -10,28 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     plusAdultButton.addEventListener("click", (event) => {
         let currentValue = parseInt(adultInput.value, 10);
-        if (currentValue < 25) { // Controleer of de waarde kleiner is dan de max-waarde
+        if (currentValue < 25) { 
             adultInput.value = currentValue + 1;
         }
     });
     
     minusAdultButton.addEventListener("click", (event) => {
         let currentValue = parseInt(adultInput.value, 10);
-        if (currentValue > 0) { // Controleer of de waarde groter is dan de min-waarde
+        if (currentValue > 0) {
             adultInput.value = currentValue - 1;
         }
     });
 
     plusChildButton.addEventListener("click", () => {
         let currentValue = parseInt(childInput.value, 10);
-        if (currentValue < 25) { // Check if the value is less than the max value
+        if (currentValue < 25) {
             childInput.value = currentValue + 1;
         }
     });
 
     minusChildButton.addEventListener("click", () => {
         let currentValue = parseInt(childInput.value, 10);
-        if (currentValue > 0) { // Check if the value is greater than the min value
+        if (currentValue > 0) {
             childInput.value = currentValue - 1;
         }
     });
