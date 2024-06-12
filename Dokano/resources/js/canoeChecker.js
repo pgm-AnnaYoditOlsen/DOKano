@@ -94,62 +94,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     };
 
-    // Function to validate the form
-    const validateForm = () => {
-        const selectedFormulaInput = document.querySelector('[name="formule"]:checked');
-        const date = document.getElementById("datePicker").value;
-        const time = document.getElementById("tijd").value;
-        const adults = document.getElementById("aantal_volwassenen").value;
-        const children = document.getElementById("aantal_kinderen").value;
-        const amountCanoe = document.getElementById("aantal_kanos").value;
-        const selectedCanoeInput = document.querySelector(
-            '[name="type_kano"]:checked'
-        );
-        const canoe = selectedCanoeInput ? selectedCanoeInput.value : "";
-        const comments = document.getElementById("opmerkingen").value;
-        const error = document.getElementById("error");
-
-        // Reset error message
-        error.innerHTML = "";
-
-        if (!selectedFormulaInput) {
-            error.innerHTML += "Selecteer alstublieft een formule.<br>";
-        }
-        if (date === "") {
-            error.innerHTML += "Selecteer alstublieft een datum.<br>";
-        }
-        if (time === "Kies uw tijd") {
-            error.innerHTML += "Selecteer alstublieft een tijd.<br>";
-        }
-        if ((adults === "0" && children === "0") || (adults === "" && children === "")) {
-            error.innerHTML += "Voer alstublieft het aantal volwassenen of kinderen in.<br>";
-        }
-        if (canoe === "") {
-            error.innerHTML += "Selecteer alstublieft een kano.<br>";
-        }
-        if (comments === "") {
-            error.innerHTML += "Voer alstublieft een opmerking in.<br>";
-        }
-        if (amountCanoe === "0" || amountCanoe === "") {
-            error.innerHTML += "Voer alstublieft het aantal kano's in.<br>";
-        }
-
-        return error.innerHTML === "";
-    }
-
     // Event listener for the "Check Availability" button
     checkAvailabilityButton.addEventListener("click", updateCanoeAvailability);
 
     // Event listener for the "Next" button
     nextButton.addEventListener("click", (event) => {
-        // Check form validation and canoe availability before moving to the next step
-        if (!validateForm() || !checkCanoeAvailabilityBeforeNext()) {
+        if (!checkCanoeAvailabilityBeforeNext()) {
             event.preventDefault(); // Prevent moving to the next step if validation fails
             event.stopPropagation(); // Stop the event from propagating further
         }
     });
 
-    // Handle category selection and show/hide canoes accordingly
     categories.forEach((category) => {
         category.addEventListener("click", () => {
             const selectedCategory = category.value.toLowerCase();
