@@ -43,6 +43,7 @@ class FormSubmissionController extends Controller
                 // Calculate total used canoes for this type and date and time
                 $totalUsed = $formSubmissions->filter(function ($submission) use ($canoeType) {
                     $submissionData = $submission->data();
+                    // isset is used to avoid errors when the 'type_kano' field is not set
                     return isset($submissionData['type_kano']) && $submissionData['type_kano'] === $canoeType;
                 })->sum(function ($submission) {
                     $submissionData = $submission->data();
@@ -79,7 +80,7 @@ class FormSubmissionController extends Controller
                 ->save();
 
 
-            return response()->json(['message' => 'Form submitted successfully']);
+            return response();
         } catch (\Exception $e) {
             Log::error('Error submitting form: ' . $e->getMessage());
             Log::error('Request Data: ' . json_encode($request->all()));
