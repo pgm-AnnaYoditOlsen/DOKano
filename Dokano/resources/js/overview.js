@@ -18,7 +18,7 @@ next.addEventListener("click", () => {
   const comments = document.getElementById("opmerkingen").value;
   const amountCanoe = document.getElementById("aantal_kanos").value; 
 
-  overview.innerHTML = `
+  let overviewContent = `
         <strong>${formula}</strong>
         <p>Datum: ${date}</p>  
         <p>Tijd: ${time}</p>
@@ -26,12 +26,22 @@ next.addEventListener("click", () => {
         <p>Kinderen: ${children}</p>
         <p>Aantal kano's: ${amountCanoe}</p>
         <p>Kano: ${canoe}</p>
-        <p>Opmerkingen: ${comments}</p>
+  `;
+
+  // Controleren of het opmerkingenveld is ingevuld
+  if (comments !== "") {
+    overviewContent += `
+      <p>Opmerkingen: ${comments}</p>
+    `;
+  }
+
+  overviewContent += `
         <hr>
         <p>Voornaam: ${firstname}</p>
         <p>Achternaam: ${lastname}</p>
         <p>Email: ${email}</p>
         <p>Telefoonnummer: ${phone}</p>
+  `;
 
-    `;
+  overview.innerHTML = overviewContent;
 });

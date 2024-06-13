@@ -18,6 +18,7 @@ const breadcrumb1 = document.getElementById("breadcrumb-1-small");
 const breadcrumb2 = document.getElementById("breadcrumb-2-small");
 const breadcrumb3 = document.getElementById("breadcrumb-3-small");
 
+
 //booking check
 let BFormOk = false;
 
@@ -48,33 +49,33 @@ function validateForm() {
     '[name="type_kano"]:checked'
   );
   const canoe = selectedCanoeInput ? selectedCanoeInput.value : "";
-  const comments = document.getElementById("opmerkingen").value;
+  // const comments = document.getElementById("opmerkingen").value;
   const error = document.getElementById("error");
 
   // Reset error message
   error.innerHTML = "";
 
   if (!selectedFormulaInput) {
-    error.innerHTML += "Selecteer alstublieft een formule.<br>";
+    error.innerHTML += "Gelieve een formule te selecteren.<br>";
   }
   if (date === "") {
-    error.innerHTML += "Selecteer alstublieft een datum.<br>";
+    error.innerHTML += "Gelieve een datum te selecteren.<br>";
   }
   if (time === "Kies uw tijd") {
-    error.innerHTML += "Selecteer alstublieft een tijd.<br>";
+    error.innerHTML += "Gelieve een tijd te selecteren.<br>";
   }
   if ((adults === "0" && children === "0") || (adults === "" && children === "")) {
-    error.innerHTML += "Voer alstublieft het aantal volwassenen of kinderen in.<br>";
-  }
-  if (canoe === "") {
-    error.innerHTML += "Selecteer alstublieft een kano.<br>";
-  }
-  if (comments === "") {
-    error.innerHTML += "Voer alstublieft een opmerking in.<br>";
+    error.innerHTML += "Gelieve het aantal volwassenen en/of kinderen in te voeren.<br>";
   }
   if (amountCanoe === "0" || amountCanoe === "") {
-    error.innerHTML += "Voer alstublieft het aantal kano's in.<br>";
+    error.innerHTML += "Gelieve het aantal kano's in te voeren.<br>";
   }
+  if (canoe === "") {
+    error.innerHTML += "Gelieve een kano te selecteren.<br>";
+  }
+  // if (comments === "") {
+  //   error.innerHTML += "Voer alstublieft een opmerking in.<br>";
+  // }
 
   return error.innerHTML === "";
 }
@@ -115,32 +116,36 @@ back1.onclick = function () {
 
 function validateForm2() {
   const firstname = document.getElementById("firstName").value;
-  const lastname = document.getElementById("lastName").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("tel").value;
+  const lastname = document.getElementById("lastName") ? document.getElementById("lastName").value : "";
+  const email = document.getElementById("email") ? document.getElementById("email").value : "";
+  const phone = document.getElementById("tel") ? document.getElementById("tel").value : "";
   const error = document.getElementById("error2");
+
   // Reset error message
   error.innerHTML = "";
 
+  let isValid = true;
   if (firstname === "") {
-    error.innerHTML += "Voer alstublieft uw voornaam in.<br>";
+    error.innerHTML += "Gelieve uw voornaam in te voeren.<br>";
+    document.getElementById("firstName").focus();
   }
   if (lastname === "") {
-    error.innerHTML += "Voer alstublieft uw achternaam in.<br>";
+    error.innerHTML += "Gelieve uw achternaam in te voeren.<br>";
   }
   if (email === "") {
-    error.innerHTML += "Voer alstublieft uw e-mailadres in.<br>";
+    error.innerHTML += "Gelieve uw email in te voeren.<br>";
+  } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+    error.innerHTML += "Gelieve een geldig e-mailadres in te voeren.<br>";
   }
   if (phone === "") {
-    error.innerHTML += "Voer alstublieft uw telefoonnummer in.<br>";
+    error.innerHTML += "Gelieve uw telefoonnummer in te voeren.<br>";
+  } else if (!/\+?[0-9]{10,15}/.test(phone)) {
+    error.innerHTML += "Gelieve een geldig telefoonnummer in te voeren.<br>";
   }
 
-  if (error.innerHTML !== "") {
-    error.style = "color: red; font-size: 1rem; margin-top: 1rem;";
+  if (!isValid) {
+    error.style = "color: red; font-size: 0.5rem; margin-top: 1rem;";
     return false;
-  }
-  if (error.innerHTML === "") {
-    BFormOk = true;
   }
 
   return true;

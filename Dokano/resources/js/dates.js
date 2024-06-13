@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(data => {
                 sessionStorage.setItem('categories', JSON.stringify(data));
-                console.log('Fetched and cached categories:', data);
             })
             .catch(error => {
                 console.error(error);
@@ -49,8 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let fixedDays = categoriesData[category].fixedDays || [];
         let notAvailableDates = categoriesData[category].notAvailableDates || [];
 
-        console.log('Initialiseer datepicker voor categorie:', category, availableDates, fixedDays, notAvailableDates);
-
         $('#datePicker').datepicker('destroy');
         $('#datePicker').datepicker({
             dateFormat: 'dd-mm-yy',
@@ -82,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('input[name="formule"]').forEach((radio) => {
         radio.addEventListener('change', function() {
             const selectedCategory = document.querySelector('input[name="formule"]:checked').value;
-            console.log('Geselecteerde categorie:', selectedCategory);
             document.getElementById('datePicker').disabled = false;
             initializeDatepicker(selectedCategory);
         });
