@@ -1,5 +1,4 @@
 $(function() {
-    // Nederlandse instellingen voor de datepicker
     $.datepicker.regional['nl'] = {
         closeText: 'Sluiten',
         prevText: 'Vorige',
@@ -21,6 +20,5 @@ $(function() {
     };
     $.datepicker.setDefaults($.datepicker.regional['nl']);
 
-    // Datepicker initialiseren
     $('#datePicker').datepicker();
 });

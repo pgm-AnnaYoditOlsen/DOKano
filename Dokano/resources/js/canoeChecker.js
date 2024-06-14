@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!selectedDate || !selectedTime) {
             canoeAvailabilitySection.innerHTML =
-                '<p class="text-center font-bold text-l">Selecteer aub een datum en een tijdstip</p>';
+                '<p class="font-bold text-l">Gelive een datum en tijd te selecteren</p>';
             return;
         }
 

@@ -36,8 +36,8 @@ next.addEventListener("click", () => {
   }
 
   overviewContent += `
-        <hr>
-        <p>Voornaam: ${firstname}</p>
+        <hr class="hr"></hr>
+        <p class="">Voornaam: ${firstname}</p>
         <p>Achternaam: ${lastname}</p>
         <p>Email: ${email}</p>
         <p>Telefoonnummer: ${phone}</p>

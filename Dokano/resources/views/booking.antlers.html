@@ -74,12 +74,14 @@
   </div>
   {{ /if }}
 
-  <div id="form1" class="transition-all relative">
-    <div class="mx-auto max-w-[88%] md:max-w-full flex flex-col md:flex-row md:gap-8">
-      <div class="w-24 md:text-right">
+  <div id="form1" class="transition-all relative w-[88%] md:w-full mx-auto">
+    <h2 class="text-standards-black text-xl text-center mb-12">Activiteit samenstellen</h2>
+
+    <div class="mx-auto md:max-w-full flex flex-col md:gap-2">
+      <div class="w-24">
         <h2 class="font-standard mb-1 text-md text-standards-black">Formule:</h2>
       </div>
-      <div class="flex flex-wrap gap-2 radio-formule-wrapper w-full md:w-3/4">
+      <div class="flex flex-wrap gap-2 radio-formule-wrapper w-full">
         {{ taxonomy:formule_categories }}
         <div>
           <input type="radio" name="formule" id="{{ title }}" value="{{ title }}" hidden>
@@ -91,138 +93,139 @@
       </div>
     </div>
 
-    <div class="md:flex items-center mx-auto max-w-[88%] mt-6 md:gap-8">
-      <div class="flex flex-col md:flex-row justify-start md:items-center mb-1 md:mb-0 md:gap-8">
-        <label class="font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="datum">Datum:</label>
+    <div class="md:flex items-center mx-auto mt-8 md:gap-16">
+      <div class="flex flex-col justify-start mb-1 md:mb-0 md:gap-2">
+        <label class="font-standard text-md text-standards-black mb-1 md:mb-0" for="datum">Datum:</label>
         <input type="text" name="datum" id="datePicker"
-          class="border-b-2 border-standards-bordergrey text-standards-black text-md h-8 md:w-64 px-2"
-          placeholder="klik hier om een datum te kiezen">
+          class="datePicker border-b-2 border-standards-bordergrey text-standards-black text-md h-8 md:w-64 disabled:bg-transparent"
+          placeholder="klik hier om een datum te kiezen" disabled>
       </div>
 
-      <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 md:mt-0 mb-1 md:mb-0 md:gap-8">
-        <label class="font-standard text-md text-standards-black mb-1 md:mb-0 md:text-right" for="tijd">Tijd:</label>
+      <div class="flex flex-col justify-start mt-6 md:mt-0 mb-1 md:mb-0 md:gap-2">
+        <label class="font-standard text-md text-standards-black mb-1 md:mb-0" for="tijd">Tijd:</label>
         <select name="tijd" id="tijd"
-          class="h-8 text-gray-400 text-md bg-standards-lightgrey border-b-2 border-standards-bordergrey hover:border-gray-400 py-1 px-2 focus:outline-none focus:ring focus:border-blue-500">
+          class="h-8 text-md  border-b-2 border-standards-bordergrey hover:border-gray-400 py-1 focus:outline-none focus:ring focus:border-blue-500">
           <option disabled selected>Kies uw tijd</option>
         </select>
       </div>
     </div>
 
-    <div class="mx-auto max-w-[88%] md:max-w-full">
-      <div class="md:flex md:justify-between">
-        <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:gap-8 mt-6 mb-1">
-          <label for="aantal_volwassenen" class="max-w-24 md:w-auto font-standard text-md text-standards-black md:text-right">
-            Aantal volwassenen:
-          </label>
-          <div class="flex items-center">
-            <button type="button" id="minusAdult" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
-            <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
-              class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0" min="0" max="25">
-            <button type="button" id="plusAdult" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
-          </div>
-        </div>
-        
-        <div class="flex flex-col md:flex-row justify-start md:items-center mt-6 mb-1 md:gap-8">
-            <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right" for="aantal_kinderen">
-                Aantal kinderen:
-            </label>
-            <div class="flex items-center">
-              <button type="button" id="minusChild" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
-              <input type="number" name="aantal_kinderen" id="aantal_kinderen"
-                  class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0"  min="0" max="25">
-              <button type="button" id="plusChild" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
-            </div>
+
+    <div class="flex justify-between md:justify-normal md:gap-[12.5rem] mt-8">
+      <div class="flex flex-col md:gap-2">
+        <label for="aantal_volwassenen" class="max-w-24 md:w-auto font-standard text-md text-standards-black">
+          Volwassenen:
+        </label>
+        <div class="flex items-center">
+          <button type="button" id="minusAdult" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
+          <input type="number" name="aantal_volwassenen" id="aantal_volwassenen"
+            class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0" min="0" max="25">
+          <button type="button" id="plusAdult" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
         </div>
       </div>
-
-      <div class="flex flex-col md:flex-row  md:items-center mt-6 mb-1 md:gap-8">
-        <label class="font-standard mb-1 text-md text-standards-black md:w-24 md:text-right"
-          for="aantal_kinderen">Aantal
-          kano's / kajaks:</label>
-        <div class="flex items-center"> 
-          <button type="button" id="minusCanoe" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
-            <input type="number" name="aantal_kanos" id="aantal_kanos"
-              class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0" min="1"
-              data-price="">
-          <button type="button" id="plusCanoe" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
+      
+      <div class="flex flex-col md:gap-2">
+        <label class="font-standard text-md text-standards-black md:w-24" for="aantal_kinderen">
+          Kinderen:
+        </label>
+        <div class="flex items-center">
+          <button type="button" id="minusChild" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
+          <input type="number" name="aantal_kinderen" id="aantal_kinderen"
+            class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0"  min="0" max="25">
+          <button type="button" id="plusChild" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
         </div>
       </div>
     </div>
+    
 
-    <div class="mx-auto max-w-[88%] md:max-w-full mt-8 mb-4">
-      <button type="button" id="checkAvailability"
-        class="p-2 bg-standards-grey font-alternative text-[18px] hover:text-standards-white hover:bg-DOKano-yellow smooth-hover w-full text-standards-black rounded">
-        Check de beschikbare kano's / kajaks
-      </button>
-
-      <div class="flex justify-center gap-9 my-4">
-        <button type="button" id="showCanoes"
-          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kano's</button>
-        <button type="button" id="showBoth"
-          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Beide</button>
-        <button type="button" id="showKayaks"
-          class="p-2 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kajaks</button>
-      </div>
-
-      <div class="mt-4 flex flex-wrap justify-between md:justify-start items-center md:gap-8">
-        <div class="w-24 md:text-right">
+    
+    <div class="mt-8">
+      <div class="mt-4 md:gap-2">
+        <div class="">
           <h2 class="font-standard text-md text-standards-black">Type Kano's / kajaks:</h2>
         </div>
-        <div class="flex flex-wrap justify-between md:w-4/5 radio-formule-wrapper" id="canoeList">
+
+        <div class="flex gap-4 my-4">
+          <button type="button" id="showBoth"
+            class="py-1 px-4 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Beide</button>
+          <button type="button" id="showCanoes"
+            class="py-1 px-4 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kano's</button>
+          <button type="button" id="showKayaks"
+            class="py-1 px-4 smooth-hover bg-DOKano-lightblue hover:bg-DOKano-darkBlue text-white rounded">Toon Kajaks</button>
+        </div>
+
+        <div class="flex flex-wrap justify-between md:justify-normal md:gap-4 md:w-4/5 radio-formule-wrapper" id="canoeList">
           {{ collection:kanos }}
-          {{ if kajak }}
-          <div class="canoe-item kayaks flex gap-3 flex-wrap">
-            <div data-canoe-type="{{ title }}">
-              <div class="tooltip">
-                <div class="tooltiptext">
-                  <strong>{{title}}: </strong>
-                  <br>
-                  {{info_kanos}}
+            {{ if kajak }}
+              <div class="canoe-item kayaks flex gap-3 flex-wrap">
+                <div data-canoe-type="{{ title }}">
+                  <div class="tooltip">
+                    <div class="tooltiptext">
+                      <strong>{{title}}: </strong>
+                      <br>
+                      {{info_kanos}}
+                    </div>
+                  </div>
+                  <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required
+                    data-categories="{{ formules }} {{ slug }} {{ /formules }}">
+                  <label class="cursor-pointer" for="{{ slug }}">
+                    <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
+                    <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
+                  </label>
                 </div>
               </div>
-              <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required
-                data-categories="{{ formules }} {{ slug }} {{ /formules }}">
-              <label class="cursor-pointer" for="{{ slug }}">
-                <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
-                <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
-              </label>
-            </div>
-          </div>
-          {{ else }}
-          <div class="canoe-item canoes flex gap-3 flex-wrap">
-            <div data-canoe-type="{{ title }}">
-              <div class="tooltip">
-                <div class="tooltiptext">
-                  <strong>{{title}}: </strong>
-                  <br>
-                  {{info_kanos}}
+              {{ else }}
+              <div class="canoe-item canoes flex gap-3 flex-wrap">
+                <div data-canoe-type="{{ title }}">
+                  <div class="tooltip">
+                    <div class="tooltiptext">
+                      <strong>{{title}}: </strong>
+                      <br>
+                      {{info_kanos}}
+                    </div>
+                  </div>
+                  <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required
+                    data-categories="{{ formules }} {{ slug }} {{ /formules }}">
+                  <label class="cursor-pointer" for="{{ slug }}">
+                    <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
+                    <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
+                  </label>
                 </div>
               </div>
-              <input type="radio" name="type_kano" id="{{ slug }}" value="{{ title }}" hidden required
-                data-categories="{{ formules }} {{ slug }} {{ /formules }}">
-              <label class="cursor-pointer" for="{{ slug }}">
-                <img src="{{ kano_image.url }}" alt="{{ kano_image.alt }}">
-                <h2 class="text-standards-black w-24 radio-formule">{{ title }}</h2>
-              </label>
-            </div>
-          </div>
-          {{ /if }}
+            {{ /if }}
           {{ /collection:kanos }}
         </div>
       </div>
-    </div>
 
-    <div class="bg-standards-white p-4 rounded-lg shadow-lg max-w-full w-full mx-auto">
-      <h2 class="font-standard text-md text-standards-black text-center">Beschikbaarheid kanos</h2>
-      <div id="canoeAvailability"></div>
-    </div>
-
-    <div class="flex gap-3 flex-wrap md:gap-8 mx-auto max-w-[88%] md:max-w-full mt-8 mb-4">
-      <div class="w-24 md:text-right">
-        <label class="font-standard text-md text-standards-black" for="opmerkingen">Opmerkingen:</label>
+      <div class="mt-8">
+        <button type="button" id="checkAvailability" class="p-2 text-md text-standards-white rounded-md bg-DOKano-yellow smooth-hover hover:text-standards-white hover:bg-DOKano-hoveredYellow">
+          Check de beschikbare kano's / kajaks
+        </button>
+  
+        <div class="bg-standards-white p-4 rounded-lg shadow-lg max-w-full w-full mx-auto mt-4">
+          <h2  class="font-standard text-md text-standards-black">Beschikbaarheid kanos</h2>
+          <div id="canoeAvailability"></div>
+        </div>
       </div>
+    </div>
+    
+    <div class="flex flex-col mt-8 mb-1 md:gap-2">
+      <label class="font-standard mb-1 text-md text-standards-black"
+        for="aantal_kinderen">Aantal
+        kano's / kajaks:</label>
+      <div class="flex items-center"> 
+        <button type="button" id="minusCanoe" class="button w-8 h-8 rounded-full border border-gray-300">-</button>
+          <input type="number" name="aantal_kanos" id="aantal_kanos"
+            class="border-b-2 w-10 mx-2 border-standards-grey text-standards-black h-full text-center number-input" value="0" min="1"
+            data-price="">
+        <button type="button" id="plusCanoe" class="button w-8 h-8 rounded-full border border-gray-300">+</button>
+      </div>
+    </div>
+    
+    <div class="flex flex-col gap-2 mx-auto mt-8 mb-4">
+      <label class="font-standard text-md text-standards-black" for="opmerkingen">Opmerkingen:</label>
       <textarea name="opmerkingen" id="opmerkingen"
-        class="w-[31rem] h-24 border-b-2 border-standards-grey text-standards-black text-sm"
+        class="h-24 border-b-2 border-standards-grey text-standards-black text-sm"
         placeholder="Geef hier uw extra opmerkingen"></textarea>
     </div>
 
@@ -289,8 +292,8 @@
     <div class="text-standards-black mt-8" id="overview">
     </div>
     <div class="text-standards-black flex gap-2">
-      <label class="text-standards-black" for="total_price">Totaal prijs:</label>
-      <p id="totalPriceDisplay"></p>
+      <label class="text-standards-black text-lg font-bold" for="total_price">Totaal prijs:</label>
+      <p id="totalPriceDisplay" class="text-lg font-bold"></p>
       <input type="hidden" name="total_price" id="totaal_prijs">
     </div>
 
