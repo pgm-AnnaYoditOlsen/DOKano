@@ -62,7 +62,6 @@ class FormSubmissionController extends Controller
             // Log::info('Response: ' . $response->getContent());
             return $response;
         } catch (\Exception $e) {
-            // Log::error('Error checking availability: ' . $e->getMessage());
             return response()->json(['error' => 'Error checking availability'], 500);
         }
     }
